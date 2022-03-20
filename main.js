@@ -38,7 +38,6 @@ highAndLow("1 2 -3 4 5"); // return "5 -3"
 highAndLow("1 9 3 4 -5"); // return "9 -5"*/
 
 function highAndLow(numbers) {
-  numbers = numbers.split(' ').map(Number);
-  let orderedArray = numbers.sort((a, b) => a-b);
-  return orderedArray[orderedArray.length - 1] + ' ' + orderedArray[0];
+  numbers = numbers.split(' ').sort((a, b) => a-b);
+  return numbers[numbers.length - 1] + ' ' + numbers[0];
 }
