@@ -94,3 +94,48 @@ function accum(s) {
   }).join('-');
 }
 
+//////// 22-03-2022 8kyu
+//////// Summation
+// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+// For example:
+
+// summation(2) -> 3
+// 1 + 2
+
+// summation(8) -> 36
+// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+
+const summation = num => num * (1 + num) / 2;
+
+//////// 23-03-2022 6kyu
+//////// Stop gninnipS My sdroW!
+// Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+function spinWords(string){
+  return string.split(' ').map(element => element.length >= 5 ? element.split('').reverse().join('') : element).join(' ');
+}
+// Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" 
+//           spinWords( "This is a test") => returns "This is a test" 
+//           spinWords( "This is another test" )=> returns "This is rehtona test"
+
+
+//////// 24-03-2022 6kyu
+//////// Split Strings
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+// Examples:
+
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
+function solution(str){
+   let arr = str.split('');
+   (arr.length % 2 !== 0) ? arr.push('_') : arr;
+   for (let i=2; i<=arr.length; i++) {
+     if (i % 3 === 0) {
+       arr.splice(i-1, 0, '.')
+     }
+   }
+   return arr.length === 0 ? arr = [] : arr.join('').split('.');
+}
+
