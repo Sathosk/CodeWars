@@ -203,3 +203,26 @@ function numberToString(num) {
 function boolToWord( bool ){
   return bool ? 'Yes' : 'No';
 }
+
+//////// 04-04-2022 8kyu
+//////// Reversed Strings
+// Complete the solution so that it reverses the string passed into it.
+
+// 'world'  =>  'dlrow'
+// 'word'   =>  'drow'
+
+function solution(str){
+  return str.split('').reverse().join('');
+}
+
+//////// 04-04-2022 8kyu
+//////// Sum of positive
+// You get an array of numbers, return the sum of all of the positives ones.
+
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+// Note: if there is nothing to sum, the sum is default to 0.
+
+function positiveSum(arr) {
+  return arr.map(element => element > 0 ? element : 0).reduce((acc, curr) => acc += curr, 0);
+}
