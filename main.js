@@ -240,11 +240,12 @@ function positiveSum(arr) {
 // The number can be negative already, in which case no change is required.
 // Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
 
+function makeNegative(num) {
+  return num <= 0 ? num : -num;
+}
+
 //////// 06-04-2022 8kyu
 //////// String repeat
-// function makeNegative(num) {
-//   return num <= 0 ? num : -num;
-// }
 
 // Write a function called repeatStr which repeats the given string string exactly n times.
 
