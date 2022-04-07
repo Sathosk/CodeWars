@@ -255,3 +255,35 @@ function makeNegative(num) {
 function repeatStr (n, s) {
   return s.repeat(n);
 }
+
+//////// 07-04-2022 8kyu
+//////// Remove First and Last Character
+// Your goal is to create a function that removes the first and last characters of a string. 
+// You're given one parameter, the original string. 
+// You don't have to worry with strings with less than two characters.
+
+function removeChar(str){
+  return str.slice(1, -1);
+ };
+
+
+//////// 07-04-2022 7kyu
+//////// Vowel Count
+// Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+ 
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+  let vowelsCount = 0;
+  let vowelArray = ['a', 'e', 'i', 'o', 'u']
+  
+  for (let i=0; i<str.length; i++) {
+    if (vowelArray.includes(str[i])) {
+      vowelsCount++;
+    }
+  }
+  
+  return vowelsCount;
+}
