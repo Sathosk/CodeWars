@@ -267,7 +267,7 @@ function removeChar(str){
  };
 
 
-//////// 07-04-2022 7kyu
+//////// 08-04-2022 7kyu
 //////// Vowel Count
 // Return the number (count) of vowels in the given string.
 
@@ -286,4 +286,44 @@ function getCount(str) {
   }
   
   return vowelsCount;
+}
+
+//////// 10-04-2022 8kyu
+//////// Find the smallest integer in the array
+
+// Given an array of integers your solution should find the smallest integer.
+
+// For example:
+
+// Given [34, 15, 88, 2] your solution will return 2
+// Given [34, -345, -1, 100] your solution will return -345
+// You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return args.sort((a, b) => a-b)[0] 
+  }
+}
+
+
+//////// 10-04-2022 5kyu
+//////// Extract the domain name from a URL
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url){
+  let arr = url.split('.');
+  if (arr.includes('www')) {
+    return arr[1];
+  } else if (arr[0].split('//').includes('www')) {
+    return arr[1];
+  } else if (arr[0].includes('//')) {
+    return arr[0].split('//')[1];
+  } else {
+    return arr[0];
+  }
 }
