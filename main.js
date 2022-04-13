@@ -306,7 +306,7 @@ class SmallestIntegerFinder {
 }
 
 
-//////// 10-04-2022 5kyu
+//////// 11-04-2022 5kyu
 //////// Extract the domain name from a URL
 
 // Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
@@ -326,4 +326,15 @@ function domainName(url){
   } else {
     return arr[0];
   }
+}
+
+//////// 12-04-2022 8kyu
+//////// Square(n) Sum
+
+// Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+// For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+
+function squareSum(numbers){
+  return numbers.reduce((acc, curr) => Math.pow(curr, 2) + acc, 0);
 }
