@@ -338,3 +338,15 @@ function domainName(url){
 function squareSum(numbers){
   return numbers.reduce((acc, curr) => Math.pow(curr, 2) + acc, 0);
 }
+
+//////// 13-04-2022 8kyu
+//////// Remove String Spaces
+
+// Simple, remove the spaces from the string, then return the resultant string.
+
+function noSpace(x){
+  let newStr = x.replace('', ' ')
+  console.log(newStr)
+}
+
+noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')
