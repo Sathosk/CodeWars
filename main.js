@@ -345,8 +345,6 @@ function squareSum(numbers){
 // Simple, remove the spaces from the string, then return the resultant string.
 
 function noSpace(x){
-  let newStr = x.replace('', ' ')
-  console.log(newStr)
+  return newStr = x.replace(/\s+/g, '')
 }
 
-noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')
