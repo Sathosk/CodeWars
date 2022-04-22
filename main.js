@@ -412,3 +412,54 @@ function century(year) {
   let roundedCentury = Math.floor(yearDivided);
   return yearDivided > roundedCentury ? roundedCentury + 1 : roundedCentury;
 }
+
+//////// 17-04-2022 8kyu
+//////// Convert a String to a Number!
+
+// Note: This kata is inspired by Convert a Number to a String!. Try that one too.
+
+// Description
+// We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+// Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+
+// Examples
+// "1234" --> 1234
+// "605"  --> 605
+// "1405" --> 1405
+// "-7" --> -7
+
+var stringToNumber = function(str){
+  return +str;
+}
+
+//////// 18-04-2022 7kyu
+//////// Sort Numbers
+
+// Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+
+// For example:
+
+// solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+// solution(null); // should return []
+
+function solution(nums){
+  return nums ? nums.sort((a, b) => a - b) : [];
+}
+
+//////// 19-04-2022 7kyu
+//////// Narcissistic Numbers
+
+// A Narcissistic Number is a number of length n in which the sum of its digits to the power of n is equal to the original number. If this seems confusing, refer to the example below.
+
+// Ex: 153, where n = 3 (number of digits in 153)
+// 13 + 53 + 33 = 153
+
+// Write a method is_narcissistic(i) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not i is a Narcissistic Number.
+
+function isNarcissistic(n){
+  let arrayN = [...String(n)].map(el => Number(el) ** [...String(n)].length)
+                             .reduce((acc, cur) => acc + cur, 0);
+                             
+  return arrayN === n ? true : false;
+}
