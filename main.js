@@ -552,3 +552,40 @@ function getMiddle(s) {
 function descendingOrder(n){
   return Number(String(n).split('').sort((a, b) => b - a).join(''))
 }
+
+//////// 25-04-2022 7kyu
+//////// List Filtering
+
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+// Example
+// filter_list([1,2,'a','b']) == [1,2]
+// filter_list([1,'a','b',0,15]) == [1,0,15]
+// filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+function filter_list(l) {
+    return l.filter(el => typeof el === 'number')
+}
+
+//////// 26-04-2022 6kyu
+//////// Replace With Alphabet Position
+
+// Welcome.
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+// If anything in the text isn't a letter, ignore it and don't return it.
+
+// "a" = 1, "b" = 2, etc.
+
+// Example
+// alphabetPosition("The sunset sets at twelve o' clock.")
+// Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
+
+function alphabetPosition(text) {
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  return text.replace(/[^a-zA-Z]/g, '')
+             .split('')
+             .map(el => alphabet.indexOf(el.toLowerCase()) + 1)
+             .join(' ')
+}
