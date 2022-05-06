@@ -603,7 +603,6 @@ function alphabetPosition(text) {
 // "a234"   -->  false
 
 function validatePIN (pin) {
-
   return (pin.length !== 4 && pin.length !== 6) ? false : pin.search(/[^0-9]/g) === -1 ? true : false;
 
   // if(pin.length !== 4 && pin.length !== 6) {
@@ -612,3 +611,23 @@ function validatePIN (pin) {
   //   return pin.search(/[^0-9]/g) === -1 ? true : false
   // }
 }
+
+//////// 28-04-2022 7kyu
+//////// Bingo ( Or Not )
+
+// For this game of BINGO, you will receive a single array of 10 numbers from 1 to 26 as an input. Duplicate numbers within the array are possible.
+
+// Each number corresponds to their alphabetical order letter (e.g. 1 = A. 2 = B, etc). Write a function where you will win the game if your numbers can spell "BINGO". They do not need to be in the right order in the input array). Otherwise you will lose. Your outputs should be "WIN" or "LOSE" respectively.
+
+// function bingo(array) {
+//   let bingo = 'BINGO'.split('')
+  
+//   let newArr = array.map(number => (number+9).toString(36).toUpperCase())
+
+//   return bingo.map(letter => newArr.includes(letter)).includes(false) ? 'LOSE' : 'WIN';
+// }
+
+function bingo(array) {
+  return [2, 9, 14, 7, 15].every(n => array.includes(n)) ? 'WIN' : 'LOSE';
+}
+
