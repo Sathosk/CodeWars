@@ -671,7 +671,6 @@ function high(x){
 function duplicateCount(text){
   return text.toLowerCase()
              .split('')
-             .filter((element, index, array) => array.lastIndexOf(element) !== array.indexOf(element) ? true : false)
-             .filter((element, index, array) => array.indexOf(element) === index)
+             .filter((element, index, array) => array.indexOf(element) !== index && array.lastIndexOf(element) === index)
              .length;
 }
