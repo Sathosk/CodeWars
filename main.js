@@ -674,3 +674,72 @@ function duplicateCount(text){
              .filter((element, index, array) => array.indexOf(element) !== index && array.lastIndexOf(element) === index)
              .length;
 }
+
+//////// 01-05-2022 6kyu
+//////// Where is my parent!?(cry)
+
+// Mothers arranged a dance party for the children in school. At that party, there are only mothers and their children. All are having great fun on the dance floor when suddenly all the lights went out. It's a dark night and no one can see each other. But you were flying nearby and you can see in the dark and have ability to teleport people anywhere you want.
+
+// Legend:
+// -Uppercase letters stands for mothers, lowercase stand for their children, i.e. "A" mother's children are "aaaa".
+// -Function input: String contains only letters, uppercase letters are unique.
+// Task:
+// Place all people in alphabetical order where Mothers are followed by their children, i.e. "aAbaBb" => "AaaBbb".
+
+function findChildren(dancingBrigade) {
+	return dancingBrigade.toLowerCase()
+                       .split('')
+                       .sort()
+                       .map((element, index, array) => array.indexOf(element) === index ? element.toUpperCase() : element)
+                       .join('')
+}
+
+//////// 02-05-2022 8kyu
+//////// Beginner Series #1 School Paperwork
+
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+// Waiting for translations and Feedback! Thanks!
+
+function paperwork(n, m) {
+  return (n < 0) || (m < 0) ? 0 : n * m;
+}
+
+//////// 03-05-2022 8kyu
+//////// Find the odd int
+
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+// Examples
+// [7] should return 7, because it occurs 1 time (which is odd).
+// [0] should return 0, because it occurs 1 time (which is odd).
+// [1,1,2] should return 2, because it occurs 1 time (which is odd).
+// [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+// [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
+
+// Very smart solution
+// function findOdd(arr) {
+//   return arr.find((item, index) => arr.filter(el => el == item).length % 2)
+// }
+
+function findOdd(a) {
+  return a.filter((number, index, array) => {
+    let counter = 0;
+
+    if (array.indexOf(number) === index) {
+      for (i=0; i<array.length; i++) {
+        array[i] === number ? counter++ : counter;
+      }
+
+      return counter % 2 !== 0;
+    }
+  })[0]
+}
+
