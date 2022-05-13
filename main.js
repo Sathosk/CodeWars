@@ -767,4 +767,16 @@ function reverseWords(str) {
   return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
 }
 
-console.log(reverseWords('hi how Are u'))
+//////// 05-05-2022 7kyu
+//////// Shortest Word
+
+// Simple, given a string of words, return the length of the shortest word(s).
+
+// String will never be empty and you do not need to account for different data types.
+
+function findShort(s){
+  return s.split(' ').reduce((acc, curr) => curr.length < acc ? acc = curr.length : acc, 10);
+  //return s.split(' ').map(word => word.length).sort((a, b) => a - b)[0]
+}
+
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"))
