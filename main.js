@@ -866,13 +866,7 @@ const reverseSeq = n => {
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 function removeSmallest(numbers) {
-  let newArr = numbers;
+  let newArr = [...numbers]
   newArr.splice(numbers.indexOf(Math.min.apply(null, numbers)), 1);
   return newArr;
 }
-
-let array = [2,2,1,2,1];
-
-
-console.log(removeSmallest(array))
-console.log(array)
