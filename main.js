@@ -934,11 +934,17 @@ function plural(n) {
 // If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0
 
 function sumArray(array) {
-  return !array || !array.length === 1 ? 0 : array.map((el, i, array) => {
-    el !== Math.min.apply(null, array) ? el : array.indexOf(el)
-  });
-}
+  if (array && array.length >= 3) {
+    return array.filter((el, index, array) => { 
 
-console.log(sumArray([6,2,1,8,10]))
+      const minValue = Math.min.apply(null, array)
+      const maxValue = Math.max.apply(null, array)
+
+      return ((minValue !== el || array.indexOf(minValue) !== index) &&
+              (maxValue !== el || array.indexOf(maxValue) !== index)
+      )
+    }).reduce((sum, cur) => sum + cur)
+  } else { return 0}
+}
 
 
