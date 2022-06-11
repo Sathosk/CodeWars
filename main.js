@@ -1237,5 +1237,3 @@ function bouncingBall(h,  bounce,  window) {
 
   return -1;
 }
-
-let a = 0;
