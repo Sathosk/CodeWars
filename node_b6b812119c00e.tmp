@@ -1309,8 +1309,14 @@ function areYouPlayingBanjo(name) {
 // ""             =>  ""
 
 function solution(string) {
-  return(string.replace(/([A-Z])/g, ' $1'));
-
+  
 }
 
-console.log(solution('camelCasingOi'))
+let string = 'camelCasing'
+
+for (i=0; i<string.length; i++) {
+  if (string[i].charCodeAt(0) <= 90) {
+    console.log(string = string.slice(0, i) + ' ' + string[i] + string.slice(i, -1))
+  }
+}
+
