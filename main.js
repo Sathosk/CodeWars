@@ -1408,4 +1408,13 @@ function minMax(arr){
   return [Math.min.apply(null, arr), Math.max.apply(null, arr)]; // fix me!
 }
 
-console.log(minMax([1,2,3,4,5,6]))
+//////// 30-05-2022 8kyu
+//////// Returning Strings
+
+// Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+
+// Make sure you type the exact thing I wrote or the program may not execute properly
+
+function greet(name){
+  return `Hello, ${name} how are you doing today?`;
+}
