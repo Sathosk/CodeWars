@@ -1418,3 +1418,12 @@ function minMax(arr){
 function greet(name){
   return `Hello, ${name} how are you doing today?`;
 }
+
+//////// 01-06-2022 8kyu
+//////// MakeUpperCase
+
+// Write a function which converts the input string to uppercase.
+
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
