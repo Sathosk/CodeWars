@@ -1581,5 +1581,4 @@ function towerBuilder(nFloors) {
   }
 
   return pyramid;
-
 }
