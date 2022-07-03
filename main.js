@@ -1533,3 +1533,53 @@ function persistence(num) {
 
    return counter;
 }
+
+//////// 07-06-2022 8kyu
+//////// Sentence Smash
+
+// Sentence Smash
+// Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+// Example
+// ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+function smash (words) {
+  return words.join(' ');
+}
+
+//////// 08-06-2022 6kyu
+//////// Build Tower
+
+// Build Tower
+// Build a pyramid-shaped tower given a positive integer number of floors. A tower block is represented with "*" character.
+
+// For example, a tower with 3 floors looks like this:
+
+// [
+//   "  *  ",
+//   " *** ", 
+//   "*****"
+// ]
+// And a tower with 6 floors looks like this:
+
+// [
+//   "     *     ", 
+//   "    ***    ", 
+//   "   *****   ", 
+//   "  *******  ", 
+//   " ********* ", 
+//   "***********"
+// ]
+
+function towerBuilder(nFloors) {
+  let pyramid = [];
+
+  for (let i=nFloors; i>0; i--) {
+    pyramid.unshift(' '.repeat(nFloors - i) + 
+                    '*'.repeat(i*2-1) + 
+                    ' '.repeat(nFloors - i))
+  }
+
+  return pyramid;
+
+}
