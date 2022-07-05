@@ -1604,3 +1604,6 @@ function removeEveryOther(arr){
 
   return newArr;
 }
+
+//////// 10-06-2022 8kyu
+//////// Removing Elements
