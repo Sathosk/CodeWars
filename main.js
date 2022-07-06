@@ -1607,3 +1607,21 @@ function removeEveryOther(arr){
 
 //////// 10-06-2022 8kyu
 //////// Removing Elements
+
+
+function deepCompare(o1, o2) {
+
+  let arrA = Object.entries(o1).sort()
+  let arrB = Object.entries(o2).sort()
+
+  
+  for (let i=0; i<arrA.length; i++) {
+    if (arrA[i][0] !== arrB[i][0] || arrA[i][1] !== arrB[i][1]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(deepCompare({ name: 'Joe', name: NaN }, { idade: 30, name: NaN }))
