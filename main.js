@@ -1610,54 +1610,45 @@ function removeEveryOther(arr){
 
 
 function deepCompare(o1, o2) {
-  console.log(typeof o1)
   //check if both elements same data type
   if (typeof o1 !== typeof o2) {return false}
 
   //check for primitives equality
-  if (typeof o1 !== 'object' || o1 == null) {
+  if (typeof o1 !== 'object' || o1 === null) {
+    if (Number.isNaN(o1) === true) {
+      return Number.isNaN(o2);
+    }
+
     return o1 === o2;
   }
 
-  //If two objects, sort property and transform in array
-  // if (typeof o1 === 'object') {
-  //   let arrA = Object.entries(o1).sort()
-  //   let arrB = Object.entries(o2).sort()
-    
-  //   //console.log(arrA, arrB)
-  
-  //   for (let i=0; i<arrA.length; i++) {
-  //     let propertyNameA = [arrA[i][0]]
-  //     let propertyNameB = [arrB[i][0]]
-  //     let valueA = [arrA[i][1]]
-  //     let valueB = [arrB[i][1]]
+  //check for array and callback each element for comparison
+  if (Array.isArray(o1)) {
+    if (o1.length !== o2.length) {return false}
 
-  //     console.log(`Iteration 1: \n${propertyNameA}\n${propertyNameB}\n${valueA}\n${valueB}`)
+    for (let i=0; i<o1.length; i++) {
+      
+      if (!deepCompare(o1[i], o2[i])) {
+        return false
+      }
+    }
 
+    return true
+  }
 
+  // If two objects, sort property and transform in array
+  if (typeof o1 === 'object') {
+    let arrA = Object.entries(o1).sort()
+    let arrB = Object.entries(o2).sort()
 
-  //     // //Check for deep equal property name
-  //     // if (arrA[i][0] !== arrB[i][0]) {
-  //     //   return false;
-  //     // }
-  
-  //     // //Check for deep equal primitives
-  //     // if (typeof arrA[i][1] !== typeof arrB[i][1]) {
-  //     //   return false;
-  //     // }
-  
-  //     // let aValueIsNaN = Number.isNaN(arrA[i][1])
-  //     // let bValueIsNaN = Number.isNaN(arrB[i][1])
-  
-  //     // if (aValueIsNaN || bValueIsNaN) {
-  //     //   if (aValueIsNaN !== bValueIsNaN) {return false}
-  //     // }
-  //   }
-  // }
+    if (arrA.length !== arrB.length) {return false}
+
+    if (!deepCompare(arrA, arrB)) {
+      return false
+    }
+  }
+
   return true;
 };
 
-let ex1 = null
-let ex2 = undefined
 
-console.log(deepCompare(ex1, ex2))
