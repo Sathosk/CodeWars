@@ -1441,7 +1441,7 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return  fuelLeft * mpg >= distanceToPump;
 }
 
-//////// 03-06-2022 8kyu
+//////// 01-07-2022 8kyu
 //////// Thinkful - Logic Drills: Traffic light
 
 // You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
@@ -1460,7 +1460,7 @@ function updateLight(current) {
   return trafficLight[current]
 }
 
-//////// 04-06-2022 6kyu
+//////// 02-07-2022 6kyu
 //////// Mexican Wave
 
 // Task
@@ -1485,7 +1485,7 @@ function wave(str){
   return waveArr
 }
 
-//////// 05-06-2022 8kyu
+//////// 03-07-2022 8kyu
 //////// Sum Arrays
 
 // Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
@@ -1512,7 +1512,7 @@ function sum(numbers) {
   return numbers.reduce((acc, curr) => acc + curr, 0);
 };
 
-//////// 06-06-2022 6kyu
+//////// 04-07-2022 6kyu
 //////// Persistent Bugger.
 
 // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
@@ -1534,7 +1534,7 @@ function persistence(num) {
    return counter;
 }
 
-//////// 07-06-2022 8kyu
+//////// 05-07-2022 8kyu
 //////// Sentence Smash
 
 // Sentence Smash
@@ -1547,7 +1547,7 @@ function smash (words) {
   return words.join(' ');
 }
 
-//////// 08-06-2022 6kyu
+//////// 06-07-2022 6kyu
 //////// Build Tower
 
 // Build Tower
@@ -1583,7 +1583,7 @@ function towerBuilder(nFloors) {
   return pyramid;
 }
 
-//////// 09-06-2022 8kyu
+//////// 07-07-2022 8kyu
 //////// Removing Elements
 
 // Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
@@ -1605,7 +1605,7 @@ function removeEveryOther(arr){
   return newArr;
 }
 
-//////// 10-06-2022 5kyu
+//////// 08-07-2022 5kyu
 //////// Deep comparison of objects
 
 // Comparing objects is not an easy task in JavaScript. The comparison operator only returns true if both variables point to the same object, that's why two objects with the same properties and values are different for JavaScript, like this:
@@ -1661,4 +1661,22 @@ function deepCompare(o1, o2) {
   return true;
 };
 
+//////// 09-07-2022 6kyu
+//////// Your order, please
 
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words){
+  return words.split(' ')
+              .map((el, i, array) => {return array.filter(el => el.includes(i+1))})
+              .join(' ');
+}
