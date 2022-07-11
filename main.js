@@ -1691,3 +1691,12 @@ function order(words){
 function grow(x){
   return x.reduce((acc, curr) => curr * acc)
 }
+
+//////// 11-07-2022 8kyu
+//////// Function 3 - multiplying two numbers
+
+// Implement a function which multiplies two numbers.
+
+function multiply(a,b) {
+  return a*b;
+}
