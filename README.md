@@ -1,1 +1,1 @@
-<h1 align="center">CodeWars Challenges: <a src="https://www.codewars.com/users/Sathosk">Visit Here</a></h1>
+<h1 align="center">CodeWars Challenges: <a href="https://www.codewars.com/users/Sathosk">Visit Here</a></h1>
