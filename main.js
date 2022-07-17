@@ -1845,6 +1845,19 @@ function checkForFactor (base, factor) {
 // The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
 
 function DNAtoRNA(dna) {
-  return dna.replace(/T/g, 'U')
+  return dna.replace(/T/g, 'U');
+}
+
+//////// 16-07-2022 8kyu
+//////// Parse nice int from char problem
+
+// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+
+// Write a program that returns the girl's age (0-9) as an integer.
+
+// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
+
+function getAge(inputString){
+  return +inputString[0];
 }
 
