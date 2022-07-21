@@ -1387,7 +1387,7 @@ function calculateYears(principal, interest, tax, desired) {
 
   return years;
 }
-aas
+
 //////// 29-05-2022 7kyu
 //////// The highest profit wins!
 
@@ -1901,3 +1901,16 @@ function gooseFilter (birds) {
   
   return birds.filter(el => !geese.includes(el))
 };
+
+//////// 20-07-2022 7kyu
+//////// Is this a triangle?
+
+// Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+
+// (In this case, all triangles must have surface greater than 0 to be accepted).
+
+function isTriangle(a,b,c) {
+  return a+b > c &&
+         a+c > b &&
+         b+c > a
+}
