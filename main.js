@@ -1915,7 +1915,7 @@ function isTriangle(a,b,c) {
          b+c > a
 }
 
-//////// 20-07-2022 5kyu
+//////// 21-07-2022 5kyu
 //////// Calculating with Functions
 
 // This time we want to write calculations using functions and get the results. Let's have a look at some examples:
@@ -1948,3 +1948,27 @@ function plus(b) {return function(a) {return a+b}}
 function minus(b) {return function(a) {return a-b}}
 function times(b) {return function(a) {return a*b}}
 function dividedBy(b) {return function(a) {return Math.floor(a/b)}}
+
+//////// 22-07-2022 5kyu
+//////// Count the divisors of a number
+
+// Count the number of divisors of a positive integer n.
+
+// Random tests go up to n = 500000.
+
+// Examples (input --> output)
+// 4 --> 3 (1, 2, 4)
+// 5 --> 2 (1, 5)
+// 12 --> 6 (1, 2, 3, 4, 6, 12)
+// 30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
+
+function getDivisorsCnt(n){
+  let result = 0;
+
+  for (let i=1; i<=n; i++) {
+    if (n % i === 0) {result++}
+  }
+
+  return result;
+}
+
