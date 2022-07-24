@@ -9,8 +9,8 @@ n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2] */
 function powersOfTwo(n){
     let arr = [];
     
-    for (let i=0; i<=n; i++) {
-      arr.push(Math.pow(2, i));
+    for (let j=0; j<=n; j++) {
+      arr.push(Math.pow(2, j));
     }
     
     return arr;
@@ -69,8 +69,8 @@ function getSum(a, b) {
         biggestNumber = Math.max(a, b);
   let result = 0;
 
-  for (let i=smallestNumber; i<=biggestNumber; i++) {
-    result += i; 
+  for (let j=smallestNumber; j<=biggestNumber; j++) {
+    result += j; 
   }
 
   return output;
@@ -87,9 +87,9 @@ function getSum(a, b) {
 // The parameter of accum is a string which includes only letters from a..z and A..Z.
 
 function accum(s) {
-	return [...s].map((element, i) => {
-    i++;
-    const str = element.repeat(i).toLowerCase();
+	return [...s].map((element, j) => {
+    j++;
+    const str = element.repeat(j).toLowerCase();
     return str.charAt(0).toUpperCase() + str.slice(1);
   }).join('-');
 }
@@ -131,9 +131,9 @@ function spinWords(string){
 function solution(str){
    let arr = str.split('');
    (arr.length % 2 !== 0) ? arr.push('_') : arr;
-   for (let i=2; i<=arr.length; i++) {
-     if (i % 3 === 0) {
-       arr.splice(i-1, 0, '.')
+   for (let j=2; j<=arr.length; j++) {
+     if (j % 3 === 0) {
+       arr.splice(j-1, 0, '.')
      }
    }
    return arr.length === 0 ? arr = [] : arr.join('').split('.');
@@ -159,8 +159,8 @@ function isPrime(num) {
   if (num < 2) return false;
   const limit = Math.sqrt(num);
   console.log(limit)
-  for (let i = 2; i <= limit; ++i) {
-    if (num % i === 0) {
+  for (let j = 2; j <= limit; ++j) {
+    if (num % j === 0) {
       return false;
     }
   }
@@ -271,16 +271,16 @@ function removeChar(str){
 //////// Vowel Count
 // Return the number (count) of vowels in the given string.
 
-// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// We will consider a, e, j, o, u as vowels for this Kata (but not y).
  
 // The input string will only consist of lower case letters and/or spaces.
 
 function getCount(str) {
   let vowelsCount = 0;
-  let vowelArray = ['a', 'e', 'i', 'o', 'u']
+  let vowelArray = ['a', 'e', 'j', 'o', 'u']
   
-  for (let i=0; i<str.length; i++) {
-    if (vowelArray.includes(str[i])) {
+  for (let j=0; j<str.length; j++) {
+    if (vowelArray.includes(str[j])) {
       vowelsCount++;
     }
   }
@@ -366,9 +366,9 @@ function noSpace(x){
 // Hint: Don't forget to check for bad values like null/undefined
 
 function countSheeps(arrayOfSheep) {
-  let i = 0;
-  arrayOfSheep.forEach(el => el ? i++ : i)
-  return i;
+  let j = 0;
+  arrayOfSheep.forEach(el => el ? j++ : j)
+  return j;
 }
 
 //////// 15-04-2022 8kyu
@@ -455,7 +455,7 @@ function solution(nums){
 // Ex: 153, where n = 3 (number of digits in 153)
 // 13 + 53 + 33 = 153
 
-// Write a method is_narcissistic(i) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not i is a Narcissistic Number.
+// Write a method is_narcissistic(j) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not j is a Narcissistic Number.
 
 function isNarcissistic(n){
   let arrayN = [...String(n)].map(el => Number(el) ** [...String(n)].length)
@@ -663,8 +663,8 @@ function high(x){
 // "abcde" -> 0 # no characters repeats more than once
 // "aabbcde" -> 2 # 'a' and 'b'
 // "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
-// "indivisibility" -> 1 # 'i' occurs six times
-// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "indivisibility" -> 1 # 'j' occurs six times
+// "Indivisibilities" -> 2 # 'j' occurs seven times and 's' occurs twice
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
@@ -681,10 +681,10 @@ function duplicateCount(text){
 // Mothers arranged a dance party for the children in school. At that party, there are only mothers and their children. All are having great fun on the dance floor when suddenly all the lights went out. It's a dark night and no one can see each other. But you were flying nearby and you can see in the dark and have ability to teleport people anywhere you want.
 
 // Legend:
-// -Uppercase letters stands for mothers, lowercase stand for their children, i.e. "A" mother's children are "aaaa".
+// -Uppercase letters stands for mothers, lowercase stand for their children, j.e. "A" mother's children are "aaaa".
 // -Function input: String contains only letters, uppercase letters are unique.
 // Task:
-// Place all people in alphabetical order where Mothers are followed by their children, i.e. "aAbaBb" => "AaaBbb".
+// Place all people in alphabetical order where Mothers are followed by their children, j.e. "aAbaBb" => "AaaBbb".
 
 function findChildren(dancingBrigade) {
 	return dancingBrigade.toLowerCase()
@@ -734,8 +734,8 @@ function findOdd(a) {
     let counter = 0;
 
     if (array.indexOf(number) === index) {
-      for (i=0; i<array.length; i++) {
-        array[i] === number ? counter++ : counter;
+      for (j=0; j<array.length; j++) {
+        array[j] === number ? counter++ : counter;
       }
 
       return counter % 2 !== 0;
@@ -808,9 +808,9 @@ function deleteNth(arr,n){
 function solution(number){
   let counter = 0;
   
-  for (i=0; i<number; i++) {
-    if (i % 3 === 0 || i % 5 === 0) {
-      counter += i;
+  for (j=0; j<number; j++) {
+    if (j % 3 === 0 || j % 5 === 0) {
+      counter += j;
     } 
   }
   return counter;
@@ -841,8 +841,8 @@ function addBinary(a,b) {
 
 const reverseSeq = n => {
   let arr = [];
-  for (i=n; i>0; i--) {
-    arr.push(i)
+  for (j=n; j>0; j--) {
+    arr.push(j)
   };
   return arr;
 };
@@ -875,7 +875,7 @@ function removeSmallest(numbers) {
 //////// Run-length encoding
 
 // Task
-// Your task is to write such a run-length encoding. For a given string, return a list (or array) of pairs (or arrays) [ (i1, s1), (i2, s2), …, (in, sn) ], such that one can reconstruct the original string by replicating the character sx ix times and concatening all those strings. Your run-length encoding should be minimal, ie. for all i the values si and si+1 should differ.
+// Your task is to write such a run-length encoding. For a given string, return a list (or array) of pairs (or arrays) [ (i1, s1), (i2, s2), …, (in, sn) ], such that one can reconstruct the original string by replicating the character sx ix times and concatening all those strings. Your run-length encoding should be minimal, ie. for all j the values si and si+1 should differ.
 
 // Examples
 // As the article states, RLE is a very simple form of data compression. It's only suitable for runs of data, as one can see in the following example:
@@ -890,11 +890,11 @@ function removeSmallest(numbers) {
 var runLengthEncoding = function(str){
   let arr = [], sum = 1;
 
-  for (i=0; i<str.length; i++) {
-    if (str[i] === str[i+1]) {
+  for (j=0; j<str.length; j++) {
+    if (str[j] === str[j+1]) {
       sum++
     } else {
-      arr.push([sum, str[i]])
+      arr.push([sum, str[j]])
       sum = 1;
     }
 
@@ -1018,9 +1018,9 @@ function isPangram(string){
   let newArr = [];
   let lowerCaseStr = string.toLowerCase()
 
-  for (let i=0; i<string.length;i++) {
-    if (!newArr.includes(lowerCaseStr[i]) && alphabet.includes(lowerCaseStr[i])) {
-      newArr.push(lowerCaseStr[i])
+  for (let j=0; j<string.length;j++) {
+    if (!newArr.includes(lowerCaseStr[j]) && alphabet.includes(lowerCaseStr[j])) {
+      newArr.push(lowerCaseStr[j])
     }
   }
 
@@ -1105,12 +1105,12 @@ function longestConsec(strarr, k) {
 
   let biggestWord = '';
 
-  for (let i=0; i<=strarr.length-k; i++) {
-    let newStr = strarr[i] 
+  for (let j=0; j<=strarr.length-k; j++) {
+    let newStr = strarr[j] 
 
     for (let j=1; j<k; j++) {
-      if (i > strarr.length - k) {return}
-      newStr = newStr + strarr[i+j] 
+      if (j > strarr.length - k) {return}
+      newStr = newStr + strarr[j+j] 
     }
     console.log(newStr)
     if (newStr.length > biggestWord.length) biggestWord = newStr;
@@ -1134,10 +1134,10 @@ function longestConsec(strarr, k) {
 function arrayDiff(a, b) {
   let newArr = [];
 
-  for(let i=0; i<a.length; i++) {
+  for(let j=0; j<a.length; j++) {
 
-    if (!b.includes(a[i])) {
-      newArr.push(a[i])
+    if (!b.includes(a[j])) {
+      newArr.push(a[j])
     }
   }
 
@@ -1158,8 +1158,8 @@ function arrayDiff(a, b) {
 function doubleChar(str) {
   let newStr = '';
 
-  for (let i=0; i<str.length; i++) {
-    newStr = newStr + str[i] + str[i]
+  for (let j=0; j<str.length; j++) {
+    newStr = newStr + str[j] + str[j]
   }
 
   return newStr;
@@ -1185,12 +1185,12 @@ function doubleChar(str) {
 function firstNonConsecutive (arr) {
   let number = arr[0];
 
-  for (let i=1; i<arr.length; i++) {
-    if (arr[i]-1 !== number) {
-      return arr[i]
+  for (let j=1; j<arr.length; j++) {
+    if (arr[j]-1 !== number) {
+      return arr[j]
     } else {
-      if (i+1 === arr.length) {return null}
-      number = arr[i];
+      if (j+1 === arr.length) {return null}
+      number = arr[j];
     }
   }
 }
@@ -1325,8 +1325,8 @@ function solution(string) {
 
 var uniqueInOrder=function(iterable){
   if (typeof iterable === 'string') {iterable = iterable.split('')}
-  return iterable.filter((element, i, array) => {
-    return array[i+1] === element ? false : true;
+  return iterable.filter((element, j, array) => {
+    return array[j+1] === element ? false : true;
   })
 }
 
@@ -1476,9 +1476,9 @@ function updateLight(current) {
 function wave(str){
   let waveArr = [];
 
-  for (let i=0; i<str.length; i++) {
-      if (str[i] !== ' ') {
-        waveArr.push(str.slice(0, i) + str[i].toUpperCase() + str.slice(i+1, str.length))
+  for (let j=0; j<str.length; j++) {
+      if (str[j] !== ' ') {
+        waveArr.push(str.slice(0, j) + str[j].toUpperCase() + str.slice(j+1, str.length))
       }
   }
 
@@ -1574,10 +1574,10 @@ function smash (words) {
 function towerBuilder(nFloors) {
   let pyramid = [];
 
-  for (let i=nFloors; i>0; i--) {
-    pyramid.unshift(' '.repeat(nFloors - i) + 
-                    '*'.repeat(i*2-1) + 
-                    ' '.repeat(nFloors - i))
+  for (let j=nFloors; j>0; j--) {
+    pyramid.unshift(' '.repeat(nFloors - j) + 
+                    '*'.repeat(j*2-1) + 
+                    ' '.repeat(nFloors - j))
   }
 
   return pyramid;
@@ -1596,9 +1596,9 @@ function towerBuilder(nFloors) {
 function removeEveryOther(arr){
   let newArr = [];
   
-  for (let i=0; i<arr.length; i++) {
-    if (i%2 === 0) {
-      newArr.push(arr[i]);
+  for (let j=0; j<arr.length; j++) {
+    if (j%2 === 0) {
+      newArr.push(arr[j]);
     }
   }
 
@@ -1636,9 +1636,9 @@ function deepCompare(o1, o2) {
   if (Array.isArray(o1)) {
     if (o1.length !== o2.length) {return false}
 
-    for (let i=0; i<o1.length; i++) {
+    for (let j=0; j<o1.length; j++) {
       
-      if (!deepCompare(o1[i], o2[i])) {
+      if (!deepCompare(o1[j], o2[j])) {
         return false
       }
     }
@@ -1677,7 +1677,7 @@ function deepCompare(o1, o2) {
 
 function order(words){
   return words.split(' ')
-              .map((el, i, array) => {return array.filter(el => el.includes(i+1))})
+              .map((el, j, array) => {return array.filter(el => el.includes(j+1))})
               .join(' ');
 }
 
@@ -1715,8 +1715,8 @@ function multiply(a,b) {
 function between(a, b) {
   let arr = [];
 
-  for (let i=a; i<=b; i++) {
-    arr.push(i);
+  for (let j=a; j<=b; j++) {
+    arr.push(j);
   }
 
   return arr;
@@ -1842,7 +1842,7 @@ function checkForFactor (base, factor) {
 // For example:
 
 // "GCAT"  =>  "GCAU"
-// The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+// The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, j.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
 
 function DNAtoRNA(dna) {
   return dna.replace(/T/g, 'U');
@@ -1965,10 +1965,67 @@ function dividedBy(b) {return function(a) {return Math.floor(a/b)}}
 function getDivisorsCnt(n){
   let result = 0;
 
-  for (let i=1; i<=n; i++) {
-    if (n % i === 0) {result++}
+  for (let j=1; j<=n; j++) {
+    if (n % j === 0) {result++}
   }
 
   return result;
 }
 
+//////// 23-07-2022 5kyu
+//////// Simple Encryption #1 - Alternating Split
+
+// Implement a pseudo-encryption algorithm which given a string S and an integer N concatenates all the odd-indexed characters of S with all the even-indexed characters of S, this process should be repeated N times.
+
+// Examples:
+
+// encrypt("012345", 1)  =>  "135024"
+// encrypt("012345", 2)  =>  "135024"  ->  "304152"
+// encrypt("012345", 3)  =>  "135024"  ->  "304152"  ->  "012345"
+
+// encrypt("01234", 1)  =>  "13024"
+// encrypt("01234", 2)  =>  "13024"  ->  "32104"
+// encrypt("01234", 3)  =>  "13024"  ->  "32104"  ->  "20314"
+// Together with the encryption function, you should also implement a decryption function which reverses the process.
+
+// If the string S is an empty value or the integer N is not positive, return the first argument without changes.
+
+function encrypt(text, n) {
+  for (let i=0; i<n; i++) {
+    let encryptText = '';
+    for (let j=1; j<=text.length; j+=2) {
+      if (j < text.length) {encryptText = encryptText + text[j] }
+      
+      if (text.length % 2 === 0) {
+        if (j === text.length-1) {j = -2};
+      } 
+      else {
+        if (j === text.length) {j = -2};
+      }
+    }
+    text = encryptText
+  }
+
+  return text;
+}
+
+console.log(encrypt("01234567", 1));
+
+function decrypt(encryptedText, n) {
+  for (let i=0; i<n; i++) {
+    let dencryptText = '';
+    for (let j=1; j<=text.length; j+=2) {
+      if (j < text.length) {dencryptText = dencryptText + text[j] }
+      
+      if (text.length % 2 === 0) {
+        if (j === text.length-1) {j = -2};
+      } 
+      else {
+        if (j === text.length) {j = -2};
+      }
+    }
+    text = dencryptText
+  }
+
+  return text;
+}
