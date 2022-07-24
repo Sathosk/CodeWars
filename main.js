@@ -1997,21 +1997,21 @@ function encrypt(text, n) {
     let length = text.length;
     let encryptText = '';
 
-    for (let j=1; j<=length; j+=2) {
-      if (j < length) {encryptText = encryptText + text[j] }
-      
-      if (length % 2 === 0) {
-        if (j === length-1) {j = -2};
-      } 
-      else {
-        if (j === length) {j = -2};
-      }
+    for (let j=1; j<length; j+=2) {
+      encryptText = encryptText + text[j];
     }
-    text = encryptText
+
+    for (let j=0; j<length; j+=2) {
+      encryptText = encryptText + text[j];
+    }
+
+    text = encryptText;
   }
 
   return text;
 }
+
+console.log(encrypt('0123456', 3))
 
 function decrypt(encryptedText, n) {
   if (!encryptedText || n < 0) {return encryptedText}
