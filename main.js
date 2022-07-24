@@ -1991,16 +1991,20 @@ function getDivisorsCnt(n){
 // If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
 function encrypt(text, n) {
+  if (!text || n < 0) {return text}
+
   for (let i=0; i<n; i++) {
+    let length = text.length;
     let encryptText = '';
-    for (let j=1; j<=text.length; j+=2) {
-      if (j < text.length) {encryptText = encryptText + text[j] }
+
+    for (let j=1; j<=length; j+=2) {
+      if (j < length) {encryptText = encryptText + text[j] }
       
-      if (text.length % 2 === 0) {
-        if (j === text.length-1) {j = -2};
+      if (length % 2 === 0) {
+        if (j === length-1) {j = -2};
       } 
       else {
-        if (j === text.length) {j = -2};
+        if (j === length) {j = -2};
       }
     }
     text = encryptText
@@ -2009,23 +2013,30 @@ function encrypt(text, n) {
   return text;
 }
 
-console.log(encrypt("01234567", 1));
-
 function decrypt(encryptedText, n) {
+  if (!encryptedText || n < 0) {return encryptedText}
+
   for (let i=0; i<n; i++) {
-    let dencryptText = '';
-    for (let j=1; j<=text.length; j+=2) {
-      if (j < text.length) {dencryptText = dencryptText + text[j] }
+    let length = encryptedText.length;
+    let middleN = length % 2 === 0 ? length / 2 : Math.floor(length / 2);
+
+    let decryptText = '';
+    let counter = 0;
+
+    for (let j=middleN; j !== length; j-=middleN) {
       
-      if (text.length % 2 === 0) {
-        if (j === text.length-1) {j = -2};
-      } 
-      else {
-        if (j === text.length) {j = -2};
-      }
+      decryptText += encryptedText[j];
+
+      if (counter === 1) {
+        counter = 0;
+        j+=(middleN*2)+1;
+      } else {counter++}
+
+      if (length % 2 !== 0 && j === length-1) {break}
     }
-    text = dencryptText
+
+    encryptedText = decryptText
   }
 
-  return text;
+  return encryptedText;
 }
