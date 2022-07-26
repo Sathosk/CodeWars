@@ -2039,7 +2039,7 @@ function decrypt(encryptedText, n) {
   return encryptedText;
 }
 
-//////// 25-07-2022 7kyu
+//////// 25-07-2022 6kyu
 //////// Find the unique number
 
 // There is an array with some numbers. All numbers are equal except for one. Try to find it!
@@ -2056,3 +2056,12 @@ function findUniq(arr) {
   return newArr[0] === newArr[1] ? newArr[newArr.length-1] : newArr[0];
 }
 
+//////// 26-07-2022 8kyu
+//////// You Can't Code Under Pressure #1
+
+// Code as fast as you can! You need to double the integer and return it.
+
+function doubleInteger(i) {
+  // i will be an integer. Double it and return it.
+  return i*2;
+}
