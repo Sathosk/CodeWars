@@ -2110,7 +2110,7 @@ function sumMix(x){
 // If the message is an empty string, you should return true
 
 function isAValidMessage(message){
-  if (!message) {return false}
+  if (!message) {return true}
   let newArr = message.replace(/([0-9]{1,2})/g, ` $1 `).split(' ');
   
   for (let i=1; i<newArr.length; i+=2) {
@@ -2120,4 +2120,23 @@ function isAValidMessage(message){
   return true;
 }
 
-console.log(isAValidMessage(""))
+//////// 30-07-2022 76kyu
+//////// Debug Sum of Digits of a Number
+
+// Debug   function getSumOfDigits that takes positive integer to calculate sum of it's digits. Assume that argument is an integer.
+
+// Example
+// 123  => 6
+// 223  => 7
+// 1337 => 14
+
+function getSumOfDigits(integer) {
+  let sum = null;
+  let digits = Math.floor(integer).toString();
+
+  for(let ix = 0; ix < digits.length; ix++) {
+    sum += +digits[ix];
+  }
+
+  return sum;
+}
