@@ -2120,7 +2120,7 @@ function isAValidMessage(message){
   return true;
 }
 
-//////// 30-07-2022 76kyu
+//////// 30-07-2022 7kyu
 //////// Debug Sum of Digits of a Number
 
 // Debug   function getSumOfDigits that takes positive integer to calculate sum of it's digits. Assume that argument is an integer.
@@ -2139,4 +2139,54 @@ function getSumOfDigits(integer) {
   }
 
   return sum;
+}
+
+//////// 31-07-2022 4kyu
+//////// Snail
+
+// Snail Sort
+// Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
+
+// array = [[1,2,3],
+//          [4,5,6],
+//          [7,8,9]]
+// snail(array) #=> [1,2,3,6,9,8,7,4,5]
+// For better understanding, please follow the numbers of the next array consecutively:
+
+// array = [[1,2,3],
+//          [8,9,4],
+//          [7,6,5]]
+// snail(array) #=> [1,2,3,4,5,6,7,8,9]
+
+snail = function(array) {
+  let result = [];
+  let dimension = [array[0].length, array.length];
+  let counter = 0;
+  
+  while (result.length < dimension[0] * dimension[1]) {
+
+      for (let i=counter; i < dimension[0]-counter; i++) {
+        if (result.length === dimension[0] * dimension[1]) {break}
+        result.push(array[counter][i]);
+      }
+
+      for (let i=counter+1; i < dimension[1]-counter; i++) {
+        if (result.length === dimension[0] * dimension[1]) {break}
+        result.push(array[i][dimension[0]-1-counter])
+      }
+
+      for (let i=dimension[0]-1-counter; i > counter; i--) {
+        if (result.length === dimension[0] * dimension[1]) {break}
+        result.push(array[dimension[1]-1-counter][i-1]);
+      }
+
+      for (let i=dimension[1]-2-counter; i > counter; i--) {
+        if (result.length === dimension[0] * dimension[1]) {break}
+        result.push(array[i][counter]);
+      }
+
+      counter++;
+  }
+
+  return result;
 }
