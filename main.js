@@ -2098,9 +2098,11 @@ function sumMix(x){
 //////// 29-07-2022 6kyu
 //////// Message Validator
 
-// In this kata, you have an input string and you should check whether it is a valid message. To decide that, you need to split the string by the numbers, and then compare the numbers with the number of characters in the following substring.
+// In this kata, you have an input string and you should check whether it is a valid message. 
+// To decide that, you need to split the string by the numbers, and then compare the numbers with the number of characters in the following substring.
 
-// For example "3hey5hello2hi" should be split into 3, hey, 5, hello, 2, hi and the function should return true, because "hey" is 3 characters, "hello" is 5, and "hi" is 2; as the numbers and the character counts match, the result is true.
+// For example "3hey5hello2hi" should be split into 3, hey, 5, hello, 2, hi and the function should return true, because "hey" is 3 characters, 
+// "hello" is 5, and "hi" is 2; as the numbers and the character counts match, the result is true.
 
 // Notes:
 
@@ -2164,7 +2166,7 @@ snail = function(array) {
   let counter = 0;
   
   while (result.length < dimension[0] * dimension[1]) {
-
+    
       for (let i=counter; i < dimension[0]-counter; i++) {
         if (result.length === dimension[0] * dimension[1]) {break}
         result.push(array[counter][i]);
@@ -2190,3 +2192,34 @@ snail = function(array) {
 
   return result;
 }
+
+//////// 01-08-2022 6kyu
+//////// Duplicate Encoder
+
+// The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that 
+// character appears only once in the original string, or ")" if that character appears more than once in the original string. 
+// Ignore capitalization when determining if a character is a duplicate.
+
+// Examples
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))((" 
+// Notes
+// Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+function duplicateEncode(word){
+  let lowerCaseWord = word.toLowerCase()
+  let newStr = '';
+
+  for (let i=0; i < lowerCaseWord.length; i++) {
+    lowerCaseWord.indexOf(lowerCaseWord[i]) === lowerCaseWord.lastIndexOf(lowerCaseWord[i]) ? 
+    newStr += '(' : 
+    newStr += ')' ;
+  }
+
+  return newStr;
+}
+
+console.log(duplicateEncode('Success'))
+
