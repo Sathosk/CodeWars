@@ -2288,11 +2288,30 @@ var Sudoku = function(data) {
       let arrayDigits = Array.from({length: dataLength}, (_, i) => i+1);
       let sumOfDigits = arrayDigits.reduce((a,b) => a+b)
       let regionsArray = {};
+      let counterZ = 0;
 
       // Check if all rows are valid
       for (let i = 0; i < dataLength; i++) { 
-        if (data[i].reduce((a, b) => a + b) !== sumOfDigits) {return false}
+        // Create counter to add region(small squares) digits to array while looping for rows
+        if (i % dimension === 0) {counterZ+=dimension}
+        let rowCounter = 1;
+        let regionArrayIndex = counterZ + 1; 
+
+        if (data[i].reduce((a, b) => {
+          // Create array with respective region index if doesnt exist on regionsArray object.
+          if (!regionsArray[regionArrayIndex-dimension]) {
+            regionsArray[regionArrayIndex-dimension] = []
+          }; 
+          // Push digits on its respective region array.
+          regionsArray[regionArrayIndex-dimension].push(b);
+          if (rowCounter < dimension) {rowCounter++}
+          else {rowCounter = 1; regionArrayIndex++};
+
+          // If the sum of all digits in a rows are not equal its dimension total return false. 
+          // Example: 9x9 sudoku should sum for 45 (1+2+3+4+5+6+7+8+9), 2x2 should sum for 10 (1+2+3+4).
+          return a + b}, 0) !== sumOfDigits) {return false};
       }
+
 
       // Check if all columns are valid
       for (let i = 0; i < dataLength; i++) {
@@ -2301,29 +2320,17 @@ var Sudoku = function(data) {
         for (let j = 0; j < dataLength; j++) {
           newArr.push(data[j][i])
         }
-
+        // If the sum of all digits in a column are not equal it's dimension total, return false.
         if (newArr.reduce((a, b) => a + b) !== sumOfDigits) {return false}
       }
 
       // Check if all regions are valid
+      for (index in regionsArray) {
+        // If the sum of all digits in a region (small squares) are not equal it's dimension total, return false.
+        if (regionsArray[index].reduce((a, b) => a + b) !== sumOfDigits) {return false}
+       }
 
       return true;
     }
   };
 };
-
-var goodSudoku1 = new Sudoku([
-  [7,8,4, 1,5,9, 3,2,6],
-  [5,3,9, 6,7,2, 8,4,1],
-  [6,1,2, 4,3,8, 7,5,9],
-
-  [9,2,8, 7,1,5, 4,6,3],
-  [3,5,7, 8,4,6, 1,9,2],
-  [4,6,1, 9,2,3, 5,8,7],
-  
-  [8,7,6, 3,9,4, 2,1,5],
-  [2,4,3, 5,6,1, 9,7,8],
-  [1,9,5, 2,8,7, 6,3,4]
-]);
-
-console.log(goodSudoku1.isValid())
