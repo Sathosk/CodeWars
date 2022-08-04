@@ -2234,21 +2234,96 @@ function duplicateEncode(word){
 // Should return: 160 (the only even number)
 
 function findOutlier(integers){
-  if (integers[0] % 2 === 0 && integers[1] % 2 === 0) {
-    for (let i=2; i<integers.length; i++) {
+  if (integers[0] % 2 === 0 && integers[1] % 2 === 0) { // If first and second element are even 
+    for (let i=2; i<integers.length; i++) { // loop through array and return first odd
       if (integers[i] % 2 !== 0) return integers[i];
     }
   } 
-  else if (integers[0] % 2 !== 0 && integers[1] % 2 !== 0) {
-    for (let i=2; i<integers.length; i++) {
+  else if (integers[0] % 2 !== 0 && integers[1] % 2 !== 0) { // If first and second element are odd
+    for (let i=2; i<integers.length; i++) { // loop through array and return first even
       if (integers[i] % 2 === 0) return integers[i];
     }
   } else {
-    return integers[2] % 2 === 0 && integers[0] % 2 === 0 ||
-           integers[2] % 2 !== 0 && integers[0] % 2 !== 0 ?
-           integers[1] :
-           integers[0] ;
+    return integers[2] % 2 === 0 && integers[0] % 2 === 0 || // if third and first element are even or
+           integers[2] % 2 !== 0 && integers[0] % 2 !== 0 ?  // if third and first element are odd
+           integers[1] : // return second element on the array
+           integers[0] ; // return first element on the array
   }
+
+  // This looks faster than most voted solutions, but let me know if this is bad written or confusing.
 }
 
-console.log(findOutlier([1, 0, 1]))
+//////// 03-08-2022 4kyu
+//////// Validate Sudoku with size `NxN`
+
+// Given a Sudoku data structure with size NxN, N > 0 and √N == integer, write a method to validate if it has been filled out correctly.
+
+// The data structure is a multi-dimensional Array, i.e:
+
+// [
+//   [7,8,4,  1,5,9,  3,2,6],
+//   [5,3,9,  6,7,2,  8,4,1],
+//   [6,1,2,  4,3,8,  7,5,9],
+  
+//   [9,2,8,  7,1,5,  4,6,3],
+//   [3,5,7,  8,4,6,  1,9,2],
+//   [4,6,1,  9,2,3,  5,8,7],
+  
+//   [8,7,6,  3,9,4,  2,1,5],
+//   [2,4,3,  5,6,1,  9,7,8],
+//   [1,9,5,  2,8,7,  6,3,4]
+// ]
+// Rules for validation
+
+// Data structure dimension: NxN where N > 0 and √N == integer
+// Rows may only contain integers: 1..N (N included)
+// Columns may only contain integers: 1..N (N included)
+// 'Little squares' (3x3 in example above) may also only contain integers: 1..N (N included)
+
+var Sudoku = function(data) {
+  return {
+    isValid: function() {
+      let dataLength = data.length;
+      let dimension = Math.sqrt(dataLength);
+      let arrayDigits = Array.from({length: dataLength}, (_, i) => i+1);
+      let sumOfDigits = arrayDigits.reduce((a,b) => a+b)
+      let regionsArray = {};
+
+      // Check if all rows are valid
+      for (let i = 0; i < dataLength; i++) { 
+        if (data[i].reduce((a, b) => a + b) !== sumOfDigits) {return false}
+      }
+
+      // Check if all columns are valid
+      for (let i = 0; i < dataLength; i++) {
+        let newArr = [];
+
+        for (let j = 0; j < dataLength; j++) {
+          newArr.push(data[j][i])
+        }
+
+        if (newArr.reduce((a, b) => a + b) !== sumOfDigits) {return false}
+      }
+
+      // Check if all regions are valid
+
+      return true;
+    }
+  };
+};
+
+var goodSudoku1 = new Sudoku([
+  [7,8,4, 1,5,9, 3,2,6],
+  [5,3,9, 6,7,2, 8,4,1],
+  [6,1,2, 4,3,8, 7,5,9],
+
+  [9,2,8, 7,1,5, 4,6,3],
+  [3,5,7, 8,4,6, 1,9,2],
+  [4,6,1, 9,2,3, 5,8,7],
+  
+  [8,7,6, 3,9,4, 2,1,5],
+  [2,4,3, 5,6,1, 9,7,8],
+  [1,9,5, 2,8,7, 6,3,4]
+]);
+
+console.log(goodSudoku1.isValid())
