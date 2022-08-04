@@ -2334,3 +2334,17 @@ var Sudoku = function(data) {
     }
   };
 };
+
+//////// 04-08-2022 7kyu
+//////// Switcheroo
+
+// Given a string made up of letters a, b, and/or c, switch the position of letters a and b (change a to b and vice versa). Leave any incidence of c untouched.
+
+// Example:
+
+// 'acb' --> 'bca'
+// 'aabacbaa' --> 'bbabcabb'
+
+function switcheroo(x){
+  return x.replace(/a|b/gi, function(m) {return m === 'a' ? 'b' : 'a'});
+}
