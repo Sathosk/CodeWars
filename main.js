@@ -2286,29 +2286,29 @@ var Sudoku = function(data) {
       let dataLength = data.length;
       let dimension = Math.sqrt(dataLength);
       let arrayDigits = Array.from({length: dataLength}, (_, i) => i+1);
-      let sumOfDigits = arrayDigits.reduce((a,b) => a+b)
+      let sumOfDigits = arrayDigits.reduce((a,b) => a+b);
       let regionsArray = {};
       let counterZ = 0;
 
       // Check if all rows are valid
       for (let i = 0; i < dataLength; i++) { 
         // Create counter to add region(small squares) digits to array while looping for rows
-        if (i % dimension === 0) {counterZ+=dimension}
+        if (i % dimension === 0) {counterZ+=dimension};
         let rowCounter = 1;
         let regionArrayIndex = counterZ + 1; 
 
         if (data[i].reduce((a, b) => {
           // Create array with respective region index if doesnt exist on regionsArray object.
           if (!regionsArray[regionArrayIndex-dimension]) {
-            regionsArray[regionArrayIndex-dimension] = []
+            regionsArray[regionArrayIndex-dimension] = [];
           }; 
           // Push digits on its respective region array.
           regionsArray[regionArrayIndex-dimension].push(b);
           if (rowCounter < dimension) {rowCounter++}
           else {rowCounter = 1; regionArrayIndex++};
 
-          // If the sum of all digits in a rows are not equal its dimension total return false. 
-          // Example: 9x9 sudoku should sum for 45 (1+2+3+4+5+6+7+8+9), 2x2 should sum for 10 (1+2+3+4).
+          // If the sum of all digits in a row are not equal it's dimension total, return false. 
+          // Example: 9x9 sudoku should sum for 45 (1+2+3+4+5+6+7+8+9), 4x4 should sum for 10 (1+2+3+4).
           return a + b}, 0) !== sumOfDigits) {return false};
       }
 
@@ -2318,16 +2318,16 @@ var Sudoku = function(data) {
         let newArr = [];
 
         for (let j = 0; j < dataLength; j++) {
-          newArr.push(data[j][i])
+          newArr.push(data[j][i]);
         }
         // If the sum of all digits in a column are not equal it's dimension total, return false.
-        if (newArr.reduce((a, b) => a + b) !== sumOfDigits) {return false}
+        if (newArr.reduce((a, b) => a + b) !== sumOfDigits) {return false};
       }
 
       // Check if all regions are valid
       for (index in regionsArray) {
         // If the sum of all digits in a region (small squares) are not equal it's dimension total, return false.
-        if (regionsArray[index].reduce((a, b) => a + b) !== sumOfDigits) {return false}
+        if (regionsArray[index].reduce((a, b) => a + b) !== sumOfDigits) {return false};
        }
 
       return true;
@@ -2348,3 +2348,23 @@ var Sudoku = function(data) {
 function switcheroo(x){
   return x.replace(/a|b/gi, function(m) {return m === 'a' ? 'b' : 'a'});
 }
+
+//////// 05-08-2022 6kyu
+//////// Count the divisible numbers
+
+// Complete the function that takes 3 numbers x, y and k (where x ≤ y), and returns the number of integers within the range [x..y] (both ends included) that are divisible by k.
+
+// More scientifically: { i : x ≤ i ≤ y, i mod k = 0 }
+
+// Example
+// Given x = 6, y = 11, k = 2 the function should return 3, because there are three numbers divisible by 2 between 6 and 11: 6, 8, 10
+
+// Note: The test cases are very large. You will need a O(log n) solution or better to pass. (A constant time solution is possible.)
+
+function divisibleCount(x, y, k) {
+  return Math.floor(y/k) - Math.floor((x-1)/k);
+}
+
+console.log(divisibleCount(5,500,150)) // 
+
+
