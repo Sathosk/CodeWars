@@ -2428,3 +2428,21 @@ console.log(countBy(2,5))
 function digitize(n) {
   return String(n).split('').reverse().map(l => +l);
 }
+
+//////// 10-08-2022 8kyu
+//////// If you can't sleep, just count sheep!!
+
+// If you can't sleep, just count sheep!!
+
+// Task:
+// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+
+const countSheep = function (num){
+  let str = '';
+
+  for (let i=1; i<=num; i++) {
+    str += `${i} sheep...`;
+  }
+
+  return str;
+}
