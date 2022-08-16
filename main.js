@@ -2500,8 +2500,6 @@ const sequenceSum = (begin, end, step) => {
   return res;
 };
 
-console.log(sequenceSum(2,6,2))
-
 //////// 14-08-2022 7kyu
 //////// Execute me nTimes
 
@@ -2519,3 +2517,37 @@ async function execute(action, nTimes){
   }
   await Promise.all(arr);
 }
+
+//////// 16-08-2022 6kyu
+//////// How many pages in a book?
+
+// Every book has n pages with page numbers 1 to n. The summary is made by adding up the number of digits of all page numbers.
+
+// Task: Given the summary, find the number of pages n the book has.
+
+// Example
+// If the input is summary=25, then the output must be n=17: The numbers 1 to 17 have 25 digits in total: 1234567891011121314151617.
+
+// Be aware that you'll get enormous books having up to 100.000 pages.
+
+// All inputs will be valid.
+
+function amountOfPages(summary){
+  let newArr = [9, 180, 2700, 36000, 450000, 5400000];
+  let result = 0;
+
+  for (let i=0; i<6; i++) {
+    if (summary <= newArr[i]) {
+      result = result+(summary/(i+1));
+      break;
+    } else {
+      result = result+(newArr[i]/(i+1));
+      summary = summary - newArr[i];
+    }
+  }
+
+  return result;
+}
+
+
+
