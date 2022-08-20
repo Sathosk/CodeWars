@@ -2689,16 +2689,13 @@ class User {
   updateProgress(progressIncrease) {
     if (this.rank >= 8) {return};
 
-    let rankIncrease = 0;
-
     this.progress = this.progress + progressIncrease;
 
     while (this.progress >= 100) {
-      rankIncrease++;
+      this.rank++;
       this.progress = this.progress - 100;
     }
 
-    this.rank = this.rank + rankIncrease;
     if (this.rank === 8) {this.progress = 0};
     if (this.rank === 0) {this.rank = 1};
   }
@@ -2706,26 +2703,17 @@ class User {
   incProgress(kataRank) {
     if (kataRank === 0 || kataRank < -8 || kataRank > 8) {throw 'The only acceptable range of rank values is -8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8.'}
 
-    let isKataAboveUserRank = kataRank > this.rank;
     let rankDifference = Math.abs((this.rank) - (kataRank));
 
     if (kataRank > 0 && this.rank < 0) {rankDifference--}
 
-    if (isKataAboveUserRank) {
+    if (kataRank > this.rank) {
       let progressEarned = 10 * rankDifference * rankDifference;
       this.updateProgress(progressEarned);
-    } 
-
-    else {
-      let progressEarned = 0;
-      
-      if (rankDifference === 0) {
-        progressEarned += 3;
-      } else {
-        progressEarned++;
-      }
-
+    } else {
+      let progressEarned = rankDifference === 0 ? 3 : 1;
       this.updateProgress(progressEarned);
     }
   }
+
 }
