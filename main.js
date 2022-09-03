@@ -2895,9 +2895,6 @@ function anagrams(word, words) {
 
   return words.filter(element => {
     const sortedElement = element.split('').sort().join('');
-    console.log(sortedWord, sortedElement)
     return sortedWord === sortedElement;
   })
 }
-
-console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
