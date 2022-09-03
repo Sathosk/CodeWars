@@ -2827,7 +2827,7 @@ function factorial(n) {
   return result;
 }
 
-//////// 31-08-2022 7kyu
+//////// 01-09-2022 6kyu
 //////// Compare Versions
 
 // Karan's company makes software that provides different features based on the version of operating system of the user.
@@ -2868,3 +2868,36 @@ function compareVersions (version1, version2) {
 
   return true;
 }
+
+//////// 02-09-2022 7kyu
+//////// Where my anagrams at?
+
+// What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. For example:
+
+// 'abba' & 'baab' == true
+
+// 'abba' & 'bbaa' == true
+
+// 'abba' & 'abbba' == false
+
+// 'abba' & 'abca' == false
+// Write a function that will find all the anagrams of a word from a list. 
+// You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
+
+// anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+
+// anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
+
+// anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
+
+function anagrams(word, words) {
+  const sortedWord = word.split('').sort().join('');
+
+  return words.filter(element => {
+    const sortedElement = element.split('').sort().join('');
+    console.log(sortedWord, sortedElement)
+    return sortedWord === sortedElement;
+  })
+}
+
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
