@@ -2898,3 +2898,4 @@ function anagrams(word, words) {
     return sortedWord === sortedElement;
   })
 }
+
