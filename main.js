@@ -3037,5 +3037,19 @@ function reverseWords(str){
 // 2 --> 3 + 5 = 8
 
 function rowSumOddNumbers(n) {
-	return Math.pow(n, 3);
+  // First try solution, don't judge me.
+
+	// let firstNumberOfRow = 1;
+  // let currentRowMinusPrevious = 2;
+  // let sumOfIntervals = 0;
+
+  // for (let i=1; i<n; i++) {
+  //   firstNumberOfRow = firstNumberOfRow + n;
+  //   sumOfIntervals = sumOfIntervals + currentRowMinusPrevious;
+  //   currentRowMinusPrevious += 2;
+  // }
+
+  // return (firstNumberOfRow * n) + sumOfIntervals;
+
+  return Math.pow(n, 3);
 }
