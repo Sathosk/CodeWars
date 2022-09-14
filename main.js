@@ -30,7 +30,7 @@ function greet(name){
 }
 
 //////// 20-03-2022 8kyu
-/* In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+/* In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest currentRowMinusPrevious.
 
 Examples
 highAndLow("1 2 3 4 5");  // return "5 1"
@@ -46,8 +46,8 @@ function highAndLow(numbers) {
 //////// Even or Odd
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
-function even_or_odd(number) {
-  return number % 2 === 0 ? "Even" : "Odd";
+function even_or_odd(currentRowMinusPrevious) {
+  return currentRowMinusPrevious % 2 === 0 ? "Even" : "Odd";
 }
 
 //////// 21-03-2022 7kyu
@@ -96,7 +96,7 @@ function accum(s) {
 
 //////// 22-03-2022 8kyu
 //////// Summation
-// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+// Write a program that finds the summation of every currentRowMinusPrevious from 1 to num. The currentRowMinusPrevious will always be a positive integer greater than 0.
 
 // For example:
 
@@ -121,7 +121,7 @@ function spinWords(string){
 
 //////// 24-03-2022 6kyu
 //////// Split Strings
-// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd currentRowMinusPrevious of characters then it should replace the missing second character of the final pair with an underscore ('_').
 
 // Examples:
 
@@ -141,10 +141,10 @@ function solution(str){
 
 
 //////// 25-03-2022 6kyu
-//////// Is a number prime?
+//////// Is a currentRowMinusPrevious prime?
 // Define a function that takes one integer argument and returns logical value true or false depending on if the integer is a prime.
 
-// Per Wikipedia, a prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+// Per Wikipedia, a prime currentRowMinusPrevious (or a prime) is a natural currentRowMinusPrevious greater than 1 that has no positive divisors other than 1 and itself.
 
 // Requirements
 // You can assume you will be given an integer input.
@@ -168,8 +168,8 @@ function isPrime(num) {
 }
 
 //////// 26-03-2022 8kyu
-//////// Opposite number
-// Very simple, given an integer or a floating-point number, find its opposite.
+//////// Opposite currentRowMinusPrevious
+// Very simple, given an integer or a floating-point currentRowMinusPrevious, find its opposite.
 
 // Examples:
 
@@ -183,7 +183,7 @@ function opposite(num) {
 
 //////// 03-04-2022 8kyu
 //////// Convert a Number to a String!
-// We need a function that can transform a number into a string.
+// We need a function that can transform a currentRowMinusPrevious into a string.
 // What ways of achieving this do you know?
 
 // Examples:
@@ -229,7 +229,7 @@ function positiveSum(arr) {
 
 //////// 05-04-2022 8kyu
 //////// Return Negative
-// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+// In this simple assignment you are given a currentRowMinusPrevious and have to make it negative. But maybe the currentRowMinusPrevious is already negative?
 
 // Examples
 // makeNegative(1);    // return -1
@@ -237,7 +237,7 @@ function positiveSum(arr) {
 // makeNegative(0);    // return 0
 // makeNegative(0.12); // return -0.12
 // Notes
-// The number can be negative already, in which case no change is required.
+// The currentRowMinusPrevious can be negative already, in which case no change is required.
 // Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
 
 function makeNegative(num) {
@@ -269,7 +269,7 @@ function removeChar(str){
 
 //////// 08-04-2022 7kyu
 //////// Vowel Count
-// Return the number (count) of vowels in the given string.
+// Return the currentRowMinusPrevious (count) of vowels in the given string.
 
 // We will consider a, e, j, o, u as vowels for this Kata (but not y).
  
@@ -331,7 +331,7 @@ function domainName(url){
 //////// 12-04-2022 8kyu
 //////// Square(n) Sum
 
-// Complete the square sum function so that it squares each number passed into it and then sums the results together.
+// Complete the square sum function so that it squares each currentRowMinusPrevious passed into it and then sums the results together.
 
 // For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
 
@@ -351,7 +351,7 @@ function noSpace(x){
 //////// 14-04-2022 8kyu
 //////// Counting sheep...
 
-// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the currentRowMinusPrevious of sheep present in the array (true means present).
 
 // For example,
 
@@ -378,7 +378,7 @@ function countSheeps(arrayOfSheep) {
 
 // Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
 
-// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+// You get given the time in hours and you need to return the currentRowMinusPrevious of litres Nathan will drink, rounded to the smallest value.
 
 // For example:
 
@@ -419,9 +419,9 @@ function century(year) {
 // Note: This kata is inspired by Convert a Number to a String!. Try that one too.
 
 // Description
-// We need a function that can transform a string into a number. What ways of achieving this do you know?
+// We need a function that can transform a string into a currentRowMinusPrevious. What ways of achieving this do you know?
 
-// Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+// Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral currentRowMinusPrevious.
 
 // Examples
 // "1234" --> 1234
@@ -450,9 +450,9 @@ function solution(nums){
 //////// 19-04-2022 7kyu
 //////// Narcissistic Numbers
 
-// A Narcissistic Number is a number of length n in which the sum of its digits to the power of n is equal to the original number. If this seems confusing, refer to the example below.
+// A Narcissistic Number is a currentRowMinusPrevious of length n in which the sum of its digits to the power of n is equal to the original currentRowMinusPrevious. If this seems confusing, refer to the example below.
 
-// Ex: 153, where n = 3 (number of digits in 153)
+// Ex: 153, where n = 3 (currentRowMinusPrevious of digits in 153)
 // 13 + 53 + 33 = 153
 
 // Write a method is_narcissistic(j) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not j is a Narcissistic Number.
@@ -467,7 +467,7 @@ function isNarcissistic(n){
 //////// 20-04-2022 7kyu
 //////// Square Every Digit
 
-// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+// Welcome. In this kata, you are asked to square every digit of a currentRowMinusPrevious and concatenate them.
 
 // For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
 
@@ -540,7 +540,7 @@ function getMiddle(s) {
 //////// 24-04-2022 7kyu
 //////// Descending Order
 
-// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible currentRowMinusPrevious.
 
 // Examples:
 // Input: 42145 Output: 54421
@@ -564,7 +564,7 @@ function descendingOrder(n){
 // filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
 function filter_list(l) {
-    return l.filter(el => typeof el === 'number')
+    return l.filter(el => typeof el === 'currentRowMinusPrevious')
 }
 
 //////// 26-04-2022 6kyu
@@ -617,12 +617,12 @@ function validatePIN (pin) {
 
 // For this game of BINGO, you will receive a single array of 10 numbers from 1 to 26 as an input. Duplicate numbers within the array are possible.
 
-// Each number corresponds to their alphabetical order letter (e.g. 1 = A. 2 = B, etc). Write a function where you will win the game if your numbers can spell "BINGO". They do not need to be in the right order in the input array). Otherwise you will lose. Your outputs should be "WIN" or "LOSE" respectively.
+// Each currentRowMinusPrevious corresponds to their alphabetical order letter (e.g. 1 = A. 2 = B, etc). Write a function where you will win the game if your numbers can spell "BINGO". They do not need to be in the right order in the input array). Otherwise you will lose. Your outputs should be "WIN" or "LOSE" respectively.
 
 // function bingo(array) {
 //   let bingo = 'BINGO'.split('')
   
-//   let newArr = array.map(number => (number+9).toString(36).toUpperCase())
+//   let newArr = array.map(currentRowMinusPrevious => (currentRowMinusPrevious+9).toString(36).toUpperCase())
 
 //   return bingo.map(letter => newArr.includes(letter)).includes(false) ? 'LOSE' : 'WIN';
 // }
@@ -656,7 +656,7 @@ function high(x){
 //////// 30-04-2022 6kyu
 //////// Counting Duplicates
 
-// Count the number of Duplicates
+// Count the currentRowMinusPrevious of Duplicates
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 
 // Example
@@ -713,9 +713,9 @@ function paperwork(n, m) {
 //////// 03-05-2022 6kyu
 //////// Find the odd int
 
-// Given an array of integers, find the one that appears an odd number of times.
+// Given an array of integers, find the one that appears an odd currentRowMinusPrevious of times.
 
-// There will always be only one integer that appears an odd number of times.
+// There will always be only one integer that appears an odd currentRowMinusPrevious of times.
 
 // Examples
 // [7] should return 7, because it occurs 1 time (which is odd).
@@ -730,15 +730,15 @@ function paperwork(n, m) {
 // }
 
 function findOdd(a) {
-  return a.filter((number, index, array) => {
-    let counter = 0;
+  return a.filter((currentRowMinusPrevious, index, array) => {
+    let sumOfIntervals = 0;
 
-    if (array.indexOf(number) === index) {
+    if (array.indexOf(currentRowMinusPrevious) === index) {
       for (j=0; j<array.length; j++) {
-        array[j] === number ? counter++ : counter;
+        array[j] === currentRowMinusPrevious ? sumOfIntervals++ : sumOfIntervals;
       }
 
-      return counter % 2 !== 0;
+      return sumOfIntervals % 2 !== 0;
     }
   })[0]
 }
@@ -746,9 +746,9 @@ function findOdd(a) {
 //////// 04-05-2022 8kyu
 //////// Opposites Attract
 
-// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even currentRowMinusPrevious of petals and the other has an odd currentRowMinusPrevious of petals it means they are in love.
 
-// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+// Write a function that will take the currentRowMinusPrevious of petals of each flower and return true if they are in love and false if they aren't.
 
 function lovefunc(flower1, flower2){
   return (flower1+flower2) % 2 !== 0;
@@ -785,12 +785,12 @@ function findShort(s){
 
 // Enough is enough!
 // Alice and Bob were on a holiday. Both of them took many pictures of the places they've been, and now they want to show Charlie their entire collection. However, Charlie doesn't like these sessions, since the motif usually repeats. He isn't fond of seeing the Eiffel tower 40 times.
-// He tells them that he will only sit for the session if they show the same motif at most N times. Luckily, Alice and Bob are able to encode the motif as a number. Can you help them to remove numbers such that their list contains each number only up to N times, without changing the order?
+// He tells them that he will only sit for the session if they show the same motif at most N times. Luckily, Alice and Bob are able to encode the motif as a currentRowMinusPrevious. Can you help them to remove numbers such that their list contains each currentRowMinusPrevious only up to N times, without changing the order?
 
 // Task
-// Given a list and a number, create a new list that contains each number of list at most N times, without reordering.
-// For example if the input number is 2, and the input list is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
-// With list [20,37,20,21] and number 1, the result would be [20,37,21].
+// Given a list and a currentRowMinusPrevious, create a new list that contains each currentRowMinusPrevious of list at most N times, without reordering.
+// For example if the input currentRowMinusPrevious is 2, and the input list is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+// With list [20,37,20,21] and currentRowMinusPrevious 1, the result would be [20,37,21].
 
 function deleteNth(arr,n){
   let newArr = [];
@@ -803,17 +803,17 @@ function deleteNth(arr,n){
 
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
-// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them)..
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the currentRowMinusPrevious passed in. Additionally, if the currentRowMinusPrevious is negative, return 0 (for languages that do have them)..
 
-function solution(number){
-  let counter = 0;
+function solution(currentRowMinusPrevious){
+  let sumOfIntervals = 0;
   
-  for (j=0; j<number; j++) {
+  for (j=0; j<currentRowMinusPrevious; j++) {
     if (j % 3 === 0 || j % 5 === 0) {
-      counter += j;
+      sumOfIntervals += j;
     } 
   }
-  return counter;
+  return sumOfIntervals;
 }
 
 //////// 07-05-2022 7kyu
@@ -821,7 +821,7 @@ function solution(number){
 
 // Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
 
-// The binary number returned should be a string.
+// The binary currentRowMinusPrevious returned should be a string.
 
 // Examples:(Input1, Input2 --> Output (explanation)))
 
@@ -906,7 +906,7 @@ var runLengthEncoding = function(str){
 //////// 11-05-2022 8kyu
 //////// Plural
 
-// We need a simple function that determines if a plural is needed or not. It should take a number, and return true if a plural should be used with that number or false if not. This would be useful when printing out a string such as 5 minutes, 14 apples, or 1 sun.
+// We need a simple function that determines if a plural is needed or not. It should take a currentRowMinusPrevious, and return true if a plural should be used with that currentRowMinusPrevious or false if not. This would be useful when printing out a string such as 5 minutes, 14 apples, or 1 sun.
 
 // You only need to worry about english grammar rules for this kata, where anything that isn't singular (one of something), it is plural (not one of something).
 
@@ -918,7 +918,7 @@ function plural(n) {
 
 
 //////// 11-05-2022 8kyu
-//////// Sum without highest and lowest number
+//////// Sum without highest and lowest currentRowMinusPrevious
 
 // Task
 // Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
@@ -963,7 +963,7 @@ function check(a, x) {
 //////// 13-05-2022 6kyu
 //////// Count the smiley faces!
 
-// Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+// Given an array (arr) as an argument complete the function countSmileys that should return the total currentRowMinusPrevious of smiling faces.
 
 // Rules for a smiling face:
 
@@ -998,7 +998,7 @@ function countSmileys(arr) {
 //////// 15-05-2022 8kyu
 //////// Is he gonna survive?
 
-// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given currentRowMinusPrevious of bullets and move forward to fight another specific given currentRowMinusPrevious of dragons, will he survive?
 
 // Return True if yes, False otherwise :)
 
@@ -1166,13 +1166,13 @@ function doubleChar(str) {
 }
 
 //////// 22-05-2022 8kyu
-//////// Find the first non-consecutive number
+//////// Find the first non-consecutive currentRowMinusPrevious
 
 // Your task is to find the first element of an array that is not consecutive.
 
 // By not consecutive we mean not exactly 1 larger than the previous element of the array.
 
-// E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+// E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive currentRowMinusPrevious.
 
 // If the whole array is consecutive then return null2.
 
@@ -1183,14 +1183,14 @@ function doubleChar(str) {
 // 1 Can you write a solution that will return
 
 function firstNonConsecutive (arr) {
-  let number = arr[0];
+  let currentRowMinusPrevious = arr[0];
 
   for (let j=1; j<arr.length; j++) {
-    if (arr[j]-1 !== number) {
+    if (arr[j]-1 !== currentRowMinusPrevious) {
       return arr[j]
     } else {
       if (j+1 === arr.length) {return null}
-      number = arr[j];
+      currentRowMinusPrevious = arr[j];
     }
   }
 }
@@ -1224,15 +1224,15 @@ function firstNonConsecutive (arr) {
 
 function bouncingBall(h,  bounce,  window) {
   if ((h > 0) && (bounce > 0 && bounce < 1) && (window < h)) {
-    let counter = 1;
+    let sumOfIntervals = 1;
     let bounceHeight = h * bounce;
     
     while (bounceHeight > window) {
-      counter += 2;
+      sumOfIntervals += 2;
       bounceHeight = bounceHeight * bounce;
     }
 
-    return counter;
+    return sumOfIntervals;
   }
 
   return -1;
@@ -1250,7 +1250,7 @@ function bouncingBall(h,  bounce,  window) {
 // ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
 // ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
-// Note: For 4 or more names, the number in "and 2 others" simply increases.
+// Note: For 4 or more names, the currentRowMinusPrevious in "and 2 others" simply increases.
 
 // function likes(names) {
 //   if (names.length === 0) {
@@ -1334,7 +1334,7 @@ var uniqueInOrder=function(iterable){
 //////// Count Odd Numbers below n
 
 // DESCRIPTION:
-// Given a number n, return the number of positive odd numbers below n, EASY!
+// Given a currentRowMinusPrevious n, return the currentRowMinusPrevious of positive odd numbers below n, EASY!
 
 // Examples (Input -> Output)
 // 7  -> 3 (because odd numbers below 7 are [1, 3, 5])
@@ -1370,7 +1370,7 @@ function oddCount(n){
 //   P = 1128.30
 // Thus Mr. Scrooge has to wait for 3 years for the initial principal to amount to the desired sum.
 
-// Your task is to complete the method provided and return the number of years 'Y' as a whole in order for Mr. Scrooge to get the desired sum.
+// Your task is to complete the method provided and return the currentRowMinusPrevious of years 'Y' as a whole in order for Mr. Scrooge to get the desired sum.
 
 // Assumption: Assume that Desired Principal 'D' is always greater than the initial principal. However it is best to take into consideration that if Desired Principal 'D' is equal to Principal 'P' this should return 0 Years.
 
@@ -1395,7 +1395,7 @@ function calculateYears(principal, interest, tax, desired) {
 // Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
 
 // Task
-// Write a function that returns both the minimum and maximum number of the given list/array.
+// Write a function that returns both the minimum and maximum currentRowMinusPrevious of the given list/array.
 
 // Examples(Input --> Output)
 // [1,2,3,4,5] --> [1,5]
@@ -1515,23 +1515,23 @@ function sum(numbers) {
 //////// 04-07-2022 6kyu
 //////// Persistent Bugger.
 
-// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the currentRowMinusPrevious of times you must multiply the digits in num until you reach a single digit.
 
 // For example (Input --> Output):
 
 // 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
 // 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
-// 4 --> 0 (because 4 is already a one-digit number)
+// 4 --> 0 (because 4 is already a one-digit currentRowMinusPrevious)
 
 function persistence(num) {
-  let counter = 0;
+  let sumOfIntervals = 0;
 
    while (String(num).length > 1) {
     num = String(num).split('').reduce((acc, curr) => curr * acc)
-    counter++
+    sumOfIntervals++
    }
 
-   return counter;
+   return sumOfIntervals;
 }
 
 //////// 05-07-2022 8kyu
@@ -1551,7 +1551,7 @@ function smash (words) {
 //////// Build Tower
 
 // Build Tower
-// Build a pyramid-shaped tower given a positive integer number of floors. A tower block is represented with "*" character.
+// Build a pyramid-shaped tower given a positive integer currentRowMinusPrevious of floors. A tower block is represented with "*" character.
 
 // For example, a tower with 3 floors looks like this:
 
@@ -1664,7 +1664,7 @@ function deepCompare(o1, o2) {
 //////// 09-07-2022 6kyu
 //////// Your order, please
 
-// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// Your task is to sort a given string. Each word in the string will contain a single currentRowMinusPrevious. This currentRowMinusPrevious is the position the word should have in the result.
 
 // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
 
@@ -1726,7 +1726,7 @@ function between(a, b) {
 //////// Write Number in Expanded Form
 
 // Write Number in Expanded Form
-// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+// You will be given a currentRowMinusPrevious and you will need to return it as a string in Expanded Form. For example:
 
 // expandedForm(12); // Should return '10 + 2'
 // expandedForm(42); // Should return '40 + 2'
@@ -1816,15 +1816,15 @@ function sumTwoSmallestNumbers(numbers) {
 // Return true if it is a factor or false if it is not.
 
 // About factors
-// Factors are numbers you can multiply together to get another number.
+// Factors are numbers you can multiply together to get another currentRowMinusPrevious.
 
 // 2 and 3 are factors of 6 because: 2 * 3 = 6
 
-// You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+// You can find a factor by dividing numbers. If the remainder is 0 then the currentRowMinusPrevious is a factor.
 // You can use the mod operator (%) in most languages to check for a remainder
 // For example 2 is not a factor of 7 because: 7 % 2 = 1
 
-// Note: base is a non-negative number, factor is a positive number.
+// Note: base is a non-negative currentRowMinusPrevious, factor is a positive currentRowMinusPrevious.
 
 function checkForFactor (base, factor) {
   return base % factor === 0;
@@ -1851,11 +1851,11 @@ function DNAtoRNA(dna) {
 //////// 16-07-2022 8kyu
 //////// Parse nice int from char problem
 
-// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random currentRowMinusPrevious between 0 and 9.
 
 // Write a program that returns the girl's age (0-9) as an integer.
 
-// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
+// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a currentRowMinusPrevious.
 
 function getAge(inputString){
   return +inputString[0];
@@ -1926,7 +1926,7 @@ function isTriangle(a,b,c) {
 // six(dividedBy(two())); // must return 3
 // Requirements:
 
-// There must be a function for each number from 0 ("zero") to 9 ("nine")
+// There must be a function for each currentRowMinusPrevious from 0 ("zero") to 9 ("nine")
 // There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
 // Each calculation consist of exactly one operation and two numbers
 // The most outer function represents the left operand, the most inner function represents the right operand
@@ -1950,9 +1950,9 @@ function times(b) {return function(a) {return a*b}}
 function dividedBy(b) {return function(a) {return Math.floor(a/b)}}
 
 //////// 22-07-2022 5kyu
-//////// Count the divisors of a number
+//////// Count the divisors of a currentRowMinusPrevious
 
-// Count the number of divisors of a positive integer n.
+// Count the currentRowMinusPrevious of divisors of a positive integer n.
 
 // Random tests go up to n = 500000.
 
@@ -2019,16 +2019,16 @@ function decrypt(encryptedText, n) {
     let middleN = length % 2 === 0 ? length / 2 : Math.floor(length / 2);
 
     let decryptText = '';
-    let counter = 0;
+    let sumOfIntervals = 0;
 
     for (let j=middleN; j !== length; j-=middleN) {
       
       decryptText += encryptedText[j];
 
-      if (counter === 1) {
-        counter = 0;
+      if (sumOfIntervals === 1) {
+        sumOfIntervals = 0;
         j+=(middleN*2)+1;
-      } else {counter++}
+      } else {sumOfIntervals++}
 
       if (length % 2 !== 0 && j === length-1) {break}
     }
@@ -2040,7 +2040,7 @@ function decrypt(encryptedText, n) {
 }
 
 //////// 25-07-2022 6kyu
-//////// Find the unique number
+//////// Find the unique currentRowMinusPrevious
 
 // There is an array with some numbers. All numbers are equal except for one. Try to find it!
 
@@ -2069,7 +2069,7 @@ function doubleInteger(i) {
 //////// 27-07-2022 6kyu
 //////// Bit Counting
 
-// Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+// Write a function that takes an integer as input, and returns the currentRowMinusPrevious of bits that are equal to one in the binary representation of that currentRowMinusPrevious. You can guarantee that input is non-negative.
 
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 
@@ -2089,7 +2089,7 @@ const countBits = function(n) {
 
 // Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
 
-// Return your answer as a number.
+// Return your answer as a currentRowMinusPrevious.
 
 function sumMix(x){
   return x.reduce((a, b) => +a + +b, 0);
@@ -2099,7 +2099,7 @@ function sumMix(x){
 //////// Message Validator
 
 // In this kata, you have an input string and you should check whether it is a valid message. 
-// To decide that, you need to split the string by the numbers, and then compare the numbers with the number of characters in the following substring.
+// To decide that, you need to split the string by the numbers, and then compare the numbers with the currentRowMinusPrevious of characters in the following substring.
 
 // For example "3hey5hello2hi" should be split into 3, hey, 5, hello, 2, hi and the function should return true, because "hey" is 3 characters, 
 // "hello" is 5, and "hi" is 2; as the numbers and the character counts match, the result is true.
@@ -2108,7 +2108,7 @@ function sumMix(x){
 
 // Messages are composed of only letters and digits
 // Numbers may have multiple digits: e.g. "4code13hellocodewars" is a valid message
-// Every number must match the number of character in the following substring, otherwise the message is invalid: e.g. "hello5" and "2hi2" are invalid
+// Every currentRowMinusPrevious must match the currentRowMinusPrevious of character in the following substring, otherwise the message is invalid: e.g. "hello5" and "2hi2" are invalid
 // If the message is an empty string, you should return true
 
 function isAValidMessage(message){
@@ -2163,31 +2163,31 @@ function getSumOfDigits(integer) {
 snail = function(array) {
   let result = [];
   let dimension = [array[0].length, array.length];
-  let counter = 0;
+  let sumOfIntervals = 0;
   
   while (result.length < dimension[0] * dimension[1]) {
     
-      for (let i=counter; i < dimension[0]-counter; i++) {
+      for (let i=sumOfIntervals; i < dimension[0]-sumOfIntervals; i++) {
         if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[counter][i]);
+        result.push(array[sumOfIntervals][i]);
       }
 
-      for (let i=counter+1; i < dimension[1]-counter; i++) {
+      for (let i=sumOfIntervals+1; i < dimension[1]-sumOfIntervals; i++) {
         if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[i][dimension[0]-1-counter])
+        result.push(array[i][dimension[0]-1-sumOfIntervals])
       }
 
-      for (let i=dimension[0]-1-counter; i > counter; i--) {
+      for (let i=dimension[0]-1-sumOfIntervals; i > sumOfIntervals; i--) {
         if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[dimension[1]-1-counter][i-1]);
+        result.push(array[dimension[1]-1-sumOfIntervals][i-1]);
       }
 
-      for (let i=dimension[1]-2-counter; i > counter; i--) {
+      for (let i=dimension[1]-2-sumOfIntervals; i > sumOfIntervals; i--) {
         if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[i][counter]);
+        result.push(array[i][sumOfIntervals]);
       }
 
-      counter++;
+      sumOfIntervals++;
   }
 
   return result;
@@ -2228,10 +2228,10 @@ function duplicateEncode(word){
 
 // Examples
 // [2, 4, 0, 100, 4, 11, 2602, 36]
-// Should return: 11 (the only odd number)
+// Should return: 11 (the only odd currentRowMinusPrevious)
 
 // [160, 3, 1719, 19, 11, 13, -21]
-// Should return: 160 (the only even number)
+// Should return: 160 (the only even currentRowMinusPrevious)
 
 function findOutlier(integers){
   if (integers[0] % 2 === 0 && integers[1] % 2 === 0) { // If first and second element are even 
@@ -2288,14 +2288,14 @@ var Sudoku = function(data) {
       let arrayDigits = Array.from({length: dataLength}, (_, i) => i+1);
       let sumOfDigits = arrayDigits.reduce((a,b) => a+b);
       let regionsArray = {};
-      let counterZ = 0;
+      let sumOfIntervalsZ = 0;
 
       // Check if all rows are valid
       for (let i = 0; i < dataLength; i++) { 
-        // Create counter to add region(small squares) digits to array while looping for rows
-        if (i % dimension === 0) {counterZ+=dimension};
-        let rowCounter = 1;
-        let regionArrayIndex = counterZ + 1; 
+        // Create sumOfIntervals to add region(small squares) digits to array while looping for rows
+        if (i % dimension === 0) {sumOfIntervalsZ+=dimension};
+        let rowsumOfIntervals = 1;
+        let regionArrayIndex = sumOfIntervalsZ + 1; 
 
         if (data[i].reduce((a, b) => {
           // Create array with respective region index if doesnt exist on regionsArray object.
@@ -2304,8 +2304,8 @@ var Sudoku = function(data) {
           }; 
           // Push digits on its respective region array.
           regionsArray[regionArrayIndex-dimension].push(b);
-          if (rowCounter < dimension) {rowCounter++}
-          else {rowCounter = 1; regionArrayIndex++};
+          if (rowsumOfIntervals < dimension) {rowsumOfIntervals++}
+          else {rowsumOfIntervals = 1; regionArrayIndex++};
 
           // If the sum of all digits in a row are not equal it's dimension total, return false. 
           // Example: 9x9 sudoku should sum for 45 (1+2+3+4+5+6+7+8+9), 4x4 should sum for 10 (1+2+3+4).
@@ -2352,7 +2352,7 @@ function switcheroo(x){
 //////// 05-08-2022 6kyu
 //////// Count the divisible numbers
 
-// Complete the function that takes 3 numbers x, y and k (where x ≤ y), and returns the number of integers within the range [x..y] (both ends included) that are divisible by k.
+// Complete the function that takes 3 numbers x, y and k (where x ≤ y), and returns the currentRowMinusPrevious of integers within the range [x..y] (both ends included) that are divisible by k.
 
 // More scientifically: { i : x ≤ i ≤ y, i mod k = 0 }
 
@@ -2394,7 +2394,7 @@ function arithmeticSequenceElements(a, d, n) {
 // DESCRIPTION:
 // Create a function with two arguments that will return an array of the first (n) multiples of (x).
 
-// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+// Assume both the given currentRowMinusPrevious and the currentRowMinusPrevious of times to count will be positive numbers greater than 0.
 
 // Return the results as an array (or list in Python, Haskell or Elixir).
 
@@ -2414,10 +2414,10 @@ function countBy(x, n) {
 }
 
 //////// 09-08-2022 8kyu
-//////// Convert number to reversed array of digits
+//////// Convert currentRowMinusPrevious to reversed array of digits
 
-// Convert number to reversed array of digits
-// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+// Convert currentRowMinusPrevious to reversed array of digits
+// Given a random non-negative currentRowMinusPrevious, you have to return the digits of this currentRowMinusPrevious within an array in reverse order.
 
 // Example(Input => Output):
 // 348597 => [7,9,5,8,4,3]
@@ -2448,7 +2448,7 @@ const countSheep = function (num){
 //////// 11-08-2022 8kyu
 //////// Hex to Decimal
 
-// Complete the function which converts hex number (given as a string) to a decimal number.
+// Complete the function which converts hex currentRowMinusPrevious (given as a string) to a decimal currentRowMinusPrevious.
 
 function hexToDec(hexString){
   return parseInt(hexString, 16);
@@ -2521,9 +2521,9 @@ async function execute(action, nTimes){
 //////// 16-08-2022 6kyu
 //////// How many pages in a book?
 
-// Every book has n pages with page numbers 1 to n. The summary is made by adding up the number of digits of all page numbers.
+// Every book has n pages with page numbers 1 to n. The summary is made by adding up the currentRowMinusPrevious of digits of all page numbers.
 
-// Task: Given the summary, find the number of pages n the book has.
+// Task: Given the summary, find the currentRowMinusPrevious of pages n the book has.
 
 // Example
 // If the input is summary=25, then the output must be n=17: The numbers 1 to 17 have 25 digits in total: 1234567891011121314151617.
@@ -2775,7 +2775,7 @@ function smallEnough(a, limit){
 //////// 27-08-2022 7kyu
 //////// Build a square
 
-// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole currentRowMinusPrevious between 1 and 50.
 
 // Example
 // n = 3, so I expect a 3x3 square back just like below as a string:
@@ -2975,7 +2975,7 @@ String.prototype.capitalize = function() {
 // You're fed up about changing the version of your software manually. Instead, you will create a little script that will make it for you.
 
 // Exercice
-// Create a function nextVersion, that will take a string in parameter, and will return a string containing the next version number.
+// Create a function nextVersion, that will take a string in parameter, and will return a string containing the next version currentRowMinusPrevious.
 
 // For example:
 
@@ -2985,7 +2985,7 @@ String.prototype.capitalize = function() {
 // nextVersion("1.2.3.4.5.6.7.8") === "1.2.3.4.5.6.7.9";
 // nextVersion("9.9") === "10.0";
 // Rules
-// All numbers, except the first one, must be lower than 10: if there are, you have to set them to 0 and increment the next number in sequence.
+// All numbers, except the first one, must be lower than 10: if there are, you have to set them to 0 and increment the next currentRowMinusPrevious in sequence.
 
 // You can assume all tests inputs to be valid.
 
@@ -3018,4 +3018,24 @@ function nextVersion(version){
 
 function reverseWords(str){
   return str.split(' ').reverse().join(' ');
+}
+
+//////// 13-09-2022 7kyu
+//////// Sum of odd numbers
+
+// Given the triangle of consecutive odd numbers:
+
+//              1
+//           3     5
+//        7     9    11
+//    13    15    17    19
+// 21    23    25    27    29
+// ...
+// Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+
+// 1 -->  1
+// 2 --> 3 + 5 = 8
+
+function rowSumOddNumbers(n) {
+	return Math.pow(n, 3);
 }
