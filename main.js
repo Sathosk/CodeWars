@@ -3108,13 +3108,14 @@ function giveChange(amount) {
 function stantonMeasure(array) {
   let newArr = array.slice();
   let n = 0;
-  let stantonMeasure = 0;
 
   for (let i=0; i<newArr.length; i++) {
     if (newArr[i] === 1) {
       n++;
-      newArr.splice(i, 1);
-      i--;
+      if (i != newArr.length - 1) {
+        newArr.splice(i, 1);
+        i--;
+      }
     }
   }
 
