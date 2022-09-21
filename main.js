@@ -3122,4 +3122,36 @@ function stantonMeasure(array) {
   return newArr.reduce((counter, curr) => curr == n ? ++counter : counter, 0)
 }
 
-console.log(stantonMeasure([-5, 1]))
+//////// 21-09-2022 6kyu
+//////// Framed Reflection
+
+// You are given a message (text) that you choose to read in a mirror (weirdo). Return what you would see, complete with the mirror frame. Example:
+
+// 'Hello World'
+
+// would give:
+// Words in your solution should be left-aligned.
+
+function mirror(text){
+  const reversedText = text.split(' ').map(word => reverseWord(word));
+  const longestWord = Math.max.apply(null, reversedText.map(word => word.length));
+  const frameTop = '*'.repeat(longestWord+4)+'\n';
+  const frameBtn = '*'.repeat(longestWord+4);
+  let mirrorFrame = reversedText.map(word => word.length === longestWord ? 
+                                             '* ' + word + ' *\n' : 
+                                             '* ' + word + ' '.repeat((longestWord - word.length) + 1) + '*\n');
+  mirrorFrame.unshift(frameTop);
+  mirrorFrame.push(frameBtn);
+                         
+  return mirrorFrame.join('');
+}
+
+function reverseWord(word) {
+  let reversedWord = '';
+
+  for (let i=word.length - 1; i >= 0; i--) {
+    reversedWord += word[i];
+  }
+
+  return reversedWord;
+}
