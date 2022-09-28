@@ -3155,3 +3155,14 @@ function reverseWord(word) {
 
   return reversedWord;
 }
+
+//////// 28-09-2022 7kyu
+//////// Just a simple sorting usage. Create a function that returns the elements of the input-array / list sorted in lexicographical order.
+
+// input: names - unsorted array
+// output: sorted array
+
+const sortme = function(names) {
+  let newArr = [...names];
+  return newArr.sort();
+}
