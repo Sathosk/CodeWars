@@ -3157,7 +3157,9 @@ function reverseWord(word) {
 }
 
 //////// 28-09-2022 7kyu
-//////// Just a simple sorting usage. Create a function that returns the elements of the input-array / list sorted in lexicographical order.
+//////// Just a simple sorting usage. 
+
+//Create a function that returns the elements of the input-array / list sorted in lexicographical order.
 
 // input: names - unsorted array
 // output: sorted array
@@ -3166,3 +3168,18 @@ const sortme = function(names) {
   let newArr = [...names];
   return newArr.sort();
 }
+
+//////// 02-10-2022 6kyu
+//////// Reverse every other word in the string
+
+function reverse(str){
+  let arr = str.trim()
+               .split(' ')
+               .map((word, i) => i % 2 == 0 ? word : word.split('')
+                                                         .reverse()
+                                                         .join(''));
+
+  return arr.join(' ');
+}
+
+console.log(reverse(' oi como vai voce?'))
