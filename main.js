@@ -3299,7 +3299,7 @@ function points(games) {
   return score;
 }
 
-//////// 10-10-2022 8kyu
+//////// 11-10-2022 8kyu
 //////// Convert string to camel case
 
 // Complete the method/function so that it converts dash/underscore delimited words into camel casing. 
@@ -3326,4 +3326,24 @@ function points(games) {
 
 function toCamelCase(str){
   return str.replace(/[-_](.)/g, (match, c) => c.toUpperCase())
+}
+
+//////// 12-10-2022 7kyu
+//////// Filter Coffee
+
+// You love coffee and want to know what beans you can afford to buy it.
+
+// The first argument to your search function will be a number which represents your budget.
+
+// The second argument will be an array of coffee bean prices.
+
+// Your 'search' function should return the stores that sell coffee within your budget.
+
+// The search function should return a string of prices for the coffees beans you can afford. 
+// The prices in this string are to be sorted in ascending order.
+
+function search(budget, prices) {
+    return prices.filter((n) => n <= budget)
+                 .sort((a, b) => a - b)
+                 .join(',');
 }
