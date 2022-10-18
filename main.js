@@ -3416,3 +3416,20 @@ function shadesOfGrey(n){
 
   return arrayOfShades;
 }
+
+//////// 17-10-2022 7kyu
+//////// esreveR
+
+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+
+// (the dedicated builtin(s) functionalities are deactivated)
+
+const reverse = function(array) {
+  let reversedArr = [];
+  
+  for (let i=array.length-1; i>=0; i--) {
+    reversedArr.push(array[i]);
+  }
+  
+  return reversedArr
+}
