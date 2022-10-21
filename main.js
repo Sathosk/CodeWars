@@ -3477,3 +3477,30 @@ function ascendDescend(length, minimum, maximum) {
 
   return result.substring(0, length);
 }
+
+//////// 20-10-2022 5kyu **
+//////// Ascend, Descend, Repeat?
+
+// Any real number may be represented in the following form with integer coefficients. In fact, all rational numbers have finite representation, 
+// and all irrational numbers have infinite representation. The latter case is exactly, what we've come for today :D
+
+// The task
+// Your task will be to write a generator function to yield integer coefficients of the continued fraction of sqrt(N). Not only coefficients must be precise, 
+// but you'll have to deal with numbers up to 2^1024.
+
+// Tip: the amount of coefficients before hitting the period is bounded by 0.72 * sqrt(N), but obviously we cannot generate that much in adequate time for big numbers. 
+// The test suite expects your code to generate 2000-4000 coefficients for a single number.
+
+const generateContinuedFraction = function* (n){
+  const s = BigInt(Math.floor(Math.sqrt(Number(n))));
+  yield s;
+  while (s**2n == n) yield 0n;
+  let a = s, p = 0n, q = 1n;
+  while(true){
+    p = a*q-p;
+    q = (n-p**2n)/q;
+    a = (s+p)/q;
+    yield a;
+    while (q == 1n) yield 0n; 
+  }
+}
