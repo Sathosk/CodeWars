@@ -3558,3 +3558,44 @@ function upArray(arr) {
 function enough(cap, on, wait) {
   return Math.max(wait + on - cap, 0)
 }
+
+//////// 24-10-2022 6kyu
+//////// +1 Array
+
+// Given an array of integers of any length, 
+// return an array that has 1 added to the value represented by the array.
+
+// the array can't be empty
+// only non-negative, single digit integers are allowed
+// Return nil (or your language's equivalent) for invalid inputs.
+
+// Examples
+// [4, 3, 2, 5] would return [4, 3, 2, 6]
+// [1, 2, 3, 9] would return [1, 2, 4, 0]
+// [9, 9, 9, 9] would return [1, 0, 0, 0, 0]
+// [0, 1, 3, 7] would return [0, 1, 3, 8]
+
+function upArray(arr){
+  let result = [];
+  if (!arr.length) return null;
+  let increaseNext = true;
+
+  for (let i=arr.length - 1; i >= 0; i--) {
+    if (arr[i] < 0 || arr[i] > 9) return null;
+    if (arr[i] == 9 && increaseNext) {
+      result.unshift(0);
+      if (i == 0) result.unshift(1);
+      increaseNext = true;
+    }
+    else {
+      if (increaseNext) {
+        result.unshift(arr[i] + 1);
+        increaseNext = false;
+      } else {
+        result.unshift(arr[i])
+      }
+    }
+  }
+
+  return result;
+}
