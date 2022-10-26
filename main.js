@@ -3622,7 +3622,7 @@ function incrementer(nums) {
   let result = [];
 
   for (let i=0; i<nums.length; i++) {
-    nums[i] + (i+1) > 9 ? result.push(nums[i] + (i+1) - 10) : result.push(nums[i] + (i+1));
+    nums[i] + (i+1) > 9 ? result.push((nums[i] + (i+1)) % 10) : result.push(nums[i] + (i+1));
   }
 
   return result;
