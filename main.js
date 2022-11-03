@@ -3753,15 +3753,25 @@ function vowelOne(s){
 
 function comp(array1, array2){
   if (!array1 || !array2) return false;
+  let i = 0;
 
-  for (let i=0; i<array1.length; i++) {
-    if (!array2.includes(array1[i] ** 2)) return false;
+  while (array2.length) {
+    let indexB = array2.indexOf(array1[i] ** 2);
+
+    if (indexB < 0) return false;
+
+    array2.splice(indexB, 1);
+    i++;
   }
 
   return true;
+  // ----- more readable but less performant
+  // let arrayA = array1.sort((a,b) => a - b);
+  // let arrayB = array2.sort((a,b) => a - b);
+
+  // for (let i=0; i<arrayA.length; i++) {
+  //   if (arrayA[i] ** 2 !== arrayB[i]) return false;
+  // }
+
+  // return true;
 }
-
-let a1 = null;
-let a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
-
-console.log(comp(a1, a2))
