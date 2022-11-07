@@ -3775,3 +3775,22 @@ function comp(array1, array2){
 
   // return true;
 }
+
+//////// 07-11-2022 7kyu
+//////// Changing letters
+
+// When provided with a String, capitalize all vowels
+
+// For example:
+
+// Input : "Hello World!"
+
+// Output : "HEllO WOrld!"
+
+// Note: Y is not a vowel in this kata.
+
+function swap (string) {
+  return string.replace(/[aeiou]/g, (m) => m.toUpperCase());
+}
+
+console.log(swap("HelloWorld!"))
