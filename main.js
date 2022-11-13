@@ -3874,12 +3874,9 @@ String.prototype.toAlternatingCase = function () {
   let newStr = '';
   
   for (let i=0; i<this.length; i++) {
-    if (this[i].charCodeAt() < 65) newStr += this[i];
-    else {
-      this[i].charCodeAt() > 90 ?
-      newStr += String.fromCharCode(this[i].charCodeAt() - 32) :
-      newStr += String.fromCharCode(this[i].charCodeAt() + 32) ;
-    }
+      this[i] === this[i].toLowerCase() ?
+      newStr += this[i].toUpperCase() :
+      newStr += this[i].toLowerCase() ;
   }
 
   return newStr;
