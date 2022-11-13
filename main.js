@@ -3863,4 +3863,24 @@ function spoonerize(words) {
          splitArr[0][0] + splitArr[1].slice(1) ;
 }
 
-console.log(spoonerize("nit picking"));
+//////// 13-11-2022 8kyu
+//////// altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+
+// altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+// Define String.prototype.toAlternatingCase (or a similar function/method such as to_alternating_case/toAlternatingCase/ToAlternatingCase in your selected language; 
+// see the initial solution for details) such that each lowercase letter becomes uppercase and each uppercase letter becomes lowercase.
+
+String.prototype.toAlternatingCase = function () {
+  let newStr = '';
+  
+  for (let i=0; i<this.length; i++) {
+    if (this[i].charCodeAt() < 65) newStr += this[i];
+    else {
+      this[i].charCodeAt() > 90 ?
+      newStr += String.fromCharCode(this[i].charCodeAt() - 32) :
+      newStr += String.fromCharCode(this[i].charCodeAt() + 32) ;
+    }
+  }
+
+  return newStr;
+}
