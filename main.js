@@ -3952,21 +3952,11 @@ function longestRepetition(s) {
 // Don't forget the space after the closing parentheses!
 
 function createPhoneNumber(numbers){
-  let areaCode = '';
-  let phoneNumber = '';
+  let format = '(xxx) xxx-xxxx'
 
   for (let i=0; i<numbers.length; i++) {
-    if (i < 3) {
-      areaCode += numbers[i];
-    } else {
-      if (i == 6) {
-        phoneNumber += '-'
-      }
-      phoneNumber += numbers[i];
-    }
+    format = format.replace('x', numbers[i]);
   }
 
-  return `(${areaCode}) ${phoneNumber}`;
+  return format;
 }
-
-console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]))
