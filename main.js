@@ -3982,19 +3982,15 @@ function generateHashtag (str) {
   if (!str || !str.replace(/ /g, '')) return false;
 
   let strArr = str.replace(/  +/g, ' ').trim().split(' '); // Replace multiple spaces to single space > trim spaces from begin/end > split from spaces.
+  if (strArr[0].charAt(0) !== '#') strArr[0] = '#' + strArr[0].charAt(0).toUpperCase() + strArr[0].slice(1);
 
   for (let i=0; i<strArr.length; i++) {
     let firstChar = strArr[i][0];
-    if (i == 0) {
-      firstChar === '#' ? 
-        firstChar.toUpperCase() + strArr[0].slice(1) : 
-        strArr[i] = '#' + firstChar.toUpperCase() + strArr[i].slice(1)}
-    else {
       strArr[i] = firstChar.toUpperCase() + strArr[i].slice(1);
-    }
   }
   
   let result = strArr.join('');
   return result.length > 140 ? false : result;
 }
-console.log(generateHashtag('  h    hh  hh'))
+
+console.log(generateHashtag('   hh   hh  hh'))
