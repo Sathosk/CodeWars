@@ -3960,3 +3960,41 @@ function createPhoneNumber(numbers){
 
   return format;
 }
+
+//////// 02-12-2022 5kyu
+//////// The Hashtag Generator
+
+// The marketing team is spending way too much time typing in hashtags.
+// Let's help them with our own Hashtag Generator!
+
+// Here's the deal:
+
+// It must start with a hashtag (#).
+// All words must have their first letter capitalized.
+// If the final result is longer than 140 chars it must return false.
+// If the input or the result is an empty string it must return false.
+// Examples
+// " Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
+// "    Hello     World   "                  =>  "#HelloWorld"
+// ""                                        =>  false
+
+function generateHashtag (str) {
+  if (!str || !str.replace(/ /g, '')) return false;
+
+  let strArr = str.replace(/  +/g, ' ').trim().split(' '); // Replace multiple spaces to single space > trim spaces from begin/end > split from spaces.
+
+  for (let i=0; i<strArr.length; i++) {
+    let firstChar = strArr[i][0];
+    if (i == 0) {
+      firstChar === '#' ? 
+        firstChar.toUpperCase() + strArr[0].slice(1) : 
+        strArr[i] = '#' + firstChar.toUpperCase() + strArr[i].slice(1)}
+    else {
+      strArr[i] = firstChar.toUpperCase() + strArr[i].slice(1);
+    }
+  }
+  
+  let result = strArr.join('');
+  return result.length > 140 ? false : result;
+}
+console.log(generateHashtag('  h    hh  hh'))
