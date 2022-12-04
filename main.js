@@ -3993,4 +3993,5 @@ function generateHashtag (str) {
   return result.length > 140 ? false : result;
 }
 
-console.log(generateHashtag('   hh   hh  hh'))
+//////// 03-12-2022 5kyu
+//////// 
