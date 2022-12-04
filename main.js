@@ -3993,5 +3993,61 @@ function generateHashtag (str) {
   return result.length > 140 ? false : result;
 }
 
-//////// 03-12-2022 5kyu
-//////// 
+//////// 04-12-2022 5kyu
+//////// Get match by pattern
+
+// You are given a string with three lowercase letters ( pattern ).
+
+// Your Task
+
+// Implement a function find_matched_by_pattern(pattern) that returns a predicate function, 
+// testing a string input and returning true if the string is matching the pattern, false otherwise.
+
+// A word is considered a match for a given pattern if the first occurrence of each letter of the pattern is found in the same order in the word. 
+// If a character in the pattern is duplicated, the same logic applies further.
+
+// The pattern will always be a string of size 3.
+
+// Example of use:
+
+// predicate = find_matched_by_pattern('acs')
+// predicate('access') # True
+// predicate('sacrifice') # False 
+// Examples of inputs/outputs:
+
+// Pattern:  Word:     Match:
+// acs       access    true
+//           ascces    false
+//           scares    false
+// vvl       veturvel  true
+//           velivel   false
+// bmb       bomb      true
+//           babyboom  false
+
+function findMatchedByPattern(pattern) {
+  return function(str) {
+    let indexArr = []; // Array to hold first index of each letter on pattern.
+
+    for (let i=0; i<pattern.length; i++) {
+      indexArr.push(str.indexOf(pattern[i])); // Push first index of each letter on patter.    
+      str = str.replace(pattern[i], '-'); // Replace pattern letter with '-' to avoid complications on indexOf.
+    }
+
+    let currentIndex = indexArr[0]; // Current index of pattern letter sequence.
+
+    return indexArr.every((n, i) => {
+      if (n < 0) return false; // If pattern letter not found return false;
+      if (i == 0) return true; // First index is always true;
+      if (n > currentIndex) {
+        currentIndex = n; // Change to next letter index of pattern sequence.
+        return true;
+      }
+
+      return false;
+    })
+  }
+}
+
+const predicate = findMatchedByPattern('kjk');
+
+console.log(predicate('skyjack'))
