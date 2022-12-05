@@ -4065,7 +4065,7 @@ function findMatchedByPattern(pattern) {
 function digitalRoot(n) {
 
   while (n > 9) {
-    n = String(n).split('').map(n => +n).reduce((acc, cur) => acc + cur);
+    n = String(n).split('').reduce((acc, cur) => acc + +cur, 0);
   }
 
   return n;
