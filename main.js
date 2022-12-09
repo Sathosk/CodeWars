@@ -4115,3 +4115,6 @@ function lastSurvivor(letters, coords) {
 function invert(array) {
   return array.map(n => -n)
 }
+
+//////// 09-12-2022 5kyu
+//////// 
