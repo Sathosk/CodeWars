@@ -4129,3 +4129,8 @@ function invert(array) {
 function maxBisectors(n) {
   return Math.floor(n * n / 4);
 }
+
+//////// 11-12-2022 8kyu
+//////// Count the number of cubes with paint on
+
+const countSquares = cuts => cuts === 0 ? 1 : (6 * cuts * cuts) + 2;
