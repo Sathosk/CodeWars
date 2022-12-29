@@ -4351,3 +4351,19 @@ const comparator = function(a,b) {
   const pos = ['On', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'a'];
   return pos.indexOf(a.split(' ')[0]) - pos.indexOf(b.split(' ')[0]);
 }
+
+//////// 29-12-2022 7kyu
+//////// Frequency sequence
+
+// Your task is to return an output string that translates an input string s by replacing each 
+// character in s with a number representing the number of times that character occurs in s and separating each number with the sep character(s).
+
+// Example (s, sep --> Output)
+
+// "hello world", "-" --> "1-1-3-3-2-1-1-2-1-3-1"
+// "19999999"   , ":" --> "1:7:7:7:7:7:7:7"
+// "^^^**$"     , "x" --> "3x3x3x2x2x1"
+
+function freqSeq(str, sep) {
+  return str.split('').map((v, i, arr) => arr.filter(vi => vi === v).length).join(sep);
+}
