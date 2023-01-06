@@ -4463,10 +4463,10 @@ function moreZeros(s){
 
 function solution(number)
 {
-  let result   = '', // XV
+  let result   = '',
       decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
       roman    = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
-                            //10   //8   // number 5
+
 
   for (let i=0; i<decimals.length; i++) {
     if (number === 0) break;
@@ -4478,4 +4478,23 @@ function solution(number)
   }
   
   return result;
+}
+
+//////// 06-01-2023 7kyu
+//////// Count consonants
+
+// Write a function consonantCount, consonant_count or ConsonantCount that takes a string of 
+// English-language text and returns the number of consonants in the string.
+
+// Consonants are all letters used to write English excluding the vowels a, e, i, o, u.
+
+function consonantCount(str) {
+  let res = 0;
+  const consonant = 'bcdfghjklmnpqrstvwxyz';
+
+  for (let i=0; i<str.length; i++) {
+    if (consoants.includes(str[i].toLowerCase())) res++;
+  }
+
+  return res;
 }
