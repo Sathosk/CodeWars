@@ -4649,8 +4649,6 @@ function palindrome(string) {
 // If there is no scent, or there are less than three in a row, there is no baby, or they do not form a straight vertical of horizontal line, 
 // return "Calm before the storm".
 
-// Lines of scent cannot pass through the baby (or if they do they dont count).
-
 function pooRoulette(p) {
   const flatArray = p.flat(); // Transform nested array in flat array
   const indexOfB = flatArray.indexOf('B'); // Find index of baby bottom
