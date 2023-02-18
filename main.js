@@ -4680,7 +4680,6 @@ function pooRoulette(p) {
     return 'Calm before the storm';
   }
 
-
   return testScent(flatArray, indexOfB, directionObject);
 }
 
