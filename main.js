@@ -4729,7 +4729,7 @@ function isDivisible(n, x, y) {
   return n % x === 0 && n % y === 0;
 }
 
-//////// 17-02-2023 8kyu
+//////// 18-02-2023 8kyu
 //////// Does array x contain all values within array y?
 
 // We want to extend the array class so that it provides a contains_all? method. 
@@ -4745,3 +4745,39 @@ function isDivisible(n, x, y) {
 Object.defineProperty( Array.prototype, "containsAll", { value: function containsAll(a) {
   return a.every(n => this.includes(n));
 } } );
+
+//////// 19-02-2023 8kyu
+//////// Format words into a sentence
+
+// Complete the method so that it formats the words into a single comma separated value. 
+// The last word should be separated by the word 'and' instead of a comma. The method takes in an array of strings and returns a single formatted string.
+
+// Note:
+
+// Empty string values should be ignored.
+// Empty arrays or null/nil/None values being passed into the method should result in an empty string being returned.
+// Example: (Input --> output)
+
+// ['ninja', 'samurai', 'ronin'] --> "ninja, samurai and ronin"
+// ['ninja', '', 'ronin'] --> "ninja and ronin"
+// [] -->""
+
+function formatWords(words){
+  if (!words || words.length == 0) return '';
+
+  const validWords = words.filter(word => word.length > 0);
+  const separators = [', ', ' and '];
+  
+  if (validWords.length > 0) {
+    let formattedSentence;
+
+    if (validWords.length === 2) formattedSentence = validWords.join(separators[1]);
+    else {
+      formattedSentence = validWords.join(separators[0])
+                                    .replace(/, (?=[^,]*$)/, separators[1]);
+    }
+    return formattedSentence;
+  } else {
+    return '';
+  }
+}
