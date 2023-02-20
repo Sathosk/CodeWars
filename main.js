@@ -4781,3 +4781,30 @@ function formatWords(words){
     return '';
   }
 }
+
+//////// 20-02-2023 7kyu
+//////// Ordered Count of Characters
+
+// Count the number of occurrences of each character and return it as a (list of tuples) in order of appearance. For empty output return (an empty list).
+
+// Consult the solution set-up for the exact data structure implementation depending on your language.
+
+// Example:
+
+// orderedCount("abracadabra") == [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
+
+const orderedCount = function (text) {
+  let characterCount = {};
+  let currText = text;
+  
+  for (letter of text) {
+
+    characterCount['_' + letter] ?
+    characterCount['_' + letter]++ :
+    characterCount['_' + letter] = 1 ;
+
+    currText = currText.slice(1);
+  }
+  
+  return Object.entries(characterCount).map(arr => [arr[0].slice(1), arr[1]]);
+}
