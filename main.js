@@ -6,23 +6,23 @@ n = 0  ==> [1]        # [2^0]
 n = 1  ==> [1, 2]     # [2^0, 2^1]
 n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2] */
 
-function powersOfTwo(n){
-    let arr = [];
-    
-    for (let j=0; j<=n; j++) {
-      arr.push(Math.pow(2, j));
-    }
-    
-    return arr;
+function powersOfTwo(n) {
+  let arr = [];
+
+  for (let j = 0; j <= n; j++) {
+    arr.push(Math.pow(2, j));
   }
+
+  return arr;
+}
 
 ///////// 19-03-2022 8kyu
 /* Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
 
 Can you help her? */
 
-function greet(name){
-  if(name === "Johnny") {
+function greet(name) {
+  if (name === "Johnny") {
     return "Hello, my love!";
   } else {
     return "Hello, " + name + "!";
@@ -38,7 +38,7 @@ highAndLow("1 2 -3 4 5"); // return "5 -3"
 highAndLow("1 9 3 4 -5"); // return "9 -5"*/
 
 function highAndLow(numbers) {
-  numbers = numbers.split(' ').sort((a, b) => a-b);
+  numbers = numbers.split(' ').sort((a, b) => a - b);
   return numbers[numbers.length - 1] + ' ' + numbers[0];
 }
 
@@ -66,11 +66,11 @@ function even_or_odd(currentRowMinusPrevious) {
 
 function getSum(a, b) {
   const smallestNumber = Math.min(a, b),
-        biggestNumber = Math.max(a, b);
+    biggestNumber = Math.max(a, b);
   let result = 0;
 
-  for (let j=smallestNumber; j<=biggestNumber; j++) {
-    result += j; 
+  for (let j = smallestNumber; j <= biggestNumber; j++) {
+    result += j;
   }
 
   return output;
@@ -87,7 +87,7 @@ function getSum(a, b) {
 // The parameter of accum is a string which includes only letters from a..z and A..Z.
 
 function accum(s) {
-	return [...s].map((element, j) => {
+  return [...s].map((element, j) => {
     j++;
     const str = element.repeat(j).toLowerCase();
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -111,7 +111,7 @@ const summation = num => num * (1 + num) / 2;
 //////// 23-03-2022 6kyu
 //////// Stop gninnipS My sdroW!
 // Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
-function spinWords(string){
+function spinWords(string) {
   return string.split(' ').map(element => element.length >= 5 ? element.split('').reverse().join('') : element).join(' ');
 }
 // Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" 
@@ -128,15 +128,15 @@ function spinWords(string){
 // * 'abc' =>  ['ab', 'c_']
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
-function solution(str){
-   let arr = str.split('');
-   (arr.length % 2 !== 0) ? arr.push('_') : arr;
-   for (let j=2; j<=arr.length; j++) {
-     if (j % 3 === 0) {
-       arr.splice(j-1, 0, '.')
-     }
-   }
-   return arr.length === 0 ? arr = [] : arr.join('').split('.');
+function solution(str) {
+  let arr = str.split('');
+  (arr.length % 2 !== 0) ? arr.push('_') : arr;
+  for (let j = 2; j <= arr.length; j++) {
+    if (j % 3 === 0) {
+      arr.splice(j - 1, 0, '.')
+    }
+  }
+  return arr.length === 0 ? arr = [] : arr.join('').split('.');
 }
 
 
@@ -200,7 +200,7 @@ function numberToString(num) {
 //////// Convert a Number to a String!
 //Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
 
-function boolToWord( bool ){
+function boolToWord(bool) {
   return bool ? 'Yes' : 'No';
 }
 
@@ -211,7 +211,7 @@ function boolToWord( bool ){
 // 'world'  =>  'dlrow'
 // 'word'   =>  'drow'
 
-function solution(str){
+function solution(str) {
   return str.split('').reverse().join('');
 }
 
@@ -252,7 +252,7 @@ function makeNegative(num) {
 // repeatStr(6, "I") // "IIIIII"
 // repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
 
-function repeatStr (n, s) {
+function repeatStr(n, s) {
   return s.repeat(n);
 }
 
@@ -262,9 +262,9 @@ function repeatStr (n, s) {
 // You're given one parameter, the original string. 
 // You don't have to worry with strings with less than two characters.
 
-function removeChar(str){
+function removeChar(str) {
   return str.slice(1, -1);
- };
+};
 
 
 //////// 08-04-2022 7kyu
@@ -272,19 +272,19 @@ function removeChar(str){
 // Return the currentRowMinusPrevious (count) of vowels in the given string.
 
 // We will consider a, e, j, o, u as vowels for this Kata (but not y).
- 
+
 // The input string will only consist of lower case letters and/or spaces.
 
 function getCount(str) {
   let vowelsCount = 0;
   let vowelArray = ['a', 'e', 'j', 'o', 'u']
-  
-  for (let j=0; j<str.length; j++) {
+
+  for (let j = 0; j < str.length; j++) {
     if (vowelArray.includes(str[j])) {
       vowelsCount++;
     }
   }
-  
+
   return vowelsCount;
 }
 
@@ -301,7 +301,7 @@ function getCount(str) {
 
 class SmallestIntegerFinder {
   findSmallestInt(args) {
-    return args.sort((a, b) => a-b)[0] 
+    return args.sort((a, b) => a - b)[0]
   }
 }
 
@@ -315,7 +315,7 @@ class SmallestIntegerFinder {
 // * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
 // * url = "https://www.cnet.com"                -> domain name = cnet"
 
-function domainName(url){
+function domainName(url) {
   let arr = url.split('.');
   if (arr.includes('www')) {
     return arr[1];
@@ -335,7 +335,7 @@ function domainName(url){
 
 // For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
 
-function squareSum(numbers){
+function squareSum(numbers) {
   return numbers.reduce((acc, curr) => Math.pow(curr, 2) + acc, 0);
 }
 
@@ -344,7 +344,7 @@ function squareSum(numbers){
 
 // Simple, remove the spaces from the string, then return the resultant string.
 
-function noSpace(x){
+function noSpace(x) {
   return newStr = x.replace(/\s+/g, '')
 }
 
@@ -389,7 +389,7 @@ function countSheeps(arrayOfSheep) {
 // time = 11.8--> litres = 5
 
 function litres(time) {
-  return Math.floor(time*0.5);
+  return Math.floor(time * 0.5);
 }
 
 //////// 16-04-2022 8kyu
@@ -408,7 +408,7 @@ function litres(time) {
 // 2000 --> 20
 
 function century(year) {
-  let yearDivided = year/100;
+  let yearDivided = year / 100;
   let roundedCentury = Math.floor(yearDivided);
   return yearDivided > roundedCentury ? roundedCentury + 1 : roundedCentury;
 }
@@ -429,7 +429,7 @@ function century(year) {
 // "1405" --> 1405
 // "-7" --> -7
 
-var stringToNumber = function(str){
+var stringToNumber = function (str) {
   return +str;
 }
 
@@ -443,7 +443,7 @@ var stringToNumber = function(str){
 // solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
 // solution(null); // should return []
 
-function solution(nums){
+function solution(nums) {
   return nums ? nums.sort((a, b) => a - b) : [];
 }
 
@@ -457,10 +457,10 @@ function solution(nums){
 
 // Write a method is_narcissistic(j) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not j is a Narcissistic Number.
 
-function isNarcissistic(n){
+function isNarcissistic(n) {
   let arrayN = [...String(n)].map(el => Number(el) ** [...String(n)].length)
-                             .reduce((acc, cur) => acc + cur, 0);
-                             
+    .reduce((acc, cur) => acc + cur, 0);
+
   return arrayN === n ? true : false;
 }
 
@@ -473,7 +473,7 @@ function isNarcissistic(n){
 
 // Note: The function accepts an integer and returns an integer
 
-function squareDigits(num){
+function squareDigits(num) {
   return +num.toString().split('').map(el => el ** 2).join('');
 }
 
@@ -490,7 +490,7 @@ function squareDigits(num){
 
 // patrick feeney => P.F
 
-function abbrevName(name){
+function abbrevName(name) {
   return name.split(' ').map(el => el[0].toUpperCase()).join('.')
 }
 
@@ -534,7 +534,7 @@ function disemvowel(str) {
 // The middle character(s) of the word represented as a string.
 
 function getMiddle(s) {
-  return s.length % 2 === 0 ? s.slice(s.length/2-1, s.length/2+1) : s[Math.ceil(s.length/2-1)]
+  return s.length % 2 === 0 ? s.slice(s.length / 2 - 1, s.length / 2 + 1) : s[Math.ceil(s.length / 2 - 1)]
 }
 
 //////// 24-04-2022 7kyu
@@ -549,7 +549,7 @@ function getMiddle(s) {
 
 // Input: 123456789 Output: 987654321
 
-function descendingOrder(n){
+function descendingOrder(n) {
   return Number(String(n).split('').sort((a, b) => b - a).join(''))
 }
 
@@ -564,7 +564,7 @@ function descendingOrder(n){
 // filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
 function filter_list(l) {
-    return l.filter(el => typeof el === 'currentRowMinusPrevious')
+  return l.filter(el => typeof el === 'currentRowMinusPrevious')
 }
 
 //////// 26-04-2022 6kyu
@@ -585,9 +585,9 @@ function filter_list(l) {
 function alphabetPosition(text) {
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'
   return text.replace(/[^a-zA-Z]/g, '')
-             .split('')
-             .map(el => alphabet.indexOf(el.toLowerCase()) + 1)
-             .join(' ')
+    .split('')
+    .map(el => alphabet.indexOf(el.toLowerCase()) + 1)
+    .join(' ')
 }
 
 //////// 27-04-2022 6kyu
@@ -602,7 +602,7 @@ function alphabetPosition(text) {
 // "12345"  -->  false
 // "a234"   -->  false
 
-function validatePIN (pin) {
+function validatePIN(pin) {
   return (pin.length !== 4 && pin.length !== 6) ? false : pin.search(/[^0-9]/g) === -1 ? true : false;
 
   // if(pin.length !== 4 && pin.length !== 6) {
@@ -621,7 +621,7 @@ function validatePIN (pin) {
 
 // function bingo(array) {
 //   let bingo = 'BINGO'.split('')
-  
+
 //   let newArr = array.map(currentRowMinusPrevious => (currentRowMinusPrevious+9).toString(36).toUpperCase())
 
 //   return bingo.map(letter => newArr.includes(letter)).includes(false) ? 'LOSE' : 'WIN';
@@ -644,14 +644,14 @@ function bingo(array) {
 
 // All letters will be lowercase and all inputs will be valid.
 
-function high(x){
+function high(x) {
   let arrayDeNumero = x.split(' ')
-                       .map(palavra => palavra.split('')
-                                              .map(letra => letra.toLowerCase().charCodeAt() - 96))
-                       .map(arrayNumero => arrayNumero.reduce((acumulador, atual) => acumulador + atual), 0);
+    .map(palavra => palavra.split('')
+      .map(letra => letra.toLowerCase().charCodeAt() - 96))
+    .map(arrayNumero => arrayNumero.reduce((acumulador, atual) => acumulador + atual), 0);
 
   return x.split(' ')[arrayDeNumero.indexOf(Math.max(...arrayDeNumero))];
-} 
+}
 
 //////// 30-04-2022 6kyu
 //////// Counting Duplicates
@@ -668,11 +668,11 @@ function high(x){
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-function duplicateCount(text){
+function duplicateCount(text) {
   return text.toLowerCase()
-             .split('')
-             .filter((element, index, array) => array.indexOf(element) !== index && array.lastIndexOf(element) === index)
-             .length;
+    .split('')
+    .filter((element, index, array) => array.indexOf(element) !== index && array.lastIndexOf(element) === index)
+    .length;
 }
 
 //////// 01-05-2022 6kyu
@@ -687,11 +687,11 @@ function duplicateCount(text){
 // Place all people in alphabetical order where Mothers are followed by their children, j.e. "aAbaBb" => "AaaBbb".
 
 function findChildren(dancingBrigade) {
-	return dancingBrigade.toLowerCase()
-                       .split('')
-                       .sort()
-                       .map((element, index, array) => array.indexOf(element) === index ? element.toUpperCase() : element)
-                       .join('')
+  return dancingBrigade.toLowerCase()
+    .split('')
+    .sort()
+    .map((element, index, array) => array.indexOf(element) === index ? element.toUpperCase() : element)
+    .join('')
 }
 
 //////// 02-05-2022 8kyu
@@ -734,7 +734,7 @@ function findOdd(a) {
     let sumOfIntervals = 0;
 
     if (array.indexOf(currentRowMinusPrevious) === index) {
-      for (j=0; j<array.length; j++) {
+      for (j = 0; j < array.length; j++) {
         array[j] === currentRowMinusPrevious ? sumOfIntervals++ : sumOfIntervals;
       }
 
@@ -750,8 +750,8 @@ function findOdd(a) {
 
 // Write a function that will take the currentRowMinusPrevious of petals of each flower and return true if they are in love and false if they aren't.
 
-function lovefunc(flower1, flower2){
-  return (flower1+flower2) % 2 !== 0;
+function lovefunc(flower1, flower2) {
+  return (flower1 + flower2) % 2 !== 0;
 }
 
 //////// 04-05-2022 7kyu
@@ -774,9 +774,9 @@ function reverseWords(str) {
 
 // String will never be empty and you do not need to account for different data types.
 
-function findShort(s){
+function findShort(s) {
   return s.split(' ')
-          .reduce((acc, curr) => curr.length < acc ? acc = curr.length : acc, 10);
+    .reduce((acc, curr) => curr.length < acc ? acc = curr.length : acc, 10);
   //return s.split(' ').map(word => word.length).sort((a, b) => a - b)[0]
 }
 
@@ -792,7 +792,7 @@ function findShort(s){
 // For example if the input currentRowMinusPrevious is 2, and the input list is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
 // With list [20,37,20,21] and currentRowMinusPrevious 1, the result would be [20,37,21].
 
-function deleteNth(arr,n){
+function deleteNth(arr, n) {
   let newArr = [];
 
   return newArr;
@@ -805,13 +805,13 @@ function deleteNth(arr,n){
 
 // Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the currentRowMinusPrevious passed in. Additionally, if the currentRowMinusPrevious is negative, return 0 (for languages that do have them)..
 
-function solution(currentRowMinusPrevious){
+function solution(currentRowMinusPrevious) {
   let sumOfIntervals = 0;
-  
-  for (j=0; j<currentRowMinusPrevious; j++) {
+
+  for (j = 0; j < currentRowMinusPrevious; j++) {
     if (j % 3 === 0 || j % 5 === 0) {
       sumOfIntervals += j;
-    } 
+    }
   }
   return sumOfIntervals;
 }
@@ -828,8 +828,8 @@ function solution(currentRowMinusPrevious){
 // 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
 // 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
 
-function addBinary(a,b) {
-  return (a+b).toString(2)
+function addBinary(a, b) {
+  return (a + b).toString(2)
 }
 
 //////// 08-05-2022 7kyu
@@ -841,7 +841,7 @@ function addBinary(a,b) {
 
 const reverseSeq = n => {
   let arr = [];
-  for (j=n; j>0; j--) {
+  for (j = n; j > 0; j--) {
     arr.push(j)
   };
   return arr;
@@ -887,11 +887,11 @@ function removeSmallest(numbers) {
 // runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
 //  // => [[34,'a'], [3,'b']]
 
-var runLengthEncoding = function(str){
+var runLengthEncoding = function (str) {
   let arr = [], sum = 1;
 
-  for (j=0; j<str.length; j++) {
-    if (str[j] === str[j+1]) {
+  for (j = 0; j < str.length; j++) {
+    if (str[j] === str[j + 1]) {
       sum++
     } else {
       arr.push([sum, str[j]])
@@ -935,16 +935,16 @@ function plural(n) {
 
 function sumArray(array) {
   if (array && array.length >= 3) {
-    return array.filter((el, index, array) => { 
+    return array.filter((el, index, array) => {
 
       const minValue = Math.min.apply(null, array)
       const maxValue = Math.max.apply(null, array)
 
       return ((minValue !== el || array.indexOf(minValue) !== index) &&
-              (maxValue !== el || array.indexOf(maxValue) !== index)
+        (maxValue !== el || array.indexOf(maxValue) !== index)
       )
     }).reduce((sum, cur) => sum + cur)
-  } else { return 0}
+  } else { return 0 }
 }
 
 //////// 12-05-2022 8kyu
@@ -988,7 +988,7 @@ function countSmileys(arr) {
   return arr.reduce((acc, curr) => {
     if (smileArray.includes(curr)) {
       acc++
-    } 
+    }
 
     return acc
   }, 0)
@@ -1002,10 +1002,10 @@ function countSmileys(arr) {
 
 // Return True if yes, False otherwise :)
 
-function hero(bullets, dragons){
+function hero(bullets, dragons) {
   return dragons * 2 <= bullets;
 }
-  
+
 //////// 16-05-2022 6kyu
 //////// Detect Pangram
 
@@ -1013,12 +1013,12 @@ function hero(bullets, dragons){
 
 // Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
-function isPangram(string){
+function isPangram(string) {
   let alphabet = 'abcdefghijklmnopqrstuvwxyz';
   let newArr = [];
   let lowerCaseStr = string.toLowerCase()
 
-  for (let j=0; j<string.length;j++) {
+  for (let j = 0; j < string.length; j++) {
     if (!newArr.includes(lowerCaseStr[j]) && alphabet.includes(lowerCaseStr[j])) {
       newArr.push(lowerCaseStr[j])
     }
@@ -1105,12 +1105,12 @@ function longestConsec(strarr, k) {
 
   let biggestWord = '';
 
-  for (let j=0; j<=strarr.length-k; j++) {
-    let newStr = strarr[j] 
+  for (let j = 0; j <= strarr.length - k; j++) {
+    let newStr = strarr[j]
 
-    for (let j=1; j<k; j++) {
-      if (j > strarr.length - k) {return}
-      newStr = newStr + strarr[j+j] 
+    for (let j = 1; j < k; j++) {
+      if (j > strarr.length - k) { return }
+      newStr = newStr + strarr[j + j]
     }
     console.log(newStr)
     if (newStr.length > biggestWord.length) biggestWord = newStr;
@@ -1134,7 +1134,7 @@ function longestConsec(strarr, k) {
 function arrayDiff(a, b) {
   let newArr = [];
 
-  for(let j=0; j<a.length; j++) {
+  for (let j = 0; j < a.length; j++) {
 
     if (!b.includes(a[j])) {
       newArr.push(a[j])
@@ -1158,7 +1158,7 @@ function arrayDiff(a, b) {
 function doubleChar(str) {
   let newStr = '';
 
-  for (let j=0; j<str.length; j++) {
+  for (let j = 0; j < str.length; j++) {
     newStr = newStr + str[j] + str[j]
   }
 
@@ -1182,14 +1182,14 @@ function doubleChar(str) {
 
 // 1 Can you write a solution that will return
 
-function firstNonConsecutive (arr) {
+function firstNonConsecutive(arr) {
   let currentRowMinusPrevious = arr[0];
 
-  for (let j=1; j<arr.length; j++) {
-    if (arr[j]-1 !== currentRowMinusPrevious) {
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[j] - 1 !== currentRowMinusPrevious) {
       return arr[j]
     } else {
-      if (j+1 === arr.length) {return null}
+      if (j + 1 === arr.length) { return null }
       currentRowMinusPrevious = arr[j];
     }
   }
@@ -1222,11 +1222,11 @@ function firstNonConsecutive (arr) {
 
 // (Condition 2) not fulfilled).
 
-function bouncingBall(h,  bounce,  window) {
+function bouncingBall(h, bounce, window) {
   if ((h > 0) && (bounce > 0 && bounce < 1) && (window < h)) {
     let sumOfIntervals = 1;
     let bounceHeight = h * bounce;
-    
+
     while (bounceHeight > window) {
       sumOfIntervals += 2;
       bounceHeight = bounceHeight * bounce;
@@ -1268,12 +1268,12 @@ function bouncingBall(h,  bounce,  window) {
 
 //     return `${names[0]}, ${names[1]} and ${names[2]} likes this`
 //   }
-  
+
 //   return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
 // }
 
 function likes(names) {
-  switch(names.length){
+  switch (names.length) {
     case 0: return 'no one likes this'; break;
     case 1: return names[0] + ' likes this'; break;
     case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
@@ -1309,7 +1309,7 @@ function areYouPlayingBanjo(name) {
 // ""             =>  ""
 
 function solution(string) {
-  return(string.replace(/([A-Z])/g, ' $1'));
+  return (string.replace(/([A-Z])/g, ' $1'));
 }
 
 //////// 26-05-2022 6kyu
@@ -1323,10 +1323,10 @@ function solution(string) {
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
-var uniqueInOrder=function(iterable){
-  if (typeof iterable === 'string') {iterable = iterable.split('')}
+var uniqueInOrder = function (iterable) {
+  if (typeof iterable === 'string') { iterable = iterable.split('') }
   return iterable.filter((element, j, array) => {
-    return array[j+1] === element ? false : true;
+    return array[j + 1] === element ? false : true;
   })
 }
 
@@ -1341,8 +1341,8 @@ var uniqueInOrder=function(iterable){
 // 15 -> 7 (because odd numbers below 15 are [1, 3, 5, 7, 9, 11, 13])
 // Expect large Inputs!
 
-function oddCount(n){
-  return Math.floor(n/2);
+function oddCount(n) {
+  return Math.floor(n / 2);
 }
 
 //////// 28-05-2022 6kyu
@@ -1404,7 +1404,7 @@ function calculateYears(principal, interest, tax, desired) {
 // Remarks
 // All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for null, undefined or similar.
 
-function minMax(arr){
+function minMax(arr) {
   return [Math.min.apply(null, arr), Math.max.apply(null, arr)]; // fix me!
 }
 
@@ -1415,7 +1415,7 @@ function minMax(arr){
 
 // Make sure you type the exact thing I wrote or the program may not execute properly
 
-function greet(name){
+function greet(name) {
   return `Hello, ${name} how are you doing today?`;
 }
 
@@ -1438,7 +1438,7 @@ function makeUpperCase(str) {
 // Function should return true if it is possible and false if not.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-  return  fuelLeft * mpg >= distanceToPump;
+  return fuelLeft * mpg >= distanceToPump;
 }
 
 //////// 01-07-2022 8kyu
@@ -1473,13 +1473,13 @@ function updateLight(current) {
 // wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 // Good luck and enjoy!
 
-function wave(str){
+function wave(str) {
   let waveArr = [];
 
-  for (let j=0; j<str.length; j++) {
-      if (str[j] !== ' ') {
-        waveArr.push(str.slice(0, j) + str[j].toUpperCase() + str.slice(j+1, str.length))
-      }
+  for (let j = 0; j < str.length; j++) {
+    if (str[j] !== ' ') {
+      waveArr.push(str.slice(0, j) + str[j].toUpperCase() + str.slice(j + 1, str.length))
+    }
   }
 
   return waveArr
@@ -1526,12 +1526,12 @@ function sum(numbers) {
 function persistence(num) {
   let sumOfIntervals = 0;
 
-   while (String(num).length > 1) {
+  while (String(num).length > 1) {
     num = String(num).split('').reduce((acc, curr) => curr * acc)
     sumOfIntervals++
-   }
+  }
 
-   return sumOfIntervals;
+  return sumOfIntervals;
 }
 
 //////// 05-07-2022 8kyu
@@ -1543,7 +1543,7 @@ function persistence(num) {
 // Example
 // ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
 
-function smash (words) {
+function smash(words) {
   return words.join(' ');
 }
 
@@ -1574,10 +1574,10 @@ function smash (words) {
 function towerBuilder(nFloors) {
   let pyramid = [];
 
-  for (let j=nFloors; j>0; j--) {
-    pyramid.unshift(' '.repeat(nFloors - j) + 
-                    '*'.repeat(j*2-1) + 
-                    ' '.repeat(nFloors - j))
+  for (let j = nFloors; j > 0; j--) {
+    pyramid.unshift(' '.repeat(nFloors - j) +
+      '*'.repeat(j * 2 - 1) +
+      ' '.repeat(nFloors - j))
   }
 
   return pyramid;
@@ -1593,11 +1593,11 @@ function towerBuilder(nFloors) {
 
 // None of the arrays will be empty, so you don't have to worry about that!
 
-function removeEveryOther(arr){
+function removeEveryOther(arr) {
   let newArr = [];
-  
-  for (let j=0; j<arr.length; j++) {
-    if (j%2 === 0) {
+
+  for (let j = 0; j < arr.length; j++) {
+    if (j % 2 === 0) {
       newArr.push(arr[j]);
     }
   }
@@ -1621,7 +1621,7 @@ function removeEveryOther(arr){
 
 function deepCompare(o1, o2) {
   //check if both elements same data type
-  if (typeof o1 !== typeof o2) {return false}
+  if (typeof o1 !== typeof o2) { return false }
 
   //check for primitives equality
   if (typeof o1 !== 'object' || o1 === null) {
@@ -1634,10 +1634,10 @@ function deepCompare(o1, o2) {
 
   //check for array and callback each element for comparison
   if (Array.isArray(o1)) {
-    if (o1.length !== o2.length) {return false}
+    if (o1.length !== o2.length) { return false }
 
-    for (let j=0; j<o1.length; j++) {
-      
+    for (let j = 0; j < o1.length; j++) {
+
       if (!deepCompare(o1[j], o2[j])) {
         return false
       }
@@ -1651,7 +1651,7 @@ function deepCompare(o1, o2) {
     let arrA = Object.entries(o1).sort()
     let arrB = Object.entries(o2).sort()
 
-    if (arrA.length !== arrB.length) {return false}
+    if (arrA.length !== arrB.length) { return false }
 
     if (!deepCompare(arrA, arrB)) {
       return false
@@ -1675,10 +1675,10 @@ function deepCompare(o1, o2) {
 // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 // ""  -->  ""
 
-function order(words){
+function order(words) {
   return words.split(' ')
-              .map((el, j, array) => {return array.filter(el => el.includes(j+1))})
-              .join(' ');
+    .map((el, j, array) => { return array.filter(el => el.includes(j + 1)) })
+    .join(' ');
 }
 
 //////// 10-07-2022 8kyu
@@ -1688,7 +1688,7 @@ function order(words){
 
 // [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
 
-function grow(x){
+function grow(x) {
   return x.reduce((acc, curr) => curr * acc)
 }
 
@@ -1697,8 +1697,8 @@ function grow(x){
 
 // Implement a function which multiplies two numbers.
 
-function multiply(a,b) {
-  return a*b;
+function multiply(a, b) {
+  return a * b;
 }
 
 //////// 11-07-2022 8kyu
@@ -1715,7 +1715,7 @@ function multiply(a,b) {
 function between(a, b) {
   let arr = [];
 
-  for (let j=a; j<=b; j++) {
+  for (let j = a; j <= b; j++) {
     arr.push(j);
   }
 
@@ -1740,13 +1740,13 @@ function expandedForm(num) {
   let expandedForm = '';
 
   while (currentN.length > 1) {
-    let divisor = '1' + '0'.repeat(currentN.length-1);
+    let divisor = '1' + '0'.repeat(currentN.length - 1);
     let remainder = +currentN % +divisor;
     let decimal = +currentN - remainder;
-    
-    String(remainder).length > 1 ? 
-    expandedForm += `${decimal} + `: 
-    expandedForm += `${decimal}`;
+
+    String(remainder).length > 1 ?
+      expandedForm += `${decimal} + ` :
+      expandedForm += `${decimal}`;
 
     currentN = String(remainder);
   }
@@ -1786,10 +1786,10 @@ function betterThanAverage(classPoints, yourPoints) {
 const rps = (p1, p2) => {
   if (p1 === p2) return 'Draw!';
 
-  if ((p1 === 'scissors' && p2 === 'paper') || 
-      (p1 === 'rock' && p2 === 'scissors') ||
-      (p1 === 'paper' && p2 === 'rock')) return 'Player 1 won!';
-  
+  if ((p1 === 'scissors' && p2 === 'paper') ||
+    (p1 === 'rock' && p2 === 'scissors') ||
+    (p1 === 'paper' && p2 === 'rock')) return 'Player 1 won!';
+
   else return 'Player 2 won!';
 };
 
@@ -1802,8 +1802,8 @@ const rps = (p1, p2) => {
 
 // [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
-function sumTwoSmallestNumbers(numbers) {  
-  let arr = numbers.sort((a,b) => a-b);
+function sumTwoSmallestNumbers(numbers) {
+  let arr = numbers.sort((a, b) => a - b);
 
   return arr[0] + arr[1];
 }
@@ -1826,7 +1826,7 @@ function sumTwoSmallestNumbers(numbers) {
 
 // Note: base is a non-negative currentRowMinusPrevious, factor is a positive currentRowMinusPrevious.
 
-function checkForFactor (base, factor) {
+function checkForFactor(base, factor) {
   return base % factor === 0;
 }
 
@@ -1857,7 +1857,7 @@ function DNAtoRNA(dna) {
 
 // Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a currentRowMinusPrevious.
 
-function getAge(inputString){
+function getAge(inputString) {
   return +inputString[0];
 }
 
@@ -1876,8 +1876,8 @@ function getAge(inputString){
 
 // All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
 
-function sortByLength (array) {
-  return array.sort((a,b) => a.length - b.length);
+function sortByLength(array) {
+  return array.sort((a, b) => a.length - b.length);
 };
 
 //////// 19-07-2022 8kyu
@@ -1896,9 +1896,9 @@ function sortByLength (array) {
 // ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
 // The elements in the returned array should be in the same order as in the initial array passed to your function, albeit with the 'geese' removed. Note that all of the strings will be in the same case as those provided, and some elements may be repeated.
 
-function gooseFilter (birds) {
+function gooseFilter(birds) {
   var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-  
+
   return birds.filter(el => !geese.includes(el))
 };
 
@@ -1909,10 +1909,10 @@ function gooseFilter (birds) {
 
 // (In this case, all triangles must have surface greater than 0 to be accepted).
 
-function isTriangle(a,b,c) {
-  return a+b > c &&
-         a+c > b &&
-         b+c > a
+function isTriangle(a, b, c) {
+  return a + b > c &&
+    a + c > b &&
+    b + c > a
 }
 
 //////// 21-07-2022 5kyu
@@ -1933,21 +1933,21 @@ function isTriangle(a,b,c) {
 // Division should be integer division. For example, this should return 2, not 2.666666...:
 // eight(dividedBy(three()));
 
-function zero(func) {return func ? func(0) : 0}
-function one(func) {return func ? func(1) : 1}
-function two(func) {return func ? func(2) : 2}
-function three(func) {return func ? func(3) : 3}
-function four(func) {return func ? func(4) : 4}
-function five(func) {return func ? func(5) : 5}
-function six(func) {return func ? func(6) : 6}
-function seven(func) {return func ? func(7) : 7}
-function eight(func) {return func ? func(8) : 8}
-function nine(func) {return func ? func(9) : 9}
+function zero(func) { return func ? func(0) : 0 }
+function one(func) { return func ? func(1) : 1 }
+function two(func) { return func ? func(2) : 2 }
+function three(func) { return func ? func(3) : 3 }
+function four(func) { return func ? func(4) : 4 }
+function five(func) { return func ? func(5) : 5 }
+function six(func) { return func ? func(6) : 6 }
+function seven(func) { return func ? func(7) : 7 }
+function eight(func) { return func ? func(8) : 8 }
+function nine(func) { return func ? func(9) : 9 }
 
-function plus(b) {return function(a) {return a+b}}
-function minus(b) {return function(a) {return a-b}}
-function times(b) {return function(a) {return a*b}}
-function dividedBy(b) {return function(a) {return Math.floor(a/b)}}
+function plus(b) { return function (a) { return a + b } }
+function minus(b) { return function (a) { return a - b } }
+function times(b) { return function (a) { return a * b } }
+function dividedBy(b) { return function (a) { return Math.floor(a / b) } }
 
 //////// 22-07-2022 5kyu
 //////// Count the divisors of a currentRowMinusPrevious
@@ -1962,11 +1962,11 @@ function dividedBy(b) {return function(a) {return Math.floor(a/b)}}
 // 12 --> 6 (1, 2, 3, 4, 6, 12)
 // 30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
 
-function getDivisorsCnt(n){
+function getDivisorsCnt(n) {
   let result = 0;
 
-  for (let j=1; j<=n; j++) {
-    if (n % j === 0) {result++}
+  for (let j = 1; j <= n; j++) {
+    if (n % j === 0) { result++ }
   }
 
   return result;
@@ -1991,17 +1991,17 @@ function getDivisorsCnt(n){
 // If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
 function encrypt(text, n) {
-  if (!text || n < 0) {return text}
+  if (!text || n < 0) { return text }
 
-  for (let i=0; i<n; i++) {
+  for (let i = 0; i < n; i++) {
     let length = text.length;
     let encryptText = '';
 
-    for (let j=1; j<length; j+=2) {
+    for (let j = 1; j < length; j += 2) {
       encryptText = encryptText + text[j];
     }
 
-    for (let j=0; j<length; j+=2) {
+    for (let j = 0; j < length; j += 2) {
       encryptText = encryptText + text[j];
     }
 
@@ -2012,25 +2012,25 @@ function encrypt(text, n) {
 }
 
 function decrypt(encryptedText, n) {
-  if (!encryptedText || n < 0) {return encryptedText}
+  if (!encryptedText || n < 0) { return encryptedText }
 
-  for (let i=0; i<n; i++) {
+  for (let i = 0; i < n; i++) {
     let length = encryptedText.length;
     let middleN = length % 2 === 0 ? length / 2 : Math.floor(length / 2);
 
     let decryptText = '';
     let sumOfIntervals = 0;
 
-    for (let j=middleN; j !== length; j-=middleN) {
-      
+    for (let j = middleN; j !== length; j -= middleN) {
+
       decryptText += encryptedText[j];
 
       if (sumOfIntervals === 1) {
         sumOfIntervals = 0;
-        j+=(middleN*2)+1;
-      } else {sumOfIntervals++}
+        j += (middleN * 2) + 1;
+      } else { sumOfIntervals++ }
 
-      if (length % 2 !== 0 && j === length-1) {break}
+      if (length % 2 !== 0 && j === length - 1) { break }
     }
 
     encryptedText = decryptText
@@ -2052,8 +2052,8 @@ function decrypt(encryptedText, n) {
 
 function findUniq(arr) {
   let newArr = arr.sort((a, b) => a - b);
-  
-  return newArr[0] === newArr[1] ? newArr[newArr.length-1] : newArr[0];
+
+  return newArr[0] === newArr[1] ? newArr[newArr.length - 1] : newArr[0];
 }
 
 //////// 26-07-2022 8kyu
@@ -2063,7 +2063,7 @@ function findUniq(arr) {
 
 function doubleInteger(i) {
   // i will be an integer. Double it and return it.
-  return i*2;
+  return i * 2;
 }
 
 //////// 27-07-2022 6kyu
@@ -2073,12 +2073,12 @@ function doubleInteger(i) {
 
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 
-const countBits = function(n) {
+const countBits = function (n) {
   let binary = n.toString(2);
   let count = 0;
 
-  for (let i=0; i<binary.length; i++) {
-    if (binary[i] == 1) {count++};
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[i] == 1) { count++ };
   }
 
   return count;
@@ -2091,7 +2091,7 @@ const countBits = function(n) {
 
 // Return your answer as a currentRowMinusPrevious.
 
-function sumMix(x){
+function sumMix(x) {
   return x.reduce((a, b) => +a + +b, 0);
 }
 
@@ -2111,12 +2111,12 @@ function sumMix(x){
 // Every currentRowMinusPrevious must match the currentRowMinusPrevious of character in the following substring, otherwise the message is invalid: e.g. "hello5" and "2hi2" are invalid
 // If the message is an empty string, you should return true
 
-function isAValidMessage(message){
-  if (!message) {return true}
+function isAValidMessage(message) {
+  if (!message) { return true }
   let newArr = message.replace(/([0-9]{1,2})/g, ` $1 `).split(' ');
-  
-  for (let i=1; i<newArr.length; i+=2) {
-    if (+newArr[i] !== newArr[i+1].length) {return false}
+
+  for (let i = 1; i < newArr.length; i += 2) {
+    if (+newArr[i] !== newArr[i + 1].length) { return false }
   }
 
   return true;
@@ -2136,7 +2136,7 @@ function getSumOfDigits(integer) {
   let sum = null;
   let digits = Math.floor(integer).toString();
 
-  for(let ix = 0; ix < digits.length; ix++) {
+  for (let ix = 0; ix < digits.length; ix++) {
     sum += +digits[ix];
   }
 
@@ -2160,34 +2160,34 @@ function getSumOfDigits(integer) {
 //          [7,6,5]]
 // snail(array) #=> [1,2,3,4,5,6,7,8,9]
 
-snail = function(array) {
+snail = function (array) {
   let result = [];
   let dimension = [array[0].length, array.length];
   let sumOfIntervals = 0;
-  
+
   while (result.length < dimension[0] * dimension[1]) {
-    
-      for (let i=sumOfIntervals; i < dimension[0]-sumOfIntervals; i++) {
-        if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[sumOfIntervals][i]);
-      }
 
-      for (let i=sumOfIntervals+1; i < dimension[1]-sumOfIntervals; i++) {
-        if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[i][dimension[0]-1-sumOfIntervals])
-      }
+    for (let i = sumOfIntervals; i < dimension[0] - sumOfIntervals; i++) {
+      if (result.length === dimension[0] * dimension[1]) { break }
+      result.push(array[sumOfIntervals][i]);
+    }
 
-      for (let i=dimension[0]-1-sumOfIntervals; i > sumOfIntervals; i--) {
-        if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[dimension[1]-1-sumOfIntervals][i-1]);
-      }
+    for (let i = sumOfIntervals + 1; i < dimension[1] - sumOfIntervals; i++) {
+      if (result.length === dimension[0] * dimension[1]) { break }
+      result.push(array[i][dimension[0] - 1 - sumOfIntervals])
+    }
 
-      for (let i=dimension[1]-2-sumOfIntervals; i > sumOfIntervals; i--) {
-        if (result.length === dimension[0] * dimension[1]) {break}
-        result.push(array[i][sumOfIntervals]);
-      }
+    for (let i = dimension[0] - 1 - sumOfIntervals; i > sumOfIntervals; i--) {
+      if (result.length === dimension[0] * dimension[1]) { break }
+      result.push(array[dimension[1] - 1 - sumOfIntervals][i - 1]);
+    }
 
-      sumOfIntervals++;
+    for (let i = dimension[1] - 2 - sumOfIntervals; i > sumOfIntervals; i--) {
+      if (result.length === dimension[0] * dimension[1]) { break }
+      result.push(array[i][sumOfIntervals]);
+    }
+
+    sumOfIntervals++;
   }
 
   return result;
@@ -2208,14 +2208,14 @@ snail = function(array) {
 // Notes
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
-function duplicateEncode(word){
+function duplicateEncode(word) {
   let lowerCaseWord = word.toLowerCase()
   let newStr = '';
 
-  for (let i=0; i < lowerCaseWord.length; i++) {
-    lowerCaseWord.indexOf(lowerCaseWord[i]) === lowerCaseWord.lastIndexOf(lowerCaseWord[i]) ? 
-    newStr += '(' : 
-    newStr += ')' ;
+  for (let i = 0; i < lowerCaseWord.length; i++) {
+    lowerCaseWord.indexOf(lowerCaseWord[i]) === lowerCaseWord.lastIndexOf(lowerCaseWord[i]) ?
+      newStr += '(' :
+      newStr += ')';
   }
 
   return newStr;
@@ -2233,21 +2233,21 @@ function duplicateEncode(word){
 // [160, 3, 1719, 19, 11, 13, -21]
 // Should return: 160 (the only even currentRowMinusPrevious)
 
-function findOutlier(integers){
+function findOutlier(integers) {
   if (integers[0] % 2 === 0 && integers[1] % 2 === 0) { // If first and second element are even 
-    for (let i=2; i<integers.length; i++) { // loop through array and return first odd
+    for (let i = 2; i < integers.length; i++) { // loop through array and return first odd
       if (integers[i] % 2 !== 0) return integers[i];
     }
-  } 
+  }
   else if (integers[0] % 2 !== 0 && integers[1] % 2 !== 0) { // If first and second element are odd
-    for (let i=2; i<integers.length; i++) { // loop through array and return first even
+    for (let i = 2; i < integers.length; i++) { // loop through array and return first even
       if (integers[i] % 2 === 0) return integers[i];
     }
   } else {
     return integers[2] % 2 === 0 && integers[0] % 2 === 0 || // if third and first element are even or
-           integers[2] % 2 !== 0 && integers[0] % 2 !== 0 ?  // if third and first element are odd
-           integers[1] : // return second element on the array
-           integers[0] ; // return first element on the array
+      integers[2] % 2 !== 0 && integers[0] % 2 !== 0 ?  // if third and first element are odd
+      integers[1] : // return second element on the array
+      integers[0]; // return first element on the array
   }
 
   // This looks faster than most voted solutions, but let me know if this is bad written or confusing.
@@ -2264,11 +2264,11 @@ function findOutlier(integers){
 //   [7,8,4,  1,5,9,  3,2,6],
 //   [5,3,9,  6,7,2,  8,4,1],
 //   [6,1,2,  4,3,8,  7,5,9],
-  
+
 //   [9,2,8,  7,1,5,  4,6,3],
 //   [3,5,7,  8,4,6,  1,9,2],
 //   [4,6,1,  9,2,3,  5,8,7],
-  
+
 //   [8,7,6,  3,9,4,  2,1,5],
 //   [2,4,3,  5,6,1,  9,7,8],
 //   [1,9,5,  2,8,7,  6,3,4]
@@ -2280,36 +2280,37 @@ function findOutlier(integers){
 // Columns may only contain integers: 1..N (N included)
 // 'Little squares' (3x3 in example above) may also only contain integers: 1..N (N included)
 
-var Sudoku = function(data) {
+var Sudoku = function (data) {
   return {
-    isValid: function() {
+    isValid: function () {
       let dataLength = data.length;
       let dimension = Math.sqrt(dataLength);
-      let arrayDigits = Array.from({length: dataLength}, (_, i) => i+1);
-      let sumOfDigits = arrayDigits.reduce((a,b) => a+b);
+      let arrayDigits = Array.from({ length: dataLength }, (_, i) => i + 1);
+      let sumOfDigits = arrayDigits.reduce((a, b) => a + b);
       let regionsArray = {};
       let sumOfIntervalsZ = 0;
 
       // Check if all rows are valid
-      for (let i = 0; i < dataLength; i++) { 
+      for (let i = 0; i < dataLength; i++) {
         // Create sumOfIntervals to add region(small squares) digits to array while looping for rows
-        if (i % dimension === 0) {sumOfIntervalsZ+=dimension};
+        if (i % dimension === 0) { sumOfIntervalsZ += dimension };
         let rowsumOfIntervals = 1;
-        let regionArrayIndex = sumOfIntervalsZ + 1; 
+        let regionArrayIndex = sumOfIntervalsZ + 1;
 
         if (data[i].reduce((a, b) => {
           // Create array with respective region index if doesnt exist on regionsArray object.
-          if (!regionsArray[regionArrayIndex-dimension]) {
-            regionsArray[regionArrayIndex-dimension] = [];
-          }; 
+          if (!regionsArray[regionArrayIndex - dimension]) {
+            regionsArray[regionArrayIndex - dimension] = [];
+          };
           // Push digits on its respective region array.
-          regionsArray[regionArrayIndex-dimension].push(b);
-          if (rowsumOfIntervals < dimension) {rowsumOfIntervals++}
-          else {rowsumOfIntervals = 1; regionArrayIndex++};
+          regionsArray[regionArrayIndex - dimension].push(b);
+          if (rowsumOfIntervals < dimension) { rowsumOfIntervals++ }
+          else { rowsumOfIntervals = 1; regionArrayIndex++ };
 
           // If the sum of all digits in a row are not equal it's dimension total, return false. 
           // Example: 9x9 sudoku should sum for 45 (1+2+3+4+5+6+7+8+9), 4x4 should sum for 10 (1+2+3+4).
-          return a + b}, 0) !== sumOfDigits) {return false};
+          return a + b
+        }, 0) !== sumOfDigits) { return false };
       }
 
 
@@ -2321,14 +2322,14 @@ var Sudoku = function(data) {
           newArr.push(data[j][i]);
         }
         // If the sum of all digits in a column are not equal it's dimension total, return false.
-        if (newArr.reduce((a, b) => a + b) !== sumOfDigits) {return false};
+        if (newArr.reduce((a, b) => a + b) !== sumOfDigits) { return false };
       }
 
       // Check if all regions are valid
       for (index in regionsArray) {
         // If the sum of all digits in a region (small squares) are not equal it's dimension total, return false.
-        if (regionsArray[index].reduce((a, b) => a + b) !== sumOfDigits) {return false};
-       }
+        if (regionsArray[index].reduce((a, b) => a + b) !== sumOfDigits) { return false };
+      }
 
       return true;
     }
@@ -2345,8 +2346,8 @@ var Sudoku = function(data) {
 // 'acb' --> 'bca'
 // 'aabacbaa' --> 'bbabcabb'
 
-function switcheroo(x){
-  return x.replace(/a|b/gi, function(m) {return m === 'a' ? 'b' : 'a'});
+function switcheroo(x) {
+  return x.replace(/a|b/gi, function (m) { return m === 'a' ? 'b' : 'a' });
 }
 
 //////// 05-08-2022 6kyu
@@ -2362,7 +2363,7 @@ function switcheroo(x){
 // Note: The test cases are very large. You will need a O(log n) solution or better to pass. (A constant time solution is possible.)
 
 function divisibleCount(x, y, k) {
-  return Math.floor(y/k) - Math.floor((x-1)/k);
+  return Math.floor(y / k) - Math.floor((x - 1) / k);
 }
 
 //////// 06-08-2022 7kyu
@@ -2380,12 +2381,12 @@ function arithmeticSequenceElements(a, d, n) {
   let result = [];
   let currN = a;
 
-  for (let i=0; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     result.push(currN);
     currN += d;
   }
 
-	return result.join(', ');
+  return result.join(', ');
 }
 
 //////// 07-08-2022 7kyu
@@ -2406,7 +2407,7 @@ function arithmeticSequenceElements(a, d, n) {
 function countBy(x, n) {
   let z = [];
 
-  for (let i=x; z.length < n; i+=x) {
+  for (let i = x; z.length < n; i += x) {
     z.push(i);
   }
 
@@ -2435,10 +2436,10 @@ function digitize(n) {
 // Task:
 // Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
 
-const countSheep = function (num){
+const countSheep = function (num) {
   let str = '';
 
-  for (let i=1; i<=num; i++) {
+  for (let i = 1; i <= num; i++) {
     str += `${i} sheep...`;
   }
 
@@ -2450,9 +2451,9 @@ const countSheep = function (num){
 
 // Complete the function which converts hex currentRowMinusPrevious (given as a string) to a decimal currentRowMinusPrevious.
 
-function hexToDec(hexString){
+function hexToDec(hexString) {
   return parseInt(hexString, 16);
- }
+}
 
 //////// 12-08-2022 7kyu
 //////// Is the string uppercase?
@@ -2470,7 +2471,7 @@ function hexToDec(hexString){
 // In this Kata, a string is said to be in ALL CAPS whenever it does not contain any lowercase letter so 
 // any string containing no letters at all is trivially considered to be in ALL CAPS.
 
-String.prototype.isUpperCase = function() {
+String.prototype.isUpperCase = function () {
   return this.toString() === this.toUpperCase();
 }
 
@@ -2493,7 +2494,7 @@ String.prototype.isUpperCase = function() {
 const sequenceSum = (begin, end, step) => {
   let res = 0;
 
-  for (let i=begin; i<=end; i+=step) {
+  for (let i = begin; i <= end; i += step) {
     res += i;
   }
 
@@ -2510,9 +2511,9 @@ const sequenceSum = (begin, end, step) => {
 // Hint: If you're not sure where to start, read up on async/await.
 
 
-async function execute(action, nTimes){
+async function execute(action, nTimes) {
   const arr = [];
-  for(let i = 0; i < nTimes; i++){
+  for (let i = 0; i < nTimes; i++) {
     arr.push(action());
   }
   await Promise.all(arr);
@@ -2532,16 +2533,16 @@ async function execute(action, nTimes){
 
 // All inputs will be valid.
 
-function amountOfPages(summary){
+function amountOfPages(summary) {
   let newArr = [9, 180, 2700, 36000, 450000, 5400000];
   let result = 0;
 
-  for (let i=0; i<6; i++) {
+  for (let i = 0; i < 6; i++) {
     if (summary <= newArr[i]) {
-      result = result+(summary/(i+1));
+      result = result + (summary / (i + 1));
       break;
     } else {
-      result = result+(newArr[i]/(i+1));
+      result = result + (newArr[i] / (i + 1));
       summary = summary - newArr[i];
     }
   }
@@ -2598,9 +2599,9 @@ function sumIntervals(intervals) {
   let sumIntervals = 0;
   let lastEndNumber = -999999999999;
 
-  for (let i=0; i < intervals.length; i++) {
-    if (intervals[i][1] < lastEndNumber) {continue};
-    
+  for (let i = 0; i < intervals.length; i++) {
+    if (intervals[i][1] < lastEndNumber) { continue };
+
     if (intervals[i][0] < lastEndNumber) {
       sumIntervals += intervals[i][1] - lastEndNumber;
     } else {
@@ -2627,7 +2628,7 @@ function sumIntervals(intervals) {
 // friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
 // Note: keep the original order of the names in the output.
 
-function friend(friends){
+function friend(friends) {
   return friends.filter(el => el.length === 4);
 }
 
@@ -2681,13 +2682,13 @@ function friend(friends){
 // It uses a pure Math based solution that gives consistent results no matter what order a set of ranked activities are completed at.
 
 class User {
-  constructor () {
+  constructor() {
     this.rank = -8;
     this.progress = 0;
   }
 
   updateProgress(progressIncrease) {
-    if (this.rank >= 8) {return};
+    if (this.rank >= 8) { return };
 
     this.progress = this.progress + progressIncrease;
 
@@ -2696,16 +2697,16 @@ class User {
       this.progress = this.progress - 100;
     }
 
-    if (this.rank === 8) {this.progress = 0};
-    if (this.rank === 0) {this.rank = 1};
+    if (this.rank === 8) { this.progress = 0 };
+    if (this.rank === 0) { this.rank = 1 };
   }
 
   incProgress(kataRank) {
-    if (kataRank === 0 || kataRank < -8 || kataRank > 8) {throw 'The only acceptable range of rank values is -8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8.'}
+    if (kataRank === 0 || kataRank < -8 || kataRank > 8) { throw 'The only acceptable range of rank values is -8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8.' }
 
     let rankDifference = Math.abs((this.rank) - (kataRank));
 
-    if (kataRank > 0 && this.rank < 0) {rankDifference--}
+    if (kataRank > 0 && this.rank < 0) { rankDifference-- }
 
     if (kataRank > this.rank) {
       let progressEarned = 10 * rankDifference * rankDifference;
@@ -2734,7 +2735,7 @@ function findMultiples(integer, limit) {
   // A bit longer but faster version.
   let result = [];
 
-  for (let i=integer; i<=limit; i+=integer) {
+  for (let i = integer; i <= limit; i += integer) {
     result.push(i);
   }
 
@@ -2753,7 +2754,7 @@ function moveZeros(arr) {
   let noZeroArr = [];
   let zeroArr = [];
 
-  for (let i=0; i<arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     arr[i] === 0 ? zeroArr.push(arr[i]) : noZeroArr.push(arr[i]);
   }
 
@@ -2768,7 +2769,7 @@ function moveZeros(arr) {
 
 // You can assume all values in the array are numbers.
 
-function smallEnough(a, limit){
+function smallEnough(a, limit) {
   return a.every(n => n <= limit);
 }
 
@@ -2784,10 +2785,10 @@ function smallEnough(a, limit){
 // +++
 // +++
 
-function generateShape(integer){
+function generateShape(integer) {
   let str = '+'.repeat(integer);
 
-  return integer > 1 ? str+`\n${str}`.repeat(integer-1) : str;
+  return integer > 1 ? str + `\n${str}`.repeat(integer - 1) : str;
 }
 
 //////// 27-08-2022 7kyu
@@ -2802,7 +2803,7 @@ function generateShape(integer){
 // * [8, 2, 7, 2, 3, 4, 6, 5, 4, 4, 1, 2, 3], [2, 4, 3] -> [8, 7, 6, 5, 1]
 // Enjoy it!!
 
-Array.prototype.remove_ = function(integer_list, values_list){
+Array.prototype.remove_ = function (integer_list, values_list) {
   return integer_list.filter(el => !values_list.includes(el));
 }
 
@@ -2820,7 +2821,7 @@ function factorial(n) {
   if (n < 0 || n > 12) throw RangeError;
   let result = n ? n : 1;
 
-  for (let i=n-1; i>0; i--) {
+  for (let i = n - 1; i > 0; i--) {
     result = result * i;
   }
 
@@ -2854,11 +2855,11 @@ function factorial(n) {
 // compareVersions("10.4.9", "10.5");              // returns false
 // It can be assumed that version strings are non empty and only contain numeric literals and the character '.'.
 
-function compareVersions (version1, version2) {
+function compareVersions(version1, version2) {
   const version1Arr = version1.split('.');
   const version2Arr = version2.split('.');
 
-  for (let i=0; i<version2Arr.length; i++) {
+  for (let i = 0; i < version2Arr.length; i++) {
     let n1 = version1Arr[i] === undefined ? 0 : +version1Arr[i];
     let n2 = +version2Arr[i];
 
@@ -2923,9 +2924,9 @@ function anagrams(word, words) {
 // In Shell bash a1 and a2 are strings. The return is a string where words are separated by commas.
 // Beware: r must be without duplicates.
 
-function inArray(array1,array2){
+function inArray(array1, array2) {
   return array1.filter(word => {
-    for (let i=0; i<array2.length; i++) {
+    for (let i = 0; i < array2.length; i++) {
       if (array2[i].includes(word)) return true;
     }
   }).sort();
@@ -2940,7 +2941,7 @@ function inArray(array1,array2){
 // "www.codewars.com#about" --> "www.codewars.com"
 // "www.codewars.com?page=1" -->"www.codewars.com?page=1"
 
-function removeUrlAnchor(url){
+function removeUrlAnchor(url) {
   return url.replace(/\#.*$/, '');
 }
 
@@ -2961,7 +2962,7 @@ function removeUrlAnchor(url){
 
 // Furthermore, the built-in string methods toUpperCase() and toLowerCase() are disabled for this Kata.
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
   if (this[0].charCodeAt() < 123 && this[0].charCodeAt() > 96) {
     return String.fromCharCode(this[0].charCodeAt() - 32) + this.slice(1);
   }
@@ -2989,11 +2990,11 @@ String.prototype.capitalize = function() {
 
 // You can assume all tests inputs to be valid.
 
-function nextVersion(version){
+function nextVersion(version) {
   let verArr = version.split('.');
   let versionLength = verArr.length;
 
-  for (let i=versionLength-1; i>=0; i--) {
+  for (let i = versionLength - 1; i >= 0; i--) {
     if (verArr[i] == 9 && i != 0) {
       verArr[i] = 0;
     } else {
@@ -3016,7 +3017,7 @@ function nextVersion(version){
 // "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
 
 
-function reverseWords(str){
+function reverseWords(str) {
   return str.split(' ').reverse().join(' ');
 }
 
@@ -3039,7 +3040,7 @@ function reverseWords(str){
 function rowSumOddNumbers(n) {
   //// First try solution, don't judge me.
 
-	// let firstNumberOfRow = 1;
+  // let firstNumberOfRow = 1;
   // let currentRowMinusPrevious = 2;
   // let sumOfIntervals = 0;
 
@@ -3109,7 +3110,7 @@ function stantonMeasure(array) {
   let newArr = array.slice();
   let n = 0;
 
-  for (let i=0; i<newArr.length; i++) {
+  for (let i = 0; i < newArr.length; i++) {
     if (newArr[i] === 1) {
       n++;
       if (i != newArr.length - 1) {
@@ -3132,24 +3133,24 @@ function stantonMeasure(array) {
 // would give:
 // Words in your solution should be left-aligned.
 
-function mirror(text){
+function mirror(text) {
   const reversedText = text.split(' ').map(word => reverseWord(word));
   const longestWord = Math.max.apply(null, reversedText.map(word => word.length));
-  const frameTop = '*'.repeat(longestWord+4)+'\n';
-  const frameBtn = '*'.repeat(longestWord+4);
-  let mirrorFrame = reversedText.map(word => word.length === longestWord ? 
-                                             '* ' + word + ' *\n' : 
-                                             '* ' + word + ' '.repeat((longestWord - word.length) + 1) + '*\n');
+  const frameTop = '*'.repeat(longestWord + 4) + '\n';
+  const frameBtn = '*'.repeat(longestWord + 4);
+  let mirrorFrame = reversedText.map(word => word.length === longestWord ?
+    '* ' + word + ' *\n' :
+    '* ' + word + ' '.repeat((longestWord - word.length) + 1) + '*\n');
   mirrorFrame.unshift(frameTop);
   mirrorFrame.push(frameBtn);
-                         
+
   return mirrorFrame.join('');
 }
 
 function reverseWord(word) {
   let reversedWord = '';
 
-  for (let i=word.length - 1; i >= 0; i--) {
+  for (let i = word.length - 1; i >= 0; i--) {
     reversedWord += word[i];
   }
 
@@ -3164,7 +3165,7 @@ function reverseWord(word) {
 // input: names - unsorted array
 // output: sorted array
 
-const sortme = function(names) {
+const sortme = function (names) {
   let newArr = [...names];
   return newArr.sort();
 }
@@ -3172,12 +3173,12 @@ const sortme = function(names) {
 //////// 02-10-2022 6kyu
 //////// Reverse every other word in the string
 
-function reverse(str){
+function reverse(str) {
   let arr = str.trim()
-               .split(' ')
-               .map((word, i) => i % 2 == 0 ? word : word.split('')
-                                                         .reverse()
-                                                         .join(''));
+    .split(' ')
+    .map((word, i) => i % 2 == 0 ? word : word.split('')
+      .reverse()
+      .join(''));
 
   return arr.join(' ');
 }
@@ -3194,11 +3195,11 @@ function reverse(str){
 // Details
 // You will be given a string of numbers and letters mixed up, you have to return all the numbers in that string in the order they occur.
 
-const filterString = function(str) {
+const filterString = function (str) {
   let n = '';
-  for (let i=0; i<str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (str[i].match(/[0-9]/)) {
-      n+=str[i];
+      n += str[i];
     }
   }
 
@@ -3242,26 +3243,26 @@ const filterString = function(str) {
 // If you are given an array with multiple answers, return the lowest correct index.
 
 function findEvenIndex(arr) {
-  for (let i=0; i<arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     let leftSide = 0;
     let rightSide = 0;
 
     // Sum left side if index > 0
     if (i > 0) {
-      for (let j=0; j<i; j++) {
+      for (let j = 0; j < i; j++) {
         leftSide += arr[j];
       }
     }
 
     // sum right side if index < arr.length
     if (i <= arr.length) {
-      for (let j=i+1; j<arr.length; j++) {
+      for (let j = i + 1; j < arr.length; j++) {
         rightSide += arr[j];
       }
     }
 
     if (leftSide == rightSide) return i;
-    else if (i == arr.length -1) return -1;
+    else if (i == arr.length - 1) return -1;
   }
 }
 
@@ -3291,9 +3292,9 @@ function findEvenIndex(arr) {
 function points(games) {
   let score = 0;
 
-  for (let i=0; i<games.length; i++) {
+  for (let i = 0; i < games.length; i++) {
     if (games[i][0] == games[i][2]) score++;
-    if (games[i][0] > games[i][2]) score+=3;
+    if (games[i][0] > games[i][2]) score += 3;
   }
 
   return score;
@@ -3320,11 +3321,11 @@ function points(games) {
 
 //     specialChar = str.match(/[-_]/i);
 //   }
-  
+
 //   return str;
 // }
 
-function toCamelCase(str){
+function toCamelCase(str) {
   return str.replace(/[-_](.)/g, (match, c) => c.toUpperCase())
 }
 
@@ -3343,9 +3344,9 @@ function toCamelCase(str){
 // The prices in this string are to be sorted in ascending order.
 
 function search(budget, prices) {
-    return prices.filter((n) => n <= budget)
-                 .sort((a, b) => a - b)
-                 .join(',');
+  return prices.filter((n) => n <= budget)
+    .sort((a, b) => a - b)
+    .join(',');
 }
 
 //////// 14-10-2022 7kyu
@@ -3361,7 +3362,7 @@ function search(budget, prices) {
 
 // In particular, "ta" < "nigeb" because 'a' < 'b' and "nigeb" < "gninnigeb" because the former word is a suffix of the latter.
 
-function unusualLexOrder(arr){
+function unusualLexOrder(arr) {
   let newArr = arr.map(word => word.split('').reverse().join(''))
 
   newArr.sort((a, b) => {
@@ -3369,11 +3370,11 @@ function unusualLexOrder(arr){
     if (a < b) {
       return -1;
     }
-    
+
     else if (a < b) {
       return 0;
     }
-    
+
     else {
       return 1;
     }
@@ -3402,15 +3403,15 @@ function unusualLexOrder(arr){
 
 // Have fun!
 
-function shadesOfGrey(n){
+function shadesOfGrey(n) {
   if (n < 1) return [];
   if (n > 254) n = 254;
   let arrayOfShades = [];
-  let hexaDecimalArray = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+  let hexaDecimalArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 
-  for (let i=1; i<=Math.min(n, 254); i++) {
-    let firstDigit = hexaDecimalArray[Math.floor(i/16)];
-    let secondDigit = hexaDecimalArray[i%16];
+  for (let i = 1; i <= Math.min(n, 254); i++) {
+    let firstDigit = hexaDecimalArray[Math.floor(i / 16)];
+    let secondDigit = hexaDecimalArray[i % 16];
     arrayOfShades.push('#' + (firstDigit + secondDigit).repeat(3));
   }
 
@@ -3424,13 +3425,13 @@ function shadesOfGrey(n){
 
 // (the dedicated builtin(s) functionalities are deactivated)
 
-const reverseList = function(array) {
+const reverseList = function (array) {
   let reversedArr = [];
-  
-  for (let i=array.length-1; i>=0; i--) {
+
+  for (let i = array.length - 1; i >= 0; i--) {
     reversedArr.push(array[i]);
   }
-  
+
   return reversedArr
 }
 
@@ -3464,13 +3465,13 @@ function ascendDescend(length, minimum, maximum) {
   let result = '';
   let increase = true;
 
-  if (minimum > maximum) {return result} 
-  else if (minimum == maximum) {return String(minimum).repeat(length)}
+  if (minimum > maximum) { return result }
+  else if (minimum == maximum) { return String(minimum).repeat(length) }
   else {
-    for (let i=0; result.length < length; i++) {
+    for (let i = 0; result.length < length; i++) {
       result += String(currentN);
-      if (currentN == maximum) {increase = false}
-      if (currentN == minimum) {increase = true}
+      if (currentN == maximum) { increase = false }
+      if (currentN == minimum) { increase = true }
       increase ? currentN++ : currentN--;
     }
   }
@@ -3491,17 +3492,17 @@ function ascendDescend(length, minimum, maximum) {
 // Tip: the amount of coefficients before hitting the period is bounded by 0.72 * sqrt(N), but obviously we cannot generate that much in adequate time for big numbers. 
 // The test suite expects your code to generate 2000-4000 coefficients for a single number.
 
-const generateContinuedFraction = function* (n){
+const generateContinuedFraction = function* (n) {
   const s = BigInt(Math.floor(Math.sqrt(Number(n))));
   yield s;
-  while (s**2n == n) yield 0n;
+  while (s ** 2n == n) yield 0n;
   let a = s, p = 0n, q = 1n;
-  while(true){
-    p = a*q-p;
-    q = (n-p**2n)/q;
-    a = (s+p)/q;
+  while (true) {
+    p = a * q - p;
+    q = (n - p ** 2n) / q;
+    a = (s + p) / q;
     yield a;
-    while (q == 1n) yield 0n; 
+    while (q == 1n) yield 0n;
   }
 }
 
@@ -3521,17 +3522,17 @@ const generateContinuedFraction = function* (n){
 
 function upArray(arr) {
   if (arr.length == 0 || arr.some(e => e < 0 || e > 9)) return null
-  
+
   let i = arr.length - 1
-  
+
   while (i >= 0 && arr[i] == 9)
     arr[i--] = 0
-  
+
   if (i < 0)
     arr.unshift(1)
   else
     arr[i]++
-  
+
   return arr
 }
 
@@ -3575,12 +3576,12 @@ function enough(cap, on, wait) {
 // [9, 9, 9, 9] would return [1, 0, 0, 0, 0]
 // [0, 1, 3, 7] would return [0, 1, 3, 8]
 
-function upArray(arr){
+function upArray(arr) {
   let result = [];
   if (!arr.length) return null;
   let increaseNext = true;
 
-  for (let i=arr.length - 1; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] < 0 || arr[i] > 9) return null;
     if (arr[i] == 9 && increaseNext) {
       result.unshift(0);
@@ -3618,11 +3619,11 @@ function upArray(arr){
 // [4, 6, 9, 1, 3]  -->  [5, 8, 2, 5, 8]  #  [4+1, 6+2, 9+3, 1+4, 3+5]
 //                                        #  9+3 = 12  -->  2
 
-function incrementer(nums) { 
+function incrementer(nums) {
   let result = [];
 
-  for (let i=0; i<nums.length; i++) {
-    nums[i] + (i+1) > 9 ? result.push((nums[i] + (i+1)) % 10) : result.push(nums[i] + (i+1));
+  for (let i = 0; i < nums.length; i++) {
+    nums[i] + (i + 1) > 9 ? result.push((nums[i] + (i + 1)) % 10) : result.push(nums[i] + (i + 1));
   }
 
   return result;
@@ -3640,7 +3641,7 @@ function incrementer(nums) {
 
 // I have removed the use of BigInteger and BigDecimal in java
 
-function sumStrings(a,b) { 
+function sumStrings(a, b) {
   return BigInt(BigInt(a) + BigInt(b)).toString();
 }
 
@@ -3681,11 +3682,11 @@ function basicOp(operation, value1, value2) {
 // Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
 // If a and b have the same length treat a as the longer producing b+reverse(a)+b
 
-function shorter_reverse_longer(a,b){
+function shorter_reverse_longer(a, b) {
   if (b.length <= a.length) {
     return b + a.split('').reverse().join('') + b;
   }
-  
+
   return a + b.split('').reverse().join('') + a;
 }
 
@@ -3703,12 +3704,12 @@ function shorter_reverse_longer(a,b){
 
 // vowelOne( "aeiou, abc" ) // "1111100100"
 
-function vowelOne(s){
+function vowelOne(s) {
   let vowel = ['a', 'e', 'i', 'o', 'u'];
   let splitStr = s.split('');
   let result = '';
 
-  for (let i=0; i<splitStr.length; i++) {
+  for (let i = 0; i < splitStr.length; i++) {
     vowel.includes(splitStr[i].toLowerCase()) ? result += '1' : result += '0';
   }
 
@@ -3751,7 +3752,7 @@ function vowelOne(s){
 // Note for C
 // The two arrays have the same size (> 0) given as parameter in function comp.
 
-function comp(array1, array2){
+function comp(array1, array2) {
   if (!array1 || !array2) return false;
   let i = 0;
 
@@ -3789,7 +3790,7 @@ function comp(array1, array2){
 
 // Note: Y is not a vowel in this kata.
 
-function swap (string) {
+function swap(string) {
   return string.replace(/[aeiou]/g, (m) => m.toUpperCase());
 }
 
@@ -3828,7 +3829,7 @@ function isHappy(n) {
 function removeExclamationMarks(s) {
   let newStr = '';
 
-  for (let i=0; i<s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     if (s[i] !== '!') {
       newStr += s[i];
     }
@@ -3858,9 +3859,9 @@ function removeExclamationMarks(s) {
 function spoonerize(words) {
   let splitArr = words.split(' ');
 
-  return splitArr[1][0] + splitArr[0].slice(1) + 
-         ' ' +
-         splitArr[0][0] + splitArr[1].slice(1) ;
+  return splitArr[1][0] + splitArr[0].slice(1) +
+    ' ' +
+    splitArr[0][0] + splitArr[1].slice(1);
 }
 
 //////// 13-11-2022 8kyu
@@ -3872,11 +3873,11 @@ function spoonerize(words) {
 
 String.prototype.toAlternatingCase = function () {
   let newStr = '';
-  
-  for (let i=0; i<this.length; i++) {
-      this[i] === this[i].toLowerCase() ?
+
+  for (let i = 0; i < this.length; i++) {
+    this[i] === this[i].toLowerCase() ?
       newStr += this[i].toUpperCase() :
-      newStr += this[i].toLowerCase() ;
+      newStr += this[i].toLowerCase();
   }
 
   return newStr;
@@ -3924,8 +3925,8 @@ function longestRepetition(s) {
   let counter = 0;
   let character = '';
 
-  for (let i = 0; i<s.length; i++) {
-    if (s[i] === s[i-1]) {
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === s[i - 1]) {
       counter++;
     } else {
       if (highestCount > s.length - i) break;
@@ -3951,10 +3952,10 @@ function longestRepetition(s) {
 
 // Don't forget the space after the closing parentheses!
 
-function createPhoneNumber(numbers){
+function createPhoneNumber(numbers) {
   let format = '(xxx) xxx-xxxx'
 
-  for (let i=0; i<numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     format = format.replace('x', numbers[i]);
   }
 
@@ -3978,17 +3979,17 @@ function createPhoneNumber(numbers){
 // "    Hello     World   "                  =>  "#HelloWorld"
 // ""                                        =>  false
 
-function generateHashtag (str) {
+function generateHashtag(str) {
   if (!str || !str.replace(/ /g, '')) return false;
 
   let strArr = str.replace(/  +/g, ' ').trim().split(' '); // Replace multiple spaces to single space > trim spaces from begin/end > split from spaces.
   if (strArr[0].charAt(0) !== '#') strArr[0] = '#' + strArr[0].charAt(0).toUpperCase() + strArr[0].slice(1);
 
-  for (let i=0; i<strArr.length; i++) {
+  for (let i = 0; i < strArr.length; i++) {
     let firstChar = strArr[i][0];
-      strArr[i] = firstChar.toUpperCase() + strArr[i].slice(1);
+    strArr[i] = firstChar.toUpperCase() + strArr[i].slice(1);
   }
-  
+
   let result = strArr.join('');
   return result.length > 140 ? false : result;
 }
@@ -4025,10 +4026,10 @@ function generateHashtag (str) {
 //           babyboom  false
 
 function findMatchedByPattern(pattern) {
-  return function(str) {
+  return function (str) {
     let indexArr = []; // Array to hold first index of each letter on pattern.
 
-    for (let i=0; i<pattern.length; i++) {
+    for (let i = 0; i < pattern.length; i++) {
       indexArr.push(str.indexOf(pattern[i])); // Push first index of each letter on patter.    
       str = str.replace(pattern[i], '-'); // Replace pattern letter with '-' to avoid complications on indexOf.
     }
@@ -4096,9 +4097,9 @@ function lastSurvivor(letters, coords) {
   letters = letters.split('');
 
   for (let i = 0; i < coords.length; i++) {
-     letters.splice(coords[i], 1)
+    letters.splice(coords[i], 1)
   }
-  
+
   return letters.join('')
 }
 
@@ -4175,7 +4176,7 @@ const countSquares = cuts => cuts === 0 ? 1 : (6 * cuts * cuts) + 2;
 // Given a string representation, determine whether it represents a valid Chess960 starting position. Note that the input is guaranteed to represent one king,
 //  one queen, two rooks, two bishops and two knights, in some order. You do not have to validate for missing pieces or extra pieces.
 
-function isValidChess960 (pieces) {
+function isValidChess960(pieces) {
   const rookPosition = [pieces.indexOf('R'), pieces.lastIndexOf('R')];
   const kingPosition = pieces.indexOf('K');
   const firstBishopTile = pieces.indexOf('B') % 2 === 0 ? 'black' : 'white';
@@ -4184,7 +4185,7 @@ function isValidChess960 (pieces) {
   if (kingPosition < rookPosition[0] || kingPosition > rookPosition[1]) return false;
   if (firstBishopTile === secondBishopTile) return false;
 
-	return true;
+  return true;
 }
 
 //////// 15-12-2022 7kyu
@@ -4206,11 +4207,11 @@ function isValidChess960 (pieces) {
 // "ATTGC" --> "TAACG"
 // "GTAT" --> "CATA"
 
-function DNAStrand(dna){
+function DNAStrand(dna) {
   const basePairing = { A: 'T', T: 'A', C: 'G', G: 'C' }
   let complementarySide = '';
 
-  for (let i=0; i<dna.length; i++) {
+  for (let i = 0; i < dna.length; i++) {
     complementarySide += basePairing[dna[i]];
   }
 
@@ -4234,9 +4235,9 @@ function DNAStrand(dna){
 const prevMultOfThree = n => {
   const stringN = String(n);
 
-  for (let i=0; i<stringN.length; i++) {
+  for (let i = 0; i < stringN.length; i++) {
     const currentN = stringN.slice(0, stringN.length - i);
-    if (currentN % 3 === 0) {return +currentN};
+    if (currentN % 3 === 0) { return +currentN };
   }
 
   return null;
@@ -4268,7 +4269,7 @@ const prevMultOfThree = n => {
 
 // There is no preloaded code to help you. This is not about coding skills; think before you code
 
-function SubtractSum(n){
+function SubtractSum(n) {
   return 'apple';
 }
 
@@ -4290,9 +4291,9 @@ function SubtractSum(n){
 function nthFibo(n) {
   let currentN = [0, 1];
 
-  for (let i=2; i<n; i++) currentN.push(currentN[i-1] + currentN[i-2]);
+  for (let i = 2; i < n; i++) currentN.push(currentN[i - 1] + currentN[i - 2]);
 
-  return currentN[n-1];
+  return currentN[n - 1];
 }
 
 //////// 25-12-2022 6kyu
@@ -4313,11 +4314,11 @@ function nthFibo(n) {
 // There can be multiple parentheses.
 // The parentheses can be nested.
 
-function removeParentheses(string){
+function removeParentheses(string) {
   while (string.includes("(")) {
     string = string.replace(/\([^()]*\)/g, "")
   }
-  
+
   return string;
 }
 
@@ -4347,7 +4348,7 @@ function removeParentheses(string){
 // 2 turtle doves and 
 // a partridge in a pear tree.
 
-const comparator = function(a,b) {
+const comparator = function (a, b) {
   const pos = ['On', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'a'];
   return pos.indexOf(a.split(' ')[0]) - pos.indexOf(b.split(' ')[0]);
 }
@@ -4378,7 +4379,7 @@ function freqSeq(str, sep) {
 // solution('abc', 'bc') // returns true
 // solution('abc', 'd') // returns false
 
-function solution(str, ending){
+function solution(str, ending) {
   return str.endsWith(ending);
 }
 
@@ -4421,17 +4422,17 @@ function addLength(str) {
 
 // 'abcde' === ["1100001", "1100010", "1100011", "1100100", "1100101"]
 //                True       True       False      True       False
-                   
+
 //         --> ['a','b','d']
-    
+
 // 'DIGEST'--> ['D','I','E','T']
 // All input will be valid strings of length > 0. Leading zeros in binary should not be counted.
 
-function moreZeros(s){
+function moreZeros(s) {
   return [...new Set(s)].filter(letter => letter.charCodeAt()
-                                          .toString(2)
-                                          .split('')
-                                          .reduce((ac, cur) => { cur == 0 ? ac++ : ac--; return ac }, 0) > 0);
+    .toString(2)
+    .split('')
+    .reduce((ac, cur) => { cur == 0 ? ac++ : ac--; return ac }, 0) > 0);
 }
 
 //////// 04-01-2023 6kyu
@@ -4461,14 +4462,13 @@ function moreZeros(s){
 
 // More about roman numerals - http://en.wikipedia.org/wiki/Roman_numerals
 
-function solution(number)
-{
-  let result   = '',
-      decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
-      roman    = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+function solution(number) {
+  let result = '',
+    decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
+    roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
 
 
-  for (let i=0; i<decimals.length; i++) {
+  for (let i = 0; i < decimals.length; i++) {
     if (number === 0) break;
 
     while (number >= decimals[i]) {
@@ -4476,7 +4476,7 @@ function solution(number)
       number -= decimals[i];
     }
   }
-  
+
   return result;
 }
 
@@ -4492,7 +4492,7 @@ function consonantCount(str) {
   let res = 0;
   const consonant = 'bcdfghjklmnpqrstvwxyz';
 
-  for (let i=0; i<str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (consoants.includes(str[i].toLowerCase())) res++;
   }
 
@@ -4562,7 +4562,7 @@ function collatz(n) {
 
 function setReducer(input) {
   if (input.length === 1) return input[0];
-  
+
   const result = [];
   let current;
   for (let i = 0; i < input.length; i++) {
@@ -4572,7 +4572,7 @@ function setReducer(input) {
     }
     current = input[i];
     result.push(1);
-    
+
   }
   return setReducer(result);
 }
@@ -4602,7 +4602,7 @@ function setReducer(input) {
 function palindrome(string) {
   let testStr = string.toLowerCase().replace(/[^a-z0-9]/gi, '');
   let reversedTestStr = testStr.split('').reverse().join('');
-  
+
   return reversedTestStr === testStr;
 }
 
@@ -4652,7 +4652,7 @@ function palindrome(string) {
 function pooRoulette(p) {
   const flatArray = p.flat(); // Transform nested array in flat array
   const indexOfB = flatArray.indexOf('B'); // Find index of baby bottom
-  const directionObject = { 
+  const directionObject = {
     right: 1,
     left: -1,
     top: -7,
@@ -4661,11 +4661,11 @@ function pooRoulette(p) {
 
   function testScent(array, bIndex, dirObject) {
     for (direction in dirObject) {
-      
+
       let currentIndex = bIndex;
       let counter = 0;
 
-      for (let i=0; i<3; i++) {
+      for (let i = 0; i < 3; i++) {
         if (array[currentIndex + dirObject[direction]] === '~') {
           counter++
           if (counter == 3 && (direction === 'left' || direction === 'right')) return 'You disgust me!';
@@ -4705,11 +4705,11 @@ function pooRoulette(p) {
 // maxMirror([1]) → 0 
 
 const maxMirror = (arr) => {
-  let rv=","+arr.slice().reverse().join()+",";
-  
-  for(let l=arr.length;l>1;l--)
-    for(let i=0;i<=arr.length-l;i++)
-      if(rv.includes(","+arr.slice(i,i+l).join()+",")) return l;
+  let rv = "," + arr.slice().reverse().join() + ",";
+
+  for (let l = arr.length; l > 1; l--)
+    for (let i = 0; i <= arr.length - l; i++)
+      if (rv.includes("," + arr.slice(i, i + l).join() + ",")) return l;
 
   return 0;
 }
@@ -4742,9 +4742,11 @@ function isDivisible(n, x, y) {
 // items.containsAll([1, 2, 3]);  =>  true
 // items.containsAll([1, 5, 13]);  =>  false // because 13 is not in the items array
 
-Object.defineProperty( Array.prototype, "containsAll", { value: function containsAll(a) {
-  return a.every(n => this.includes(n));
-} } );
+Object.defineProperty(Array.prototype, "containsAll", {
+  value: function containsAll(a) {
+    return a.every(n => this.includes(n));
+  }
+});
 
 //////// 19-02-2023 8kyu
 //////// Format words into a sentence
@@ -4762,19 +4764,19 @@ Object.defineProperty( Array.prototype, "containsAll", { value: function contain
 // ['ninja', '', 'ronin'] --> "ninja and ronin"
 // [] -->""
 
-function formatWords(words){
+function formatWords(words) {
   if (!words || words.length == 0) return '';
 
   const validWords = words.filter(word => word.length > 0);
   const separators = [', ', ' and '];
-  
+
   if (validWords.length > 0) {
     let formattedSentence;
 
     if (validWords.length === 2) formattedSentence = validWords.join(separators[1]);
     else {
       formattedSentence = validWords.join(separators[0])
-                                    .replace(/, (?=[^,]*$)/, separators[1]);
+        .replace(/, (?=[^,]*$)/, separators[1]);
     }
     return formattedSentence;
   } else {
@@ -4796,15 +4798,37 @@ function formatWords(words){
 const orderedCount = function (text) {
   let characterCount = {};
   let currText = text;
-  
+
   for (letter of text) {
 
     characterCount['_' + letter] ?
-    characterCount['_' + letter]++ :
-    characterCount['_' + letter] = 1 ;
+      characterCount['_' + letter]++ :
+      characterCount['_' + letter] = 1;
 
     currText = currText.slice(1);
   }
-  
+
   return Object.entries(characterCount).map(arr => [arr[0].slice(1), arr[1]]);
+}
+
+//////// 21-02-2023 7kyu
+//////// No ifs no buts
+
+// Write a function that accepts two numbers a and b and returns whether a is smaller than, bigger than, or equal to b, as a string.
+
+// (5, 4)   ---> "5 is greater than 4"
+// (-4, -7) ---> "-4 is greater than -7"
+// (2, 2)   ---> "2 is equal to 2"
+// There is only one problem...
+
+// You cannot use if statements, and you cannot use the ternary operator ? :.
+
+// In fact the word if and the character ? are not allowed in your code.
+
+function noIfsNoButs(a, b) {
+  switch (Math.sign(a - b)) {
+    case 1: return `${a} is greater than ${b}`;
+    case -1: return `${a} is smaller than ${b}`;
+    case 0: return `${a} is equal to ${b}`;
+  }
 }
