@@ -4849,3 +4849,18 @@ function numberToPower(number, power){
   for (let i=1; i<power; i++) curr = curr * number;
   return power === 0 ? 1 : curr;
 }
+
+//////// 23-02-2023 7kyu
+//////// Sum a list but ignore any duplicates
+
+// Please write a function that sums a list, but ignores any duplicate items in the list.
+
+// For instance, for the list [3, 4, 3, 6] , the function should return 10.
+
+function sumNoDuplicates(numList) {
+  let sum = numList.reduce((acc, curr, i, array) => {
+    return array.indexOf(curr) === array.lastIndexOf(curr) ? acc + curr : acc;
+  }, 0)
+
+  return sum;
+}
