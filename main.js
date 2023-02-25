@@ -4865,7 +4865,7 @@ function sumNoDuplicates(numList) {
   return sum;
 }
 
-//////// 24-02-2023 7kyu
+//////// 24-02-2023 6kyu
 //////// Pair of gloves
 
 // Pair of gloves
@@ -4893,4 +4893,28 @@ function numberOfPairs(gloves) {
                .reduce((acc, curr) => acc + Math.floor(curr / 2), 0)
 }
 
-console.log(numberOfPairs(['gray','black','purple','purple','gray','black']))
+//////// 25-02-2023 7kyu
+//////// Indexed capitalization
+
+// Given a string and an array of integers representing indices, capitalize all letters at the given indices.
+
+// For example:
+
+// capitalize("abcdef",[1,2,5]) = "aBCdeF"
+// capitalize("abcdef",[1,2,5,100]) = "aBCdeF". There is no index 100.
+// The input will be a lowercase string with no spaces and an array of digits.
+
+// Good luck!
+
+function capitalize(s,arr){
+  let capitalizedString = s;
+
+  for (let index of arr) {
+    if (index < s.length) 
+      capitalizedString = capitalizedString.substring(0, index) + 
+                        capitalizedString[index].toUpperCase() + 
+                        capitalizedString.substring(index + 1) ;
+  }
+
+  return capitalizedString;
+}
