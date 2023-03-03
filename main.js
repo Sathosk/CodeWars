@@ -5007,4 +5007,18 @@ function last(x){
   });
 }
 
-console.log(last('man i need a taxi up to ubud'))
+//////// 03-03-2023 7kyu
+//////// Greet Me
+
+// Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+
+// Example:
+
+// "riley" --> "Hello Riley!"
+// "JACK"  --> "Hello Jack!"
+
+var greet = function(name) {
+  return `Hello ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
+};
+
+console.log(greet('TIAGO'))
