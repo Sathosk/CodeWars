@@ -5031,11 +5031,11 @@ var greet = function(name) {
 // Your task is to complete the Cat class which Extends Animal and replace the speak method to return the cats name + meows. e.g. 'Mr Whiskers meows.'
 // The name attribute is passed with this.name (JS), @name (Ruby) or self.name (Python).
 
-class Cat extends Animal {
-  speak() {
-    return `${this.name} meows.`;
-  }
-}
+// class Cat extends Animal {
+//   speak() {
+//     return `${this.name} meows.`;
+//   }
+// }
 
 //////// 08-03-2023 7kyu
 //////// Merge overlapping strings
@@ -5066,3 +5066,25 @@ function mergeStrings(first, second){
   return first + second.slice(count);
 }
 
+//////// 10-03-2023 7kyu
+//////// Keypad horror
+
+// Solve the horror of unstandardized keypads by providing a function that converts computer input to a number as if it was typed on a phone.
+
+// Example:
+// "789" -> "123"
+
+// Notes:
+// You get a string with numbers only
+
+function computerToPhone(numbers){
+  const keypad = [0,7,8,9,4,5,6,1,2,3];
+  const numbersArr = [...numbers];
+  let result = '';
+
+  for (let n of numbersArr) {
+    result += keypad[n]
+  }
+
+  return result
+}
