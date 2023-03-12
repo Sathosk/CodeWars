@@ -5083,8 +5083,24 @@ function computerToPhone(numbers){
   let result = '';
 
   for (let n of numbersArr) {
-    result += keypad[n]
+    result += keypad[n];
   }
 
-  return result
+  return result;
+}
+
+//////// 12-03-2023 7kyu
+//////// Ch4113ng3
+
+// Make your strings more nerdy: Replace all 'a'/'A' with 4, 'e'/'E' with 3 and 'l' with 1 e.g. "Fundamentals" --> "Fund4m3nt41s"
+
+function nerdify(txt) {
+  const obj = {a: 4, A: 4, e: 3, E: 3, l: 1};
+  let result = '';
+
+  for (let l of txt) {
+    obj[l] ? result += obj[l] : result += l;
+  }
+
+  return result;
 }
