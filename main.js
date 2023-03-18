@@ -5138,4 +5138,21 @@ function validParentheses(parenStr) {
   return true;
 }
 
-console.log(validParentheses('()(())((()))(())()'))
+//////// 18-03-2023 6kyu
+//////// Valid Parentheses
+
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  const countObj = {};
+
+  for (let char of string) {
+    countObj[char] ? countObj[char]++ : countObj[char] = 1;
+  }
+
+  return countObj;
+}
+
+console.log(count('abc'))
