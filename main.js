@@ -5217,3 +5217,21 @@ function realNumbers(n){
        + floor(n / 15)
        - floor(n / 30);
 }
+
+//////// 24-03-2023 7kyu
+//////// Mysterious Singularity Numbers
+
+// Given a mixed array of number and string representations of integers, add up the non-string integers and subtract the total of the string integers.
+
+// Return as a number.
+
+function divCon(x){
+  let n = 0;
+  let strN = 0;
+
+  for (number of x) {
+    typeof number === 'string' ? strN += +number :  n += number;
+  }
+
+  return n - strN;
+}
