@@ -5464,3 +5464,11 @@ function keepOrder(ary, val) {
 function betweenExtremes(numbers) {
   return Math.max.apply(Math, numbers) - Math.min.apply(Math, numbers);
 }
+
+//////// 05-04-2023 7kyu
+//////// Cats and shelves
+
+function solution(start, finish) {
+  return Math.floor((finish-start)/3) + (finish-start) % 3;
+}
+  
