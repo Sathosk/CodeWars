@@ -5712,3 +5712,81 @@ function array(string) {
   
   return arr.slice(1, arr.length - 1).join(' ');
 }
+
+//////// 29-05-2023 5kyu
+//////// Last digit of a large number
+
+// Define a function that takes in two non-negative integers A and B and returns the last decimal digit of a ** b
+// Note that A and B may be very large!
+
+// You may assume that the input will always be valid.
+
+function lastDigit(str1, str2) {
+  if (str2 == 0) return 1;
+  
+  const lastDigitBase = str1.slice(-1);
+  const lastDigitsPower = str2.slice(-2);
+  
+  const power = +lastDigitsPower % 4 || 4;
+  
+  return (+lastDigitBase) ** power % 10;
+}
+
+//////// 29-05-2023 5kyu
+//////// Last digit of a large number
+
+function lastDigitArr(arr) {
+  const arrLength = arr.length;
+
+  if (arrLength === 0) return 1;
+  if (arrLength === 1) return arr[0] % 10;
+
+  let base = arr[arrLength - 2] % 10;
+  let exponent = arr[arrLength - 1] % 4;
+
+  if (exponent === 0) exponent = 4;
+
+  let result = Math.pow(base, exponent) % 10;
+
+  const updatedArr = [...arr.slice(0, arrLength - 2), result];
+  return lastDigitArr(updatedArr)
+}
+
+//////// 24-06-2023 4kyu
+//////// IBM testcase
+
+function countMovesToEqualizeArray(array) {
+  if (array.length === 1) return Math.ceil(array[0] / 2);
+
+  const soma = array.reduce((prev, curr) => curr + prev);
+  const metade = Math.ceil(soma / 2);
+  let contador = 1;
+  let numeroAtual = array[0];
+
+  for (let i = 1; i < array.length - 1; i++) {
+      numeroAtual = numeroAtual + array[i];
+
+      contador++;
+      if (numeroAtual >= metade) break;
+  }
+
+  let array1 = array.slice(0, contador).reduce((prev, curr) => curr + prev);
+
+  let array2 = array
+      .slice(contador, array.length)
+      .reduce((prev, curr) => curr + prev);
+
+  if (array1 === array2) return 0;
+
+  return Math.abs(array1 - array2);
+}
+
+// Example usage
+const array1 = [70925];
+console.log(countMovesToEqualizeArray(array1));
+
+const array2 = [1, 4, 4];
+console.log(countMovesToEqualizeArray(array2));
+
+const array3 = [12, 12, 12];
+console.log(countMovesToEqualizeArray(array3));
