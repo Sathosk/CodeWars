@@ -5977,3 +5977,20 @@ function checkLogs(log) {
 function inverseSlice(a, m, n) {
   return a.slice(0, m).concat(a.slice(n));
 }
+
+//////// 07-08-2023 7kyu
+//////// Log without dates
+
+// Imagine that you are given two sticks. You want to end up with 
+// three sticks of equal length. You are allowed to cut either or both of the sticks to 
+// accomplish this, and can throw away leftover pieces.
+
+// Write a function, maxlen, that takes the lengths of the two sticks 
+// (L1 and L2, both positive values), 
+// that will return the maximum length you can make the three sticks.
+
+function maxlen(l1, l2) {
+  let a = Math.min(l1, l2), b = Math.max(l1, l2)
+  
+  return a * 2 >= b ? b / 2: a * 3 >= b ? a : a + (b - a * 3) / 3
+}
