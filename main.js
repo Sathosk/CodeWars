@@ -6040,3 +6040,34 @@ function to24hourtime(hour, minute, period) {
 // Sunday --> 666 or -666
 
 // Write a function which takes a string (day of the week) and an integer (number to be tested) so it tells the doctor if I'm afraid or not. (return a boolean)
+
+function AmIAfraid(day, num) {
+  return {
+    "Monday"   : num === 12,
+    "Tuesday"  : num > 95,
+    "Wednesday": num === 34,
+    "Thursday" : num === 0,
+    "Friday"   : num % 2 === 0,
+    "Saturday" : num === 56,
+    "Sunday"   : Math.abs(num) === 666
+  }[day];
+}
+
+//////// 21-08-2023 7kyu
+//////// Eliminate the intruders! Bit manipulation
+
+// You are given a string representing a number in binary. 
+// Your task is to delete all the unset bits in this string and return the corresponding number (after keeping only the '1's).
+
+// In practice, you should implement this function:
+
+// function eliminateUnsetBits(number);
+// Examples
+// eliminateUnsetBits("11010101010101") ->  255 (= 11111111)
+// eliminateUnsetBits("111") ->  7
+// eliminateUnsetBits("1000000") -> 1
+// eliminateUnsetBits("000") -> 0
+
+function eliminateUnsetBits(number) {
+  return parseInt(number.replace(/0/g,'') || 0, 2)
+}
