@@ -6072,7 +6072,7 @@ function eliminateUnsetBits(number) {
   return parseInt(number.replace(/0/g,'') || 0, 2)
 }
 
-//////// 21-08-2023 7kyu
+//////// 04-09-2023 8kyu
 //////// Return Two Highest Values in List
 
 // In this kata, your job is to return the two distinct highest values in a list. 
