@@ -6089,3 +6089,32 @@ function eliminateUnsetBits(number) {
 function twoHighest(arr) {
   return [...new Set(arr)].sort((a, b) => b - a).slice(0, 2)
 }
+
+//////// 05-09-2023 8kyu
+//////// Incorrect division method
+
+// This method, which is supposed to return the result of 
+// dividing its first argument by its second, isn't always returning correct values. Fix it.
+
+const solve = (x, y) => x / y
+
+//////// 07-09-2023 7kyu
+//////// Area of a Circle
+
+// Complete the function which will return the area of a circle with the given radius.
+
+// Round the returned number to two decimal places. If the radius is not positive or not a number, return false.
+
+// Example:
+
+// circleArea(-1485.86);    //returns false
+// circleArea(0);           //returns false
+// circleArea(43.2673);     //returns 5881.25
+// circleArea(68);          //returns 14526.72
+// circleArea("number");    //returns false
+
+const circleArea = function(radius) {
+  if (isNaN(radius) || radius <= 0) return false
+
+  return +(3.14159265 * Math.pow(radius, 2)).toFixed(2)
+};
