@@ -158,7 +158,7 @@ function solution(str) {
 function isPrime(num) {
   if (num < 2) return false;
   const limit = Math.sqrt(num);
-  console.log(limit)
+
   for (let j = 2; j <= limit; ++j) {
     if (num % j === 0) {
       return false;
@@ -1112,7 +1112,7 @@ function longestConsec(strarr, k) {
       if (j > strarr.length - k) { return }
       newStr = newStr + strarr[j + j]
     }
-    console.log(newStr)
+
     if (newStr.length > biggestWord.length) biggestWord = newStr;
   }
 
@@ -5783,13 +5783,13 @@ function countMovesToEqualizeArray(array) {
 
 // Example usage
 const array1 = [70925];
-console.log(countMovesToEqualizeArray(array1));
+
 
 const array2 = [1, 4, 4];
-console.log(countMovesToEqualizeArray(array2));
+
 
 const array3 = [12, 12, 12];
-console.log(countMovesToEqualizeArray(array3));
+
 
 //////// 25-06-2023 7kyu
 //////// What dominates your array?
@@ -6194,4 +6194,39 @@ function justify(str, len) {
   });
   lastLine && lines.push(lastLine);
   return lines.join('\n');
+}
+
+//////// 10-09-2023 5kyu
+//////// Describe time from seconds
+
+function describeTime(seconds) {
+  if (seconds <= 0) {
+    return 'now';
+  }
+
+  const units = [
+    { label: 'year', duration: 365 * 86400 }, // 365.25 if leap years counted
+    { label: 'day', duration: 86400 },
+    { label: 'hour', duration: 3600 },
+    { label: 'minute', duration: 60 },
+    { label: 'second', duration: 1 },
+  ];
+
+  const parts = [];
+
+  for (const unit of units) {
+    const value = Math.floor(seconds / unit.duration);
+    seconds %= unit.duration;
+    if (value > 0) {
+      const label = value > 1 ? `${unit.label}s` : unit.label;
+      parts.push(`${value} ${label}`);
+    }
+  }
+
+  if (parts.length > 1) {
+    const lastPart = parts.pop();
+    return `${parts.join(', ')} and ${lastPart}`;
+  } else {
+    return parts[0];
+  }
 }
