@@ -6230,3 +6230,42 @@ function describeTime(seconds) {
     return parts[0];
   }
 }
+
+//////// 10-09-2023 5kyu
+//////// get highest dish average rating
+
+function solution(n, ratings) {
+  let obj = {}
+  let highest = 0
+
+  for ( let i = 1; i<ratings.length; i++ ) {
+    let id = ratings[i][0]
+    let rating = ratings[i][1]
+    if (id in obj)  {
+      obj[id] = [obj[id][0] + 1, rating + obj[id][1]]
+    } else {
+      obj[id] = [1, rating]
+    }
+  }
+
+  console.log(obj)
+
+  for ( let key in obj ) {
+    obj[key] = obj[key][1] / obj[key][0]
+    if (obj[key] > highest) highest = obj[key]
+  }
+
+  console.log(obj)
+
+  let arr = []
+
+  for (let key in obj) {
+    if (obj[key] === highest) arr.push(key)
+  }
+
+  return Math.min(...arr)
+}
+
+let clientRating = [1, [512, 3], [123, 3], [978, 4], [123, 5], [123, 3], [978, 5], [1, 4], [1, 5]]
+
+console.log(solution(4, clientRating))
