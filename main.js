@@ -6231,7 +6231,7 @@ function describeTime(seconds) {
   }
 }
 
-//////// 10-09-2023 5kyu
+//////// 15-09-2023 5kyu
 //////// get highest dish average rating
 
 function solution(n, ratings) {
